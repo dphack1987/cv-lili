@@ -23,7 +23,6 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            /* Simple, clean background gradient */
             background: linear-gradient(180deg, var(--color-bg-medium) 0%, var(--color-bg-subtle) 100%);
             color: var(--color-text-medium);
             line-height: 1.7;
@@ -34,14 +33,14 @@
         /* Main CV container styling */
         .cv-container {
             background-color: white;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Softer, less diffused shadow */
-            border-radius: 1.5rem; /* Moderately rounded corners */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 1.5rem;
             overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
-            transition: box-shadow 0.3s ease; /* Simple transition for hover */
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
         }
         .cv-container:hover {
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); /* Slightly more prominent on hover */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
 
         /* Header Section Styling */
@@ -54,10 +53,9 @@
             overflow: hidden;
             border-bottom-left-radius: 1.5rem;
             border-bottom-right-radius: 1.5rem;
-            /* Simple fade-in animation */
             animation: fadeIn 0.8s ease-out forwards;
             opacity: 0;
-            box-shadow: inset 0 -5px 10px rgba(0,0,0,0.05); /* Very subtle inner shadow */
+            box-shadow: inset 0 -5px 10px rgba(0,0,0,0.05);
         }
 
         @keyframes fadeIn {
@@ -67,17 +65,17 @@
 
         /* Profile Picture Styling - Reduced size */
         .profile-pic {
-            width: 120px; /* Reduced from 160px */
-            height: 120px; /* Reduced from 160px */
-            border: 6px solid rgba(255, 255, 255, 0.9); /* Thinner, clean border */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Softer shadow */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Simple transition */
+            width: 120px;
+            height: 120px;
+            border: 6px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             z-index: 1;
         }
         .profile-pic:hover {
-            transform: scale(1.05); /* Gentle scale on hover */
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Slightly deeper shadow on hover */
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
 
         /* Section Titles with clean accent and animation */
@@ -89,8 +87,8 @@
             font-weight: 800;
             font-size: 2.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em; /* Reduced letter spacing */
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Very subtle text shadow */
+            letter-spacing: 0.05em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
         .section-title::after {
             content: '';
@@ -98,22 +96,22 @@
             left: 0;
             bottom: 0;
             width: 0;
-            height: 4px; /* Thinner accent line */
+            height: 4px;
             background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
             border-radius: 9999px;
-            animation: lineExpandSimple 1s ease-out forwards; /* Simpler, faster animation */
+            animation: lineExpandSimple 1s ease-out forwards;
             animation-delay: 0.2s;
         }
         @keyframes lineExpandSimple {
             from { width: 0; }
-            to { width: 80px; } /* Fixed width for consistency */
+            to { width: 80px; }
         }
 
         /* Animation for sections appearing on scroll */
         .section-hidden {
             opacity: 0;
-            transform: translateY(30px); /* Less pronounced slide up */
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Faster transition */
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .section-visible {
             opacity: 1;
@@ -127,56 +125,55 @@
             font-weight: 600;
             padding: 0.6rem 1.2rem;
             border-radius: 9999px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Softer shadow */
-            transition: all 0.3s ease; /* Simple transition */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
             cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .skill-tag:hover {
             background: linear-gradient(45deg, var(--color-primary-dark) 0%, var(--color-accent-dark) 100%);
-            transform: translateY(-3px); /* Gentle lift on hover */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); /* Slightly deeper shadow on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
         }
 
         /* Experience Item Styling (Timeline effect) - cleaner, less busy */
         .experience-item {
             position: relative;
-            padding-left: 2.5rem; /* Space for timeline dot/line */
-            margin-bottom: 2.5rem; /* Space between items */
+            padding-left: 2.5rem;
+            margin-bottom: 2.5rem;
             background-color: var(--color-bg-light);
             padding: 1.5rem;
             border-radius: 1rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid var(--color-bg-medium);
         }
         .experience-item:hover {
-            transform: translateY(-5px); /* Gentle lift */
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18); /* Slightly deeper shadow on hover */
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
         }
         /* Timeline dot */
         .experience-item::before {
             content: '';
             position: absolute;
-            left: 0.75rem; /* Position of the dot */
-            top: 2rem; /* Align with content */
+            left: 0.75rem;
+            top: 2rem;
             width: 18px;
             height: 18px;
             background: var(--color-primary-light);
             border-radius: 50%;
-            border: 3px solid var(--color-accent-light); /* Thinner outer ring */
-            box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.2); /* Softer glow effect, adjusted to primary-light */
+            border: 3px solid var(--color-accent-light);
+            box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.2);
             z-index: 1;
-            /* No animation */
         }
         /* Timeline vertical line */
         .experience-item:not(:last-child)::after {
             content: '';
             position: absolute;
-            left: 0.95rem; /* Align with dot center */
-            top: 3.5rem; /* Start below the dot */
-            bottom: -0.5rem; /* Extend below the item */
-            width: 2px; /* Thinner line */
+            left: 0.95rem;
+            top: 3.5rem;
+            bottom: -0.5rem;
+            width: 2px;
             background-color: var(--color-bg-medium);
             z-index: 0;
         }
@@ -212,12 +209,12 @@
             background: linear-gradient(160deg, var(--color-bg-subtle) 0%, #ffffff 100%);
             border-radius: 1.5rem;
             padding: 2.5rem;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
         .contact-form-section input,
         .contact-form-section textarea {
-            border: 2px solid var(--color-bg-medium); /* Thinner border */
+            border: 2px solid var(--color-bg-medium);
             border-radius: 0.75rem;
             padding: 0.9rem 1.2rem;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -227,7 +224,7 @@
         .contact-form-section input:focus,
         .contact-form-section textarea:focus {
             border-color: var(--color-primary-light);
-            box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.3); /* Softer focus ring, adjusted to primary-light */
+            box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.3);
             outline: none;
             background-color: var(--color-bg-light);
         }
@@ -236,38 +233,37 @@
             font-weight: 700;
             padding: 1.2rem 2.5rem;
             border-radius: 1rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Softer shadow */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             letter-spacing: 0.05em;
             text-transform: uppercase;
         }
         .contact-button:hover {
             background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-accent-dark) 100%);
-            transform: translateY(-3px); /* Gentle lift */
+            transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
-        /* Floating WhatsApp Button - simpler animation */
+        /* Floating WhatsApp Button */
         .whatsapp-button {
             position: fixed;
             bottom: 2.5rem;
             right: 2.5rem;
-            background-color: #25D366; /* Standard WhatsApp green */
+            background-color: #25D366;
             color: white;
             border-radius: 9999px;
             padding: 1.25rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Softer shadow */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
             z-index: 1000;
-            /* No pulse animation */
         }
         .whatsapp-button:hover {
-            transform: scale(1.1); /* Gentle scale on hover */
-            background-color: #1DA851; /* Darker WhatsApp green on hover */
+            transform: scale(1.1);
+            background-color: #1DA851;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
@@ -280,18 +276,18 @@
         }
 
         .partner-logo {
-            max-height: 80px; /* Adjusted size */
+            max-height: 80px;
             width: auto;
             margin: 1rem;
             transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
         }
         .partner-logo:hover {
-            transform: scale(1.08); /* Slightly enlarge on hover */
+            transform: scale(1.08);
         }
 
         /* Specific style for LinkedIn logo to reduce its size */
-        .partners-section a:nth-child(4) .partner-logo { /* Targeting the 4th link (LinkedIn) */
-            max-height: 65px; /* Adjust this value as needed */
+        .partners-section a:nth-child(4) .partner-logo {
+            max-height: 65px;
         }
 
         /* Navbar Styling */
@@ -306,7 +302,7 @@
         }
 
         .navbar.scrolled {
-            background-color: var(--color-primary-dark); /* Solid color on scroll */
+            background-color: var(--color-primary-dark);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
@@ -316,6 +312,7 @@
             padding: 0.75rem 1rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, color 0.3s ease;
+            white-space: nowrap; /* Prevent text wrapping */
         }
 
         .navbar-item:hover {
@@ -324,9 +321,19 @@
         }
 
         /* Responsive adjustments */
+        @media (max-width: 1024px) { /* Adjust for smaller laptops/large tablets */
+            .navbar .flex {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .navbar-item {
+                margin: 0.25rem 0.5rem; /* Add some margin between items when wrapped */
+            }
+        }
+
         @media (max-width: 768px) {
             body {
-                padding-top: 60px; /* Adjust padding for smaller screens */
+                padding-top: 60px;
             }
             .section-title {
                 font-size: 2.4rem;
@@ -348,30 +355,32 @@
                 padding-bottom: 2.5rem;
             }
             .profile-pic {
-                width: 100px; /* Adjusted for smaller screens */
-                height: 100px; /* Adjusted for smaller screens */
+                width: 100px;
+                height: 100px;
             }
             .partner-logo {
-                max-height: 60px; /* Adjusted for smaller screens */
+                max-height: 60px;
             }
-            /* Responsive adjustment for LinkedIn logo */
             .partners-section a:nth-child(4) .partner-logo {
-                max-height: 50px; /* Adjust for smaller screens if necessary */
+                max-height: 50px;
             }
-            .navbar-item {
-                font-size: 0.9rem;
-                padding: 0.5rem 0.75rem;
+            .navbar {
+                padding: 0.5rem 1rem;
             }
             .navbar .flex {
-                flex-direction: column;
-                align-items: center;
-                padding: 0.5rem;
+                flex-direction: row; /* Keep row for wider screens, wrap if needed */
+                justify-content: center;
+            }
+            .navbar-item {
+                font-size: 0.85rem;
+                padding: 0.6rem 0.8rem;
+                margin: 0.15rem 0.3rem; /* Tighter spacing */
             }
         }
 
         @media (max-width: 640px) {
             body {
-                padding-top: 50px; /* Further adjust padding for smallest screens */
+                padding-top: 50px;
             }
             .cv-container {
                 border-radius: 1rem;
@@ -411,19 +420,19 @@
                 font-size: 1.5rem;
             }
             .partner-logo {
-                max-height: 50px; /* Adjusted for smallest screens */
+                max-height: 50px;
             }
-            /* Responsive adjustment for LinkedIn logo */
             .partners-section a:nth-child(4) .partner-logo {
-                max-height: 40px; /* Adjust for smallest screens if necessary */
+                max-height: 40px;
             }
             .navbar .flex {
                 flex-direction: column; /* Stack items vertically on very small screens */
             }
             .navbar-item {
-                width: 100%; /* Make items full width */
+                width: 100%;
                 text-align: center;
                 margin-bottom: 0.25rem;
+                padding: 0.5rem;
             }
         }
     </style>
@@ -626,7 +635,7 @@
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
                             <input type="email" id="email" name="email" class="w-full" placeholder="tu.correo@example.com">
                         </div>
-                        <div
+                        <div>
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
                             <textarea id="message" name="message" rows="4" class="w-full" placeholder="Escribe tu mensaje aquí..."></textarea>
                         </div>
@@ -645,16 +654,13 @@
                 <a href="https://www.abilitytohelp.com/" target="_blank" rel="noopener noreferrer">
                     <img src="images/ability.jpg" alt="Logo de ABILITYTOHELP" class="partner-logo">
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <img src="images/fip.jpg" alt="Logo de FIP" class="partner-logo">
+                <a href="https://fip.org.co/" target="_blank" rel="noopener noreferrer"> <img src="images/fip.jpg" alt="Logo de FIP" class="partner-logo">
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <img src="images/inclo.jpg" alt="Logo de INCLO" class="partner-logo">
+                <a href="https://inclusion.org.co/" target="_blank" rel="noopener noreferrer"> <img src="images/inclo.jpg" alt="Logo de INCLO" class="partner-logo">
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" style="max-height: 65px;">
-                    <img src="images/linkelink.png" alt="Logo de LinkedIn" class="partner-logo">
+                <a href="#" target="_blank" rel="noopener noreferrer" style="max-height: 65px;"> <img src="images/linkelink.png" alt="Logo de LinkedIn" class="partner-logo">
                 </a>
-                </div>
+            </div>
         </section>
 
         <footer class="text-center text-gray-500 text-sm mt-10 p-5 border-t border-gray-200">
@@ -684,12 +690,6 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.remove('section-hidden');
                         entry.target.classList.add('section-visible');
-                        // No need to unobserve if we want the animation to repeat on scroll up/down
-                        // observer.unobserve(entry.target); 
-                    } else {
-                        // Optional: Re-add 'section-hidden' if you want it to hide again when out of view
-                        // entry.target.classList.remove('section-visible');
-                        // entry.target.classList.add('section-hidden');
                     }
                 });
             }, observerOptions);
