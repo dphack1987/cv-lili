@@ -28,6 +28,7 @@
             color: var(--color-text-medium);
             line-height: 1.7;
             overflow-x: hidden;
+            padding-top: 70px; /* Add padding to body to prevent content from being hidden by fixed nav */
         }
 
         /* Main CV container styling */
@@ -288,9 +289,45 @@
             transform: scale(1.08); /* Slightly enlarge on hover */
         }
 
+        /* Specific style for LinkedIn logo to reduce its size */
+        .partners-section a:nth-child(4) .partner-logo { /* Targeting the 4th link (LinkedIn) */
+            max-height: 65px; /* Adjust this value as needed */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent;
+            z-index: 999;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: var(--color-primary-dark); /* Solid color on scroll */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-item {
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-item:hover {
+            background-color: var(--color-primary-light);
+            color: white;
+        }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+            body {
+                padding-top: 60px; /* Adjust padding for smaller screens */
+            }
             .section-title {
                 font-size: 2.4rem;
             }
@@ -317,9 +354,25 @@
             .partner-logo {
                 max-height: 60px; /* Adjusted for smaller screens */
             }
+            /* Responsive adjustment for LinkedIn logo */
+            .partners-section a:nth-child(4) .partner-logo {
+                max-height: 50px; /* Adjust for smaller screens if necessary */
+            }
+            .navbar-item {
+                font-size: 0.9rem;
+                padding: 0.5rem 0.75rem;
+            }
+            .navbar .flex {
+                flex-direction: column;
+                align-items: center;
+                padding: 0.5rem;
+            }
         }
 
         @media (max-width: 640px) {
+            body {
+                padding-top: 50px; /* Further adjust padding for smallest screens */
+            }
             .cv-container {
                 border-radius: 1rem;
             }
@@ -360,10 +413,34 @@
             .partner-logo {
                 max-height: 50px; /* Adjusted for smallest screens */
             }
+            /* Responsive adjustment for LinkedIn logo */
+            .partners-section a:nth-child(4) .partner-logo {
+                max-height: 40px; /* Adjust for smallest screens if necessary */
+            }
+            .navbar .flex {
+                flex-direction: column; /* Stack items vertically on very small screens */
+            }
+            .navbar-item {
+                width: 100%; /* Make items full width */
+                text-align: center;
+                margin-bottom: 0.25rem;
+            }
         }
     </style>
 </head>
 <body class="antialiased">
+
+    <nav class="navbar py-4 px-6 flex justify-center items-center">
+        <div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <a href="#resumen" class="navbar-item">Resumen</a>
+            <a href="#habilidades" class="navbar-item">Habilidades</a>
+            <a href="#experiencia" class="navbar-item">Experiencia</a>
+            <a href="#educacion" class="navbar-item">Educación</a>
+            <a href="#certificaciones" class="navbar-item">Certificaciones</a>
+            <a href="#contacto" class="navbar-item">Contacto</a>
+            <a href="#aliados-estrategicos" class="navbar-item">Aliados Estratégicos</a>
+        </div>
+    </nav>
 
     <div class="container mx-auto p-4 sm:p-6 lg:p-8 cv-container my-8 max-w-4xl">
 
@@ -574,7 +651,7 @@
                 <a href="#" target="_blank" rel="noopener noreferrer">
                     <img src="images/inclo.jpg" alt="Logo de INCLO" class="partner-logo">
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="#" target="_blank" rel="noopener noreferrer" style="max-height: 65px;">
                     <img src="images/linkelink.png" alt="Logo de LinkedIn" class="partner-logo">
                 </a>
                 </div>
@@ -607,13 +684,28 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.remove('section-hidden');
                         entry.target.classList.add('section-visible');
-                        observer.unobserve(entry.target); // Stop observing once animated
+                        // No need to unobserve if we want the animation to repeat on scroll up/down
+                        // observer.unobserve(entry.target); 
+                    } else {
+                        // Optional: Re-add 'section-hidden' if you want it to hide again when out of view
+                        // entry.target.classList.remove('section-visible');
+                        // entry.target.classList.add('section-hidden');
                     }
                 });
             }, observerOptions);
 
             sections.forEach(section => {
                 observer.observe(section);
+            });
+
+            // Navbar sticky effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { // Adjust this value to when you want the navbar to change
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
             });
         });
     </script>
