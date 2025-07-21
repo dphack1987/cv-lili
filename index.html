@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Martha Liliana Rodríguez Romo - Relacionista Pública</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Tailwind Configuration and Global Styles */
+        :root {
+            --color-primary-light: #6b8e23; /* Olive Drab - a nice olive green */
+            --color-primary-dark: #556b2f;  /* Dark Olive Green */
+            --color-accent-light: #9acd32; /* Yellow Green - brighter green accent */
+            --color-accent-dark: #3a5f0b;  /* Darker Olive Green */
+            --color-text-dark: #1f2937;    /* Gray 800 */
+            --color-text-medium: #4b5563;  /* Gray 600 */
+            --color-bg-light: #f9fafb;     /* Gray 50 */
+            --color-bg-medium: #e5e7eb;    /* Gray 200 */
+            --color-bg-subtle: #f3f4f6;    /* Gray 100 */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Simple, clean background gradient */
+            background: linear-gradient(180deg, var(--color-bg-medium) 0%, var(--color-bg-subtle) 100%);
+            color: var(--color-text-medium);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Main CV container styling */
+        .cv-container {
+            background-color: white;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Softer, less diffused shadow */
+            border-radius: 1.5rem; /* Moderately rounded corners */
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+            transition: box-shadow 0.3s ease; /* Simple transition for hover */
+        }
+        .cv-container:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); /* Slightly more prominent on hover */
+        }
+
+        /* Header Section Styling */
+        .header-section {
+            background: linear-gradient(145deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            /* Simple fade-in animation */
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+            box-shadow: inset 0 -5px 10px rgba(0,0,0,0.05); /* Very subtle inner shadow */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Profile Picture Styling */
+        .profile-pic {
+            border: 6px solid rgba(255, 255, 255, 0.9); /* Thinner, clean border */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Softer shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Simple transition */
+            position: relative;
+            z-index: 1;
+        }
+        .profile-pic:hover {
+            transform: scale(1.05); /* Gentle scale on hover */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Slightly deeper shadow on hover */
+        }
+
+        /* Section Titles with clean accent and animation */
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2.5rem;
+            color: var(--color-text-dark);
+            font-weight: 800;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em; /* Reduced letter spacing */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Very subtle text shadow */
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 4px; /* Thinner accent line */
+            background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
+            border-radius: 9999px;
+            animation: lineExpandSimple 1s ease-out forwards; /* Simpler, faster animation */
+            animation-delay: 0.2s;
+        }
+        @keyframes lineExpandSimple {
+            from { width: 0; }
+            to { width: 80px; } /* Fixed width for consistency */
+        }
+
+        /* Animation for sections appearing on scroll */
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(30px); /* Less pronounced slide up */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Faster transition */
+        }
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Skill Tags Styling - clean and friendly */
+        .skill-tag {
+            background: linear-gradient(45deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
+            color: white;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 9999px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Softer shadow */
+            transition: all 0.3s ease; /* Simple transition */
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+        }
+        .skill-tag:hover {
+            background: linear-gradient(45deg, var(--color-primary-dark) 0%, var(--color-accent-dark) 100%);
+            transform: translateY(-3px); /* Gentle lift on hover */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); /* Slightly deeper shadow on hover */
+        }
+
+        /* Experience Item Styling (Timeline effect) - cleaner, less busy */
+        .experience-item {
+            position: relative;
+            padding-left: 2.5rem; /* Space for timeline dot/line */
+            margin-bottom: 2.5rem; /* Space between items */
+            background-color: var(--color-bg-light);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--color-bg-medium);
+        }
+        .experience-item:hover {
+            transform: translateY(-5px); /* Gentle lift */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18); /* Slightly deeper shadow on hover */
+        }
+        /* Timeline dot */
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem; /* Position of the dot */
+            top: 2rem; /* Align with content */
+            width: 18px;
+            height: 18px;
+            background: var(--color-primary-light);
+            border-radius: 50%;
+            border: 3px solid var(--color-accent-light); /* Thinner outer ring */
+            box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.2); /* Softer glow effect, adjusted to primary-light */
+            z-index: 1;
+            /* No animation */
+        }
+        /* Timeline vertical line */
+        .experience-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 0.95rem; /* Align with dot center */
+            top: 3.5rem; /* Start below the dot */
+            bottom: -0.5rem; /* Extend below the item */
+            width: 2px; /* Thinner line */
+            background-color: var(--color-bg-medium);
+            z-index: 0;
+        }
+        .experience-item h3 {
+            color: var(--color-primary-dark);
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item h4 {
+            color: var(--color-primary-light);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .experience-item p {
+            font-size: 1rem;
+            color: var(--color-text-dark);
+        }
+        .experience-item ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        .experience-item ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: var(--color-text-medium);
+        }
+
+        /* Contact Form Styling */
+        .contact-form-section {
+            background: linear-gradient(160deg, var(--color-bg-subtle) 0%, #ffffff 100%);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .contact-form-section input,
+        .contact-form-section textarea {
+            border: 2px solid var(--color-bg-medium); /* Thinner border */
+            border-radius: 0.75rem;
+            padding: 0.9rem 1.2rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
+            color: var(--color-text-dark);
+        }
+        .contact-form-section input:focus,
+        .contact-form-section textarea:focus {
+            border-color: var(--color-primary-light);
+            box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.3); /* Softer focus ring, adjusted to primary-light */
+            outline: none;
+            background-color: var(--color-bg-light);
+        }
+        .contact-button {
+            background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+            font-weight: 700;
+            padding: 1.2rem 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Softer shadow */
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .contact-button:hover {
+            background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-accent-dark) 100%);
+            transform: translateY(-3px); /* Gentle lift */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Floating WhatsApp Button - simpler animation */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 2.5rem;
+            right: 2.5rem;
+            background-color: #25D366; /* Standard WhatsApp green */
+            color: white;
+            border-radius: 9999px;
+            padding: 1.25rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Softer shadow */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+            /* No pulse animation */
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.1); /* Gentle scale on hover */
+            background-color: #1DA851; /* Darker WhatsApp green on hover */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.4rem;
+            }
+            .experience-item h3 {
+                font-size: 1.6rem;
+            }
+            .experience-item h4 {
+                font-size: 1.1rem;
+            }
+            .whatsapp-button {
+                bottom: 2rem;
+                right: 2rem;
+                padding: 1rem;
+                font-size: 1.8rem;
+            }
+            .header-section {
+                padding-top: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cv-container {
+                border-radius: 1rem;
+            }
+            .header-section {
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            .experience-item {
+                padding: 1.2rem;
+                margin-bottom: 2rem;
+            }
+            .experience-item::before {
+                left: 0.6rem;
+                top: 1.8rem;
+                width: 16px;
+                height: 16px;
+            }
+            .experience-item:not(:last-child)::after {
+                left: 0.75rem;
+                top: 3rem;
+                bottom: -0.4rem;
+                width: 1.5px;
+            }
+            .contact-form-section {
+                padding: 2rem;
+                border-radius: 1rem;
+            }
+            .whatsapp-button {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                padding: 0.8rem;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Main Container for the CV content -->
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 cv-container my-8 max-w-4xl">
+
+        <!-- Header Section: Contains profile picture, name, title, contact info, and CAVLIR logo -->
+        <header class="text-center header-section mb-8 pb-4 relative z-10">
+            <!-- Profile Picture Placeholder -->
+            <!-- IMPORTANT: Replace 'https://placehold.co/180x180/6B8E23/FFFFFF?text=Tu+Foto' with the actual URL of Martha Liliana's profile picture -->
+            <img src="https://placehold.co/180x180/6B8E23/FFFFFF?text=Tu+Foto" alt="Foto de Perfil de Martha Liliana Rodríguez Romo" class="w-40 h-40 rounded-full mx-auto mb-4 profile-pic object-cover">
+
+            <div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1 leading-tight">Martha Liliana Rodríguez Romo</h1>
+                <p class="text-lg sm:text-xl lg:text-2xl font-medium text-green-100 mb-5">Relacionista Pública</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-md sm:text-lg text-green-100">
+                <a href="tel:+573145092255" class="hover:text-white transition-colors duration-200 flex items-center">
+                    <i class="fas fa-phone-alt mr-2 text-green-200"></i> +57 314 509 2255
+                </a>
+                <a href="mailto:liliromo56@gmail.com" class="hover:text-white transition-colors duration-200 flex items-center">
+                    <i class="fas fa-envelope mr-2 text-green-200"></i> liliromo56@gmail.com
+                </a>
+                <span class="flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2 text-green-200"></i> San Antonio del Tequendama, Cundinamarca
+                </span>
+            </div>
+
+            <!-- CAVLIR Logo Placeholder -->
+            <!-- IMPORTANT: Replace 'https://placehold.co/100x40/6B8E23/FFFFFF?text=Logo+CAVLIR' with the actual URL of the CAVLIR logo -->
+            <div class="mt-6">
+                <img src="https://placehold.co/100x40/6B8E23/FFFFFF?text=Logo+CAVLIR" alt="Logo de Cambiando Vidas LR SAS" class="h-14 w-auto mx-auto rounded-md shadow-md">
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="p-6 sm:p-8 lg:p-10">
+
+            <!-- Profile Summary Section -->
+            <section id="resumen" class="mb-10 section-hidden">
+                <h2 class="section-title">Resumen</h2>
+                <p class="text-base text-gray-700 leading-relaxed">
+                    Soy una Relacionista Pública enfocada en ayuda social en Colombia. Fundé Cambiando Vidas LR SAS, liderando
+                    iniciativas para apoyar a adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de
+                    derechos humanos, conservación ambiental, y apoyo a animales en estado de vulnerabilidad. Con experiencia en
+                    orquídeologia y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.
+                </p>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="habilidades" class="mb-10 section-hidden">
+                <h2 class="section-title">Habilidades Blandas</h2>
+                <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+                    <span class="skill-tag">Comunicación Efectiva</span>
+                    <span class="skill-tag">Trabajo en Equipo</span>
+                    <span class="skill-tag">Empatía</span>
+                    <span class="skill-tag">Liderazgo</span>
+                    <span class="skill-tag">Coordinación de Proyectos</span>
+                    <span class="skill-tag">Gestión de Recursos</span>
+                    <span class="skill-tag">Trabajo con Comunidades Vulnerables</span>
+                    <span class="skill-tag">Conservación Ambiental</span>
+                    <span class="skill-tag">Organización de Eventos</span>
+                    <span class="skill-tag">Adaptable</span>
+                    <span class="skill-tag">Orientada a Resultados</span>
+                    <span class="skill-tag">Empírica</span>
+                    <span class="skill-tag">Relaciones Públicas</span>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experiencia" class="mb-10 section-hidden">
+                <h2 class="section-title">Experiencia Laboral</h2>
+
+                <div class="experience-item">
+                    <h3>Secretaria Diplomática</h3>
+                    <h4>Mission Human Rights Internacional (Colombia – Europa)</h4>
+                    <p class="text-sm text-gray-500 mb-2">Julio 2023 – Hoy</p>
+                    <ul class="list-disc ml-5 text-gray-600">
+                        <li>Ejercicio de funciones diplomáticas de alto nivel como representante institucional de Mission Human Rights en Colombia, articulando esfuerzos nacionales e internacionales en favor de la protección y promoción de los derechos humanos.</li>
+                        <li>Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.</li>
+                        <li>Coordinación de la incidencia diplomática y política ante sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.</li>
+                        <li>Supervisión de la gestión nacional, velando por la alineación estratégica con la misión institucional y promoviendo la transparencia, la integridad y la articulación efectiva de los órganos directivos.</li>
+                        <li>Facilitación de relaciones con organismos multilaterales, cooperantes y aliados estratégicos para la proyección internacional de la organización y la consolidación de su estructura operativa.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>CEO</h3>
+                    <h4>Cambiando Vidas LR S.A.S.</h4>
+                    <p class="text-sm text-gray-500 mb-2">Julio 2023 – Hoy | San Antonio del Tequendama, CO</p>
+                    <ul class="list-disc ml-5 text-gray-600">
+                        <li>Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.</li>
+                        <li>Gestión e implementación de una alianza internacional con la organización ABILITYTOHELP, mediante la cual se logró la distribución de 15.000 becas de formación en inglés (niveles A1 a B1), así como becas para estudios técnicos en Conducta Humana Aplicada, beneficiando a jóvenes y adultos en condiciones de vulnerabilidad.</li>
+                        <li>Facilitación de procesos estratégicos para el posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo la visibilidad y el fortalecimiento de sus marcas en colaboración directa con la con Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, y la Agencia Mundial de Prensa.</li>
+                        <li>Desarrollo de programas de formación, capacitación e impulso emprendedor, dirigidos especialmente a mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar a través del trabajo en conjunto con la organización Mecedora de mis Ancestros.</li>
+                        <li>Coordinación de una red nacional de productores para optimizar la comercialización de sus productos, fortalecer sus emprendimientos y posicionar a los agricultores colombianos en mercados nacionales e internacionales.</li>
+                        <li>Promoción de iniciativas culturales innovadoras que integran el arte y la identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional por medio de una alianza cultural con el Maestro Siaucho.</li>
+                        <li>Liderazgo en Sembrando Semillas, un proyecto de Cambiando Vidas LR S.A.S que impactó a más de 1,500 clientes a través de la venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para fomentar el desarrollo sostenible del sector.</li>
+                        <li>Facilitamos el acceso a capacitaciones en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, captando recursos para el programa Colombia Mayor.</li>
+                        <li>Colaboro con la Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en la promoción y defensa de los derechos humanos a nivel nacional.</li>
+                        <li>Coordiné la capacitación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas a través de la Fundación FMEC.</li>
+                        <li>Organizo eventos en Bogotá, con la fundación PROASOCIADOS conectando a inversores internacionales con emprendedores nacionales, logrando que más de 200 emprendedores formalicen y escalen sus negocios.</li>
+                        <li>Conecté a estudiantes de territorios remotos con la Fundación TLS, facilitando su acceso a becas de la Georgia Tech International Corporation para su titulación universitaria.</li>
+                        <li>Brindamos capacitaciones a las personas con discapacidad, a través de la alianza con el movimiento latinoamericano de personas con discapacidad, para facilitar su integración a la sociedad.</li>
+                        <li>Capacito a víctimas del conflicto armado sobre sus derechos y brindándoles apoyo continuo.</li>
+                        <li>Coordiné la gestión y postulación de proyectos en Cundinamarca y Antioquía junto a Dismartek, cumpliendo con todos los requerimientos y plazos establecidos.</li>
+                        <li>Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.</li>
+                        <li>Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.</li>
+                        <li>Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.</li>
+                        <li>Apoyó a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
+                        <li>Apoyó en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
+                        <li>Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Relacionista Comercial</h3>
+                    <h4>ATSEI de Colombia</h4>
+                    <p class="text-sm text-gray-500 mb-2">Febrero 2016 – Hoy | San Antonio del Tequendama, CO</p>
+                    <ul class="list-disc ml-5 text-gray-600">
+                        <li>Impulsé la comercialización e implementación de paneles solares a nivel nacional, logrando su adopción exitosa en 5 ciudades.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Fundadora</h3>
+                    <h4>Construyendo Sonrisas</h4>
+                    <p class="text-sm text-gray-500 mb-2">2012 – 2016 | Lima, PE</p>
+                    <ul class="list-disc ml-5 text-gray-600">
+                        <li>Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
+                        <li>Colaboró con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
+                        <li>Organizó talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
+                        <li>Dirigí la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
+                        <li>Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="educacion" class="mb-10 section-hidden">
+                <h2 class="section-title">Educación Extendida</h2>
+
+                <div class="experience-item">
+                    <h3>Diplomado de Derechos Humanos</h3>
+                    <h4>Capellanía Armada Mundial de Paz de México</h4>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Técnico Agropecuario</h3>
+                    <h4>Instituto Tomás Moro</h4>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Diplomado en Inclusión</h3>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Derechos Humanos</h3>
+                    <h4>Escuela Nacional de Formación Comunitaria</h4>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Diplomado en Círculo de Maestros Conocimientos y Saberes</h3>
+                    <h4>Federación de Discapacidad Cuidadores de Colombia y el Movimiento Guajira Disruptiva</h4>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section id="certificaciones" class="mb-10 section-hidden">
+                <h2 class="section-title">Certificaciones</h2>
+
+                <div class="experience-item">
+                    <h3>Alta Distinción «Honor, Dignidad y Gloria»</h3>
+                    <h4>Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.</h4>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Doctor Honoris Causa en Derechos Humanos</h3>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contacto" class="section-hidden">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contact-form-section">
+                    <p class="text-base text-gray-700 mb-5 text-center">
+                        Si mi perfil se alinea con tus necesidades o deseas explorar posibles colaboraciones, no dudes en contactarme.
+                    </p>
+                    <form class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo</label>
+                            <input type="text" id="name" name="name" class="w-full" placeholder="Tu nombre">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" class="w-full" placeholder="tu.correo@example.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" class="w-full" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="contact-button text-white">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm mt-10 p-5 border-t border-gray-200">
+            <p>&copy; 2025 Martha Liliana Rodríguez Romo. Todos los derechos reservados.</p>
+            <p class="mt-1">Diseñado con <i class="fas fa-heart text-red-500"></i> y código creativo por Zenythos 2.0.</p>
+        </footer>
+
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/573145092255" target="_blank" rel="noopener noreferrer" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // JavaScript for scroll-triggered animations (Intersection Observer)
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section-hidden');
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('section-hidden');
+                        entry.target.classList.add('section-visible');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
