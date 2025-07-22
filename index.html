@@ -3,675 +3,537 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Profesional - Martha Liliana Rodríguez Romo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3WdfZpG/nU6qD4G0T6JtN0c5W1y6x9A7Z9G3P1O/T5U5w5d5R5v5w5d5R5v5w5d5R5v5w5d5R5v5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>CV Profesional - Liliana Rodríguez Romo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Custom Tailwind Configuration and Global Styles - Colores Tema Azul (adaptado al original) */
+        /* Variables CSS para una gestión sencilla de colores y fuentes */
         :root {
-            --color-primary-light: #1A237E; /* Darker Blue (Indigo) */
-            --color-primary-dark: #0D103D;  /* Very Dark Blue */
-            --color-accent-light: #2196F3; /* Medium Blue (Dodger Blue) */
-            --color-accent-dark: #1976D2;  /* Slightly darker accent blue */
-            --color-text-dark: #212121;    /* Dark gray for main text */
-            --color-text-medium: #616161;  /* Medium gray for secondary text */
-            --color-bg-light: #E3F2FD;     /* Very light pale blue background */
-            --color-bg-medium: #BBDEFB;    /* Light blue background */
-            --color-bg-subtle: #90CAF9;    /* More subtle blue background */
+            --color-primary: #34495E; /* Azul Grisáceo Oscuro - Profesional */
+            --color-secondary: #ECF0F1; /* Gris Claro - Fondo Suave */
+            --color-accent: #E67E22; /* Naranja Terracota - Calidez y Énfasis */
+            --color-text-dark: #2C3E50; /* Azul Oscuro Casi Negro - Para texto principal */
+            --color-text-light: #FFFFFF; /* Blanco - Para texto sobre fondos oscuros */
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --spacing-unit: 1rem; /* Unidad base para espaciado */
+        }
+
+        /* Reset y estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--color-bg-light); /* Fondo más claro para el minimalismo */
-            color: var(--color-text-medium);
-            line-height: 1.7;
-            overflow-x: hidden;
-            padding-top: 70px; /* Espacio para el navbar fijo */
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--color-text-dark);
+            background-color: var(--color-secondary);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alinea al inicio del eje principal (arriba) */
+            min-height: 100vh;
+            padding: 2rem;
         }
 
-        /* Main CV container styling - Más limpio, bordes más sutiles */
-        .cv-container {
-            background-color: white;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Sombra más suave */
-            border-radius: 1rem; /* Bordes un poco menos redondeados */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 1000px;
+            width: 100%;
+            background-color: var(--color-text-light);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.03); /* Borde casi imperceptible */
-            transition: box-shadow 0.3s ease;
-        }
-        .cv-container:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Sombra al pasar el mouse */
-        }
-
-        /* Header Section Styling - Más enfocado y con menos gradiente intenso */
-        .header-section {
-            background: var(--color-primary-light); /* Fondo sólido primario */
-            color: white;
-            padding-top: 2.5rem;
-            padding-bottom: 2rem;
-            position: relative;
-            overflow: hidden;
-            border-bottom-left-radius: 1rem;
-            border-bottom-right-radius: 1rem;
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
-            box-shadow: inset 0 -3px 8px rgba(0,0,0,0.05); /* Sombra interna sutil */
+            animation: fadeIn 1s ease-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Profile Picture Styling - Reduced size, frame with accent */
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-            border: 4px solid var(--color-accent-light); /* Borde con color de acento */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra más suave */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Sección de la barra lateral (Información de contacto y foto) */
+        .sidebar {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
             position: relative;
-            z-index: 1;
-        }
-        .profile-pic:hover {
-            transform: scale(1.03); /* Escala más sutil */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
 
-        /* Section Titles with clean accent and animation - Línea más fina, menos impacto */
-        .section-title {
-            position: relative;
-            padding-bottom: 0.8rem; /* Menos padding */
-            margin-bottom: 2rem; /* Menos margen */
-            color: var(--color-primary-dark); /* Títulos en color oscuro principal */
-            font-weight: 700; /* Menos bold, más legible */
-            font-size: 2.5rem; /* Tamaño de fuente ligeramente reducido */
-            text-transform: uppercase;
-            letter-spacing: 0.03em; /* Menos espaciado */
-            text-shadow: none; /* Sin sombra de texto */
-        }
-        .section-title::after {
+        .sidebar::before {
             content: '';
             position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 3px; /* Línea más delgada */
-            background: var(--color-accent-dark); /* Color sólido de acento */
-            border-radius: 9999px;
-            animation: lineExpandSimple 1s ease-out forwards;
-            animation-delay: 0.2s;
-        }
-        @keyframes lineExpandSimple {
-            from { width: 0; }
-            to { width: 60px; } /* Línea más corta */
-        }
-
-        /* Animation for sections appearing on scroll */
-        .section-hidden {
-            opacity: 0;
-            transform: translateY(20px); /* Menos desplazamiento */
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Animación más rápida */
-        }
-        .section-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Skill Tags Styling - Más sutiles, colores más planos */
-        .skill-tag {
-            background-color: var(--color-bg-medium); /* Fondo más plano */
-            color: var(--color-primary-dark); /* Texto oscuro */
-            font-weight: 500; /* Menos bold */
-            padding: 0.5rem 1rem; /* Menos padding */
-            border-radius: 0.5rem; /* Bordes menos redondeados */
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
-            transition: all 0.2s ease;
-            cursor: pointer;
-            border: 1px solid var(--color-bg-subtle); /* Borde sutil */
-        }
-        .skill-tag:hover {
-            background-color: var(--color-accent-light); /* Color de acento al pasar el mouse */
-            color: white;
-            transform: translateY(-2px); /* Menos desplazamiento */
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
-        }
-
-        /* Experience Item Styling (Original: No timeline, simply structured blocks) */
-        .experience-item {
-            position: relative;
-            padding: 1.5rem 2rem; /* Espaciado generoso */
-            margin-bottom: 2rem; /* Espacio entre elementos */
-            background-color: white; /* Fondo blanco */
-            border-radius: 0.75rem; /* Bordes redondeados */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: 1px solid var(--color-bg-medium); /* Borde sutil */
-        }
-        .experience-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-        }
-        /* Remove timeline specific pseudo-elements */
-        .experience-item::before,
-        .experience-item::after {
-            content: none !important;
-        }
-
-        .experience-item h3 {
-            color: var(--color-primary-dark);
-            font-weight: 700;
-            font-size: 1.6rem; /* Menos grande */
-            margin-bottom: 0.4rem; /* Margen reducido */
-        }
-        .experience-item h4 {
-            color: var(--color-accent-dark);
-            font-weight: 600;
-            font-size: 1.1rem; /* Más pequeño */
-            margin-bottom: 0.6rem; /* Margen reducido */
-        }
-        .experience-item p {
-            font-size: 0.95rem; /* Texto un poco más pequeño */
-            color: var(--color-text-dark);
-        }
-        .experience-item ul {
-            list-style: disc;
-            margin-left: 1.2rem; /* Menos margen */
-            margin-top: 0.8rem; /* Menos margen */
-        }
-        .experience-item ul li {
-            margin-bottom: 0.4rem; /* Menos margen */
-            line-height: 1.5; /* Interlineado más ajustado */
-            color: var(--color-text-medium);
-            font-size: 0.95rem; /* Consistencia en el tamaño de la lista */
-        }
-
-        /* Contact Form Styling - Más limpio, menos boxy */
-        .contact-form-section {
-            background-color: var(--color-bg-light); /* Fondo más claro */
-            border-radius: 1rem;
-            padding: 2rem; /* Menos padding */
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.03);
-        }
-        .contact-form-section input,
-        .contact-form-section textarea {
-            border: 1px solid var(--color-bg-medium); /* Borde más fino */
-            border-radius: 0.5rem; /* Menos redondeado */
-            padding: 0.8rem 1rem; /* Menos padding */
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            background-color: white;
-            color: var(--color-text-dark);
-        }
-        .contact-form-section input:focus,
-        .contact-form-section textarea:focus {
-            border-color: var(--color-accent-light);
-            box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2); /* Sombra más sutil */
-            outline: none;
-            background-color: #F8FDFF; /* Fondo muy claro al enfocar */
-        }
-        .contact-button {
-            background: var(--color-accent-dark); /* Color sólido de acento */
-            font-weight: 600; /* Menos bold */
-            padding: 1rem 2rem; /* Menos padding */
-            border-radius: 0.75rem; /* Menos redondeado */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más suave */
-            transition: all 0.3s ease;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-            color: white;
-        }
-        .contact-button:hover {
-            background: var(--color-primary-dark); /* Color primario oscuro al pasar el mouse */
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Floating WhatsApp Button - Keep the distinct WhatsApp green */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: #25D366; /* Standard WhatsApp green */
-            color: white;
-            border-radius: 9999px;
-            padding: 1.1rem; /* Un poco más pequeño */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem; /* Tamaño de icono */
-            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-            z-index: 1000;
-        }
-        .whatsapp-button:hover {
-            transform: scale(1.05); /* Escala más sutil */
-            background-color: #1DA851;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Styles for the new Strategic Partners section */
-        .partners-section {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            border-top: 1px solid var(--color-bg-medium);
-            text-align: center;
-            background-color: var(--color-bg-light);
-            border-bottom-left-radius: 1rem;
-            border-bottom-right-radius: 1rem;
-        }
-
-        .partner-logo {
-            max-height: 70px; /* Tamaño un poco más pequeño */
-            width: auto;
-            margin: 0.8rem; /* Menos margen */
-            transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
-            filter: grayscale(80%); /* Ligeramente en escala de grises para integrarse más */
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
             opacity: 0.8;
         }
-        .partner-logo:hover {
+         .sidebar::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--color-accent);
+            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-picture:hover {
             transform: scale(1.05);
-            filter: grayscale(0%); /* Color completo al pasar el mouse */
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .contact-info li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centrar elementos en dispositivos grandes */
+            gap: 0.8rem;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        .contact-info li:hover {
             opacity: 1;
         }
 
-        /* Specific style for LinkedIn logo to reduce its size, applying to linkelink */
-        .partners-section a[aria-label="Logo Linkelink"] .partner-logo {
-            max-height: 55px; /* Ajuste para el logo de LinkedIn/Linkelink */
+        .contact-info i {
+            color: var(--color-accent);
+            font-size: 1.1rem;
+            width: 20px; /* Ancho fijo para alinear iconos */
+            text-align: center;
         }
 
-        /* Navbar Styling */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--color-primary-dark); /* Color de fondo sólido */
-            z-index: 999;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15); /* Sombra suave */
-        }
-
-        .navbar.scrolled {
-            background-color: var(--color-primary-dark); /* Permanece oscuro */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .navbar-item {
-            color: white;
-            font-weight: 500; /* Menos bold */
-            padding: 0.6rem 0.9rem; /* Menos padding */
-            border-radius: 0.4rem; /* Menos redondeado */
-            transition: background-color 0.2s ease, color 0.2s ease;
+        .contact-info a {
+            color: var(--color-text-light);
             text-decoration: none;
-            font-size: 0.95rem; /* Fuente ligeramente más pequeña */
+            transition: color 0.3s ease;
         }
 
-        .navbar-item:hover {
-            background-color: var(--color-accent-light);
-            color: white;
+        .contact-info a:hover {
+            color: var(--color-accent);
         }
 
-        /* Responsive adjustments */
-        @media (min-width: 1025px) {
-            .navbar-item {
-                white-space: nowrap;
+        /* Sección de contenido principal */
+        .main-content {
+            padding: 2.5rem;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: var(--font-sans);
+            font-size: 1.2rem;
+            color: var(--color-accent);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            animation: slideInRight 0.8s ease-out forwards;
+            opacity: 0; /* Empieza oculto */
+        }
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Retraso de animación para secciones sucesivas */
+        section:nth-of-type(1) { animation-delay: 0.2s; }
+        section:nth-of-type(2) { animation-delay: 0.4s; }
+        section:nth-of-type(3) { animation-delay: 0.6s; }
+        section:nth-of-type(4) { animation-delay: 0.8s; }
+        section:nth-of-type(5) { animation-delay: 1.0s; }
+        section:nth-of-type(6) { animation-delay: 1.2s; } /* Para la nueva sección de certificaciones */
+
+
+        h3 {
+            font-family: var(--font-sans);
+            font-size: 1.6rem;
+            color: var(--color-primary);
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-left: 20px; /* Espacio para el icono */
+        }
+        h3 i {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-accent);
+            font-size: 1.3rem;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--color-accent);
+            transition: background-color 0.3s ease;
+        }
+        .experience-item:hover, .education-item:hover {
+            background-color: rgba(230, 126, 34, 0.05); /* Fondo suave al pasar el mouse */
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-title, .degree {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 1.15rem;
+        }
+
+        .company-name, .institution-name {
+            font-weight: 500;
+            color: #555;
+            margin-top: 0.2rem;
+        }
+
+        .dates {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 0.2rem;
+            font-style: italic;
+        }
+
+        .job-description ul {
+            list-style: none; /* Elimina viñetas predeterminadas */
+            padding-left: 0;
+            margin-top: 0.8rem;
+        }
+
+        .job-description li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .job-description li::before {
+            content: '\2022'; /* Código de viñeta • */
+            color: var(--color-accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1.5em;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Habilidades */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .skill-item {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .skill-item:hover {
+            background-color: var(--color-accent);
+            transform: translateY(-3px);
+        }
+
+        /* Proyectos (similar a experiencia pero con enfoque en logros) */
+        .project-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 1.15rem;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+        .project-description ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.8rem;
+        }
+        .project-description li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .project-description li::before {
+            content: '\2713'; /* Marca de verificación ✓ */
+            color: var(--color-accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1.5em;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Estilos para la nueva sección de certificaciones */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 3-4 columnas */
+            gap: 1.5rem;
+            justify-items: center; /* Centrar imágenes en la cuadrícula */
+            margin-top: 1rem;
+        }
+
+        .certification-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .certification-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* Media Queries para diseño responsivo */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 300px 1fr; /* Sidebar fija y contenido flexible */
+            }
+            .contact-info li {
+                justify-content: flex-start; /* Alinear a la izquierda en desktop */
+            }
+            h1, h2 {
+                text-align: left; /* Alinear títulos a la izquierda en desktop */
+            }
+            .main-content {
+                padding-left: 3rem; /* Más espacio a la izquierda para el contenido */
             }
         }
 
-        @media (max-width: 1024px) {
-            .navbar .flex {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .navbar-item {
-                margin: 0.2rem 0.4rem; /* Menos margen */
-            }
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             body {
-                padding-top: 60px;
+                padding: 1rem; /* Menos padding en pantallas pequeñas */
             }
-            .section-title {
-                font-size: 2.2rem;
-            }
-            .experience-item h3 {
-                font-size: 1.5rem;
-            }
-            .experience-item h4 {
-                font-size: 1rem;
-            }
-            .whatsapp-button {
-                bottom: 1.8rem;
-                right: 1.8rem;
-                padding: 0.9rem;
-                font-size: 1.6rem;
-            }
-            .header-section {
-                padding-top: 2rem;
-                padding-bottom: 1.5rem;
-            }
-            .profile-pic {
-                width: 100px;
-                height: 100px;
-            }
-            .partner-logo {
-                max-height: 55px;
-            }
-            .partners-section a[aria-label="Logo Linkelink"] .partner-logo {
-                max-height: 45px;
-            }
-            .navbar {
-                padding: 0.4rem 0.8rem;
-            }
-            .navbar .flex {
-                flex-direction: row;
-                justify-content: center;
-            }
-            .navbar-item {
-                font-size: 0.8rem;
-                padding: 0.5rem 0.7rem;
-                margin: 0.1rem 0.25rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            body {
-                padding-top: 50px;
-            }
-            .cv-container {
-                border-radius: 0.8rem;
-            }
-            .header-section {
-                border-bottom-left-radius: 0.8rem;
-                border-bottom-right-radius: 0.8rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 1.5rem;
-            }
-            .experience-item {
-                padding: 1.2rem 1.5rem;
-                margin-bottom: 1.5rem;
-                border-radius: 0.6rem;
-            }
-            .contact-form-section {
+            .sidebar {
                 padding: 1.5rem;
-                border-radius: 0.8rem;
             }
-            .whatsapp-button {
-                bottom: 1.2rem;
-                right: 1.2rem;
-                padding: 0.7rem;
-                font-size: 1.3rem;
+            .main-content {
+                padding: 1.5rem;
             }
-            .partner-logo {
-                max-height: 45px;
+            h1 {
+                font-size: 2rem;
             }
-            .partners-section a[aria-label="Logo Linkelink"] .partner-logo {
-                max-height: 35px;
+            h2 {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
             }
-            .navbar .flex {
-                flex-direction: column;
+            h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
             }
-            .navbar-item {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 0.2rem;
-                padding: 0.4rem;
+            section {
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+            }
+            .certifications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Más columnas en móvil si hay espacio */
+                gap: 1rem;
             }
         }
     </style>
 </head>
-<body class="relative">
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="URL_DE_TU_FOTO_DE_PERFIL.jpg" alt="Foto de Perfil de Liliana Rodríguez Romo" class="profile-picture">
+            <h2>Liliana Rodríguez Romo</h2>
+            <p>Relacionista Pública | Gestora de Proyectos Sociales</p>
 
-    <nav class="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-center space-x-4">
-            <a href="#about" class="navbar-item">Sobre Mí</a>
-            <a href="#skills" class="navbar-item">Habilidades</a>
-            <a href="#experience" class="navbar-item">Experiencia</a>
-            <a href="#education" class="navbar-item">Educación</a>
-            <a href="#certifications" class="navbar-item">Certificaciones</a>
-            <a href="#contact" class="navbar-item">Contacto</a>
-            <a href="#partners" class="navbar-item">Socios</a>
-        </div>
-    </nav>
+            <ul class="contact-info">
+                <li><i class="fas fa-envelope"></i> <a href="mailto:tu.email@example.com">tu.email@example.com</a></li>
+                <li><i class="fas fa-phone"></i> <a href="tel:+573001234567">+57 300 123 4567</a></li>
+                <li><i class="fas fa-map-marker-alt"></i> Armenia, Quindío, Colombia</li>
+                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tuperfil" target="_blank">LinkedIn/tuperfil</a></li>
+                </ul>
+        </aside>
 
-    <main class="max-w-4xl mx-auto p-4 md:p-8 relative">
-        <div class="cv-container">
-
-            <header id="header" class="header-section text-center p-8 section-hidden">
-                <img src="./images/foto-perfil.jpg" alt="Foto de Perfil Martha Liliana" class="profile-pic rounded-full mx-auto mb-6 shadow-lg">
-                <h1 class="text-5xl font-extrabold mb-2">Martha Liliana Rodríguez Romo</h1>
-                <p class="text-xl font-light opacity-90 mb-4">Relacionista Pública</p>
-                <p class="text-lg opacity-80 mb-4">San Antonio del Tequendama, Cundinamarca</p>
-                <div class="flex justify-center space-x-6 text-2xl">
-                    <a href="mailto:liliromo56@gmail.com" class="hover:text-gray-300 transition-colors duration-300" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+573145092255" class="hover:text-gray-300 transition-colors duration-300" aria-label="Teléfono"><i class="fas fa-phone"></i></a>
-                </div>
-            </header>
-
-            <section id="about" class="p-8 md:p-12 section-hidden">
-                <h2 class="section-title">Resumen</h2>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Soy una Relacionista Pública enfocada en ayuda social en Colombia. Fundé Cambiando Vidas LR SAS, liderando iniciativas para apoyar a adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de derechos humanos, conservación ambiental, y apoyo a animales en estado de vulnerabilidad. Con experiencia en orquídeologia y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.
-                </p>
+        <main class="main-content">
+            <section id="about">
+                <h3><i class="fas fa-user-circle"></i> Sobre Mí</h3>
+                <p>Profesional apasionada con más de [X] años de experiencia en el desarrollo y gestión de proyectos de impacto social, especialmente enfocados en comunidades rurales. Mi trayectoria se ha centrado en fortalecer la base asociativa, impulsar la economía local sostenible y promover la inclusión de poblaciones vulnerables como personas con discapacidad, mujeres cabeza de familia y víctimas del conflicto armado en Colombia. Mi compromiso es generar un desarrollo equitativo y digno para todos, a través de estrategias innovadoras y alianzas estratégicas.</p>
             </section>
 
-            <section id="skills" class="p-8 md:p-12 border-t border-gray-200 section-hidden">
-                <h2 class="section-title">Habilidades Blandas</h2>
-                <div class="flex flex-wrap gap-3 justify-center">
-                    <span class="skill-tag">Comunicación efectiva</span>
-                    <span class="skill-tag">Trabajo en equipo</span>
-                    <span class="skill-tag">Empatía</span>
-                    <span class="skill-tag">Liderazgo</span>
-                    <span class="skill-tag">Coordinación de proyectos</span>
-                    <span class="skill-tag">Gestión de recursos</span>
-                    <span class="skill-tag">Trabajo con comunidades vulnerables</span>
-                    <span class="skill-tag">Conservación ambiental</span>
-                    <span class="skill-tag">Organización de eventos</span>
-                    <span class="skill-tag">Adaptable</span>
-                    <span class="skill-tag">Orientada a resultados</span>
-                    <span class="skill-tag">Empírica</span>
-                    <span class="skill-tag">Relaciones públicas</span>
-                </div>
-            </section>
-
-            <section id="experience" class="p-8 md:p-12 border-t border-gray-200 section-hidden">
-                <h2 class="section-title">Experiencia</h2>
-
+            <section id="experience">
+                <h3><i class="fas fa-briefcase"></i> Experiencia Profesional</h3>
                 <div class="experience-item">
-                    <h3>Secretaria Diplomática</h3>
-                    <h4>Mission Human Rights Internacional (Colombia – Europa)</h4>
-                    <p class="text-gray-600 mb-3">Julio 2023 – Hoy</p>
-                    <ul class="text-gray-600">
-                        <li>Ejercicio de funciones diplomáticas de alto nivel como representante institucional de Mission Human Rights en Colombia, articulando esfuerzos nacionales e internacionales en favor de la protección y promoción de los derechos humanos.</li>
-                        <li>Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.</li>
-                        <li>Coordinación de la incidencia diplomática y política ante sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.</li>
-                        <li>Supervisión de la gestión nacional, velando por la alineación estratégica con la misión institucional y promoviendo la transparencia, la integridad y la articulación efectiva de los órganos directivos.</li>
-                        <li>Facilitación de relaciones con organismos multilaterales, cooperantes y aliados estratégicos para la proyección internacional de la organización y la consolidación de su estructura operativa.</li>
-                    </ul>
+                    <div class="job-title">Representante Legal</div>
+                    <div class="company-name">Asociación Productiva Rural CLAVIR para el Desarrollo Local Sostenible – ASPROCAVLIR</div>
+                    <div class="dates">Julio 2025 – Presente</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Liderazgo en la constitución y registro formal de la asociación.</li>
+                            <li>Definición e implementación de estrategias para promover el desarrollo económico y social rural, con enfoque en procesos productivos avícolas sostenibles.</li>
+                            <li>Gestión y articulación con entidades públicas, privadas, nacionales e internacionales para la obtención de recursos y establecimiento de alianzas.</li>
+                            <li>Fomento de la participación activa y el bienestar de los miembros, incluyendo poblaciones vulnerables.</li>
+                        </ul>
+                    </div>
                 </div>
-
                 <div class="experience-item">
-                    <h3>CEO</h3>
-                    <h4>Cambiando Vidas LR S.A.S., San Antonio del Tequendama, CO</h4>
-                    <p class="text-gray-600 mb-3">Julio 2023 – Hoy</p>
-                    <ul class="text-gray-600">
-                        <li>Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.</li>
-                        <li>Gestión e implementación de una alianza internacional con la organización ABILITYTOHELP, mediante la cual se logró la distribución de 15.000 becas de formación en inglés (niveles A1 a B1), así como becas para estudios técnicos en Conducta Humana Aplicada, beneficiando a jóvenes y adultos en condiciones de vulnerabilidad.</li>
-                        <li>Facilitación de procesos estratégicos para el posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo la visibilidad y el fortalecimiento de sus marcas en colaboración directa con la Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, y la Agencia Mundial de Prensa.</li>
-                        <li>Desarrollo de programas de formación, capacitación e impulso emprendedor, dirigidos especialmente a mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar a través del trabajo en conjunto con la organización Mecedora de mis Ancestros.</li>
-                        <li>Coordinación de una red nacional de productores para optimizar la comercialización de sus productos, fortalecer sus emprendimientos y posicionar a los agricultores colombianos en mercados nacionales e internacionales.</li>
-                        <li>Promoción de iniciativas culturales innovadoras que integran el arte y la identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional por medio de una alianza cultural con el Maestro Siaucho.</li>
-                        <li>Liderazgo en Sembrando Semillas, un proyecto de Cambiando Vidas LR S.A.S que impactó a más de 1,500 clientes a través de la venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para fomentar el desarrollo sostenible del sector.</li>
-                        <li>Facilitamos el acceso a capacitaciones en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, captando recursos para el programa Colombia Mayor.</li>
-                        <li>Colaboro con la Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en la promoción y defensa de los derechos humanos a nivel nacional.</li>
-                        <li>Coordiné la capacitación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas a través de la Fundación FMEC.</li>
-                        <li>Organizo eventos en Bogotá, con la fundación PROASOCIADOS conectando a inversores internacionales con emprendedores nacionales, logrando que más de 200 emprendedores formalicen y escalen sus negocios.</li>
-                        <li>Conecté a estudiantes de territorios remotos con la Fundación TLS, facilitando su acceso a becas de la Georgia Tech International Corporation para su titulación universitaria.</li>
-                        <li>Brindamos capacitaciones a las personas con discapacidad, a través de la alianza con el movimiento latinoamericano de personas con discapacidad, para facilitar su integración a la sociedad.</li>
-                        <li>Capacito a víctimas del conflicto armado sobre sus derechos y brindándoles apoyo continuo.</li>
-                        <li>Coordiné la gestión y postulación de proyectos en Cundinamarca y Antioquía junto a Dismartek, cumpliendo con todos los requerimientos y plazos establecidos.</li>
-                        <li>Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.</li>
-                        <li>Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.</li>
-                        <li>Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.</li>
-                        <li>Apoyó a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
-                        <li>Apoyó en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
-                        <li>Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Relacionista comercial</h3>
-                    <h4>ATSEI de Colombia, San Antonio del Tequendama, CO</h4>
-                    <p class="text-gray-600 mb-3">Febrero 2016 – Hoy</p>
-                    <ul class="text-gray-600">
-                        <li>Impulsé la comercialización e implementación de paneles solares a nivel nacional, logrando su adopción exitosa en 5 ciudades.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Fundadora</h3>
-                    <h4>Construyendo Sonrisas, Lima, PE</h4>
-                    <p class="text-gray-600 mb-3">2012 – 2016</p>
-                    <ul class="text-gray-600">
-                        <li>Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
-                        <li>Colaboré con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
-                        <li>Organizó talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
-                        <li>Dirigí la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
-                        <li>Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
-                    </ul>
+                    <div class="job-title">[Tu Otro Cargo Anterior]</div>
+                    <div class="company-name">[Nombre de la Empresa/Organización Anterior]</div>
+                    <div class="dates">[Fecha de Inicio] – [Fecha de Fin]</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>[Logro o Responsabilidad clave 1]</li>
+                            <li>[Logro o Responsabilidad clave 2]</li>
+                            <li>[Logro o Responsabilidad clave 3]</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
-            <section id="education" class="p-8 md:p-12 border-t border-gray-200 section-hidden">
-                <h2 class="section-title">Educación Extendida</h2>
-                <div class="experience-item !pl-0 !pt-0 !pb-0 !shadow-none !border-none">
-                    <ul class="text-gray-600 !m-0 !list-none">
-                        <li>• Diplomado de derechos humanos con la Capellanía Armada Mundial de Paz de México.</li>
-                        <li>• Técnico Agropecuario, instituto Tomás Moro.</li>
-                        <li>• Diplomado en Inclusión.</li>
-                        <li>• Derechos humanos, Escuela nacional de formación comunitaria.</li>
-                        <li>• Diplomado en Circulo De Maestros Conocimientos Y Saberes De La Federación De Discapacidad Cuidadores De Colombia Y El Movimiento Guajira Disruptiva.</li>
-                    </ul>
+            <section id="education">
+                <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
+                <div class="education-item">
+                    <div class="degree">[Tu Título Universitario/Posgrado]</div>
+                    <div class="institution-name">[Nombre de la Universidad/Institución]</div>
+                    <div class="dates">[Año de Inicio] – [Año de Finalización]</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">[Otro Título/Diploma]</div>
+                    <div class="institution-name">[Otra Institución]</div>
+                    <div class="dates">[Año de Inicio] – [Año de Finalización]</div>
                 </div>
             </section>
 
-            <section id="certifications" class="p-8 md:p-12 border-t border-gray-200 section-hidden">
-                <h2 class="section-title">Certificaciones</h2>
-                <div class="experience-item !pl-0 !pt-0 !pb-0 !shadow-none !border-none">
-                    <ul class="text-gray-600 !m-0 !list-none">
-                        <li>• Alta Distinción «Honor, Dignidad y Gloria» Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.</li>
-                        <li>• Doctor Honoris Causa en: Derechos Humanos.</li>
-                    </ul>
+            <section id="skills">
+                <h3><i class="fas fa-tools"></i> Habilidades</h3>
+                <div class="skills-grid">
+                    <span class="skill-item">Gestión de Proyectos Sociales</span>
+                    <span class="skill-item">Relaciones Públicas</span>
+                    <span class="skill-item">Desarrollo Comunitario</span>
+                    <span class="skill-item">Formulación y Evaluación de Proyectos</span>
+                    <span class="skill-item">Comunicación Estratégica</span>
+                    <span class="skill-item">Liderazgo de Equipos</span>
+                    <span class="skill-item">Mediación y Resolución de Conflictos</span>
+                    <span class="skill-item">Inclusión Social</span>
+                    <span class="skill-item">Sostenibilidad Rural</span>
+                    <span class="skill-item">Manejo de Office 365</span>
+                    <span class="skill-item">Investigación Social</span>
                 </div>
             </section>
 
-            <section id="contact" class="p-8 md:p-12 border-t border-gray-200 section-hidden">
-                <h2 class="section-title">Contacto</h2>
-                <div class="contact-form-section text-center">
-                    <p class="text-lg text-gray-700 mb-6">¿Interesado en colaborar o tienes alguna pregunta? No dudes en contactarme.</p>
-                    <form action="#" method="POST" class="max-w-lg mx-auto grid grid-cols-1 gap-6">
-                        <input type="text" name="name" placeholder="Tu Nombre" class="w-full" required>
-                        <input type="email" name="email" placeholder="Tu Correo Electrónico" class="w-full" required>
-                        <textarea name="message" rows="5" placeholder="Tu Mensaje" class="w-full resize-y" required></textarea>
-                        <button type="submit" class="contact-button w-full text-white">Enviar Mensaje</button>
-                    </form>
+            <section id="projects">
+                <h3><i class="fas fa-lightbulb"></i> Proyectos Destacados</h3>
+                <div class="project-item">
+                    <div class="project-title">Constitución y Operación de ASPROCAVLIR</div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Liderazgo integral en la fase fundacional, legal y operativa de la asociación.</li>
+                            <li>Establecimiento de alianzas clave para el desarrollo avícola sostenible.</li>
+                            <li>Implementación de mecanismos de gobernanza transparente y rendición de cuentas.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">[Nombre de Otro Proyecto]</div>
+                    <div class="project-description">
+                        <ul>
+                            <li>[Logro clave del proyecto 1]</li>
+                            <li>[Logro clave del proyecto 2]</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
-            <section id="partners" class="partners-section p-8 md:p-12 border-t border-gray-200 section-hidden">
-                <h2 class="section-title !text-center">Socios Estratégicos</h2>
-                <div class="flex flex-wrap justify-center items-center gap-6 mt-8">
-                    <a href="https://example.com/ability" target="_blank" aria-label="Logo ABILITYTOHELP">
-                        <img src="./images/ability.jpg" alt="ABILITYTOHELP Logo" class="partner-logo">
-                    </a>
-                    <a href="https://example.com/fip" target="_blank" aria-label="Logo FIP">
-                        <img src="./images/fip.jpg" alt="FIP Logo" class="partner-logo">
-                    </a>
-                    <a href="https://example.com/inclu" target="_blank" aria-label="Logo Inclusión">
-                        <img src="./images/inclu.jpg" alt="Inclusión Logo" class="partner-logo">
-                    </a>
-                    <a href="https://example.com/linkelink" target="_blank" aria-label="Logo Linkelink">
-                        <img src="./images/linkelink.png" alt="Linkelink Logo" class="partner-logo">
-                    </a>
-                    <a href="https://example.com/cavlir" target="_blank" aria-label="Logo Grupo Educativo CAVLIR">
-                        <img src="./images/logo-cavlir.png" alt="Grupo Educativo CAVLIR Logo" class="partner-logo">
-                    </a>
+            <section id="certifications">
+                <h3><i class="fas fa-award"></i> Certificaciones y Reconocimientos</h3>
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <img src="images/1.jpg" alt="Certificación 1">
+                    </div>
+                    <div class="certification-item">
+                        <img src="images/2.jpg" alt="Certificación 2">
+                    </div>
+                    <div class="certification-item">
+                        <img src="images/3.jpg" alt="Certificación 3">
+                    </div>
+                    <div class="certification-item">
+                        <img src="images/4.jpg" alt="Certificación 4">
+                    </div>
+                    <div class="certification-item">
+                        <img src="images/5.jpg" alt="Certificación 5">
+                    </div>
+                    <div class="certification-item">
+                        <img src="images/6.jpg" alt="Certificación 6">
+                    </div>
+                    <div class="certification-item">
+                        <img src="images/7.jpg" alt="Certificación 7">
+                    </div>
+                    <div class="certification-item">
+                        <img src="images/8.jpg" alt="Certificación 8">
+                    </div>
+                    <div class="certification-item">
+                        <img src="images/9.jpg" alt="Certificación 9">
+                    </div>
                 </div>
-                <p class="text-lg text-gray-700 mt-8">Agradecemos el apoyo de nuestros valiosos socios que hacen posible nuestra misión.</p>
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9em; color: #777;">Estos logos representan certificaciones y reconocimientos clave en mi trayectoria profesional.</p>
             </section>
-
-        </div>
-    </main>
-
-    <a href="https://wa.me/573145092255" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Sticky Navbar on Scroll
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { // Adjust scroll threshold as needed
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Intersection Observer for section animations
-        const sections = document.querySelectorAll('section, header');
-
-        const observerOptions = {
-            root: null, // viewport
-            rootMargin: '0px',
-            threshold: 0.1 // 10% of the section must be visible
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.remove('section-hidden');
-                    entry.target.classList.add('section-visible');
-                    // Stop observing once it's visible if you only want it to animate once
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            section.classList.add('section-hidden'); // Ensure all start hidden
-            observer.observe(section);
-        });
-
-        // Initial check for header visibility (if it's already in viewport on load)
-        const header = document.getElementById('header');
-        if (header) {
-            const headerObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.remove('section-hidden');
-                        entry.target.classList.add('section-visible');
-                        headerObserver.unobserve(entry.target); // Stop observing after first view
-                    }
-                });
-            }, { threshold: 0.1 });
-            headerObserver.observe(header);
-        }
-
-    </script>
+        </main>
+    </div>
 </body>
 </html>
