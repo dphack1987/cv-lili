@@ -312,7 +312,7 @@
             padding: 0.75rem 1rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, color 0.3s ease;
-            white-space: nowrap; /* Prevent text wrapping */
+            /* Se eliminó white-space: nowrap; de aquí para permitir que se envuelva en móviles */
         }
 
         .navbar-item:hover {
@@ -321,6 +321,12 @@
         }
 
         /* Responsive adjustments */
+        @media (min-width: 1025px) { /* Aplicar white-space: nowrap solo en pantallas grandes */
+            .navbar-item {
+                white-space: nowrap; /* Mantiene los items en una sola línea en desktop */
+            }
+        }
+
         @media (max-width: 1024px) { /* Adjust for smaller laptops/large tablets */
             .navbar .flex {
                 flex-wrap: wrap;
