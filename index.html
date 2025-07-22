@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenythos - Hoja de Vida</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>CV Martha Liliana Rodríguez Romo - Relacionista Pública</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Custom Tailwind Configuration and Global Styles */
@@ -311,14 +312,12 @@
             padding: 0.75rem 1rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, color 0.3s ease;
-            /* Eliminamos white-space: nowrap; de aquí para que el texto se envuelva por defecto */
+            white-space: nowrap; /* Prevent text wrapping */
         }
 
-        /* Aplicamos white-space: nowrap; solo para pantallas más grandes si es deseado */
-        @media (min-width: 1025px) {
-            .navbar-item {
-                white-space: nowrap; /* Solo para desktop para mantener en una línea */
-            }
+        .navbar-item:hover {
+            background-color: var(--color-primary-light);
+            color: white;
         }
 
         /* Responsive adjustments */
@@ -405,8 +404,6 @@
                 height: 16px;
             }
             .experience-item:not(:last-child)::after {
-                content: '';
-                position: absolute;
                 left: 0.75rem;
                 top: 3rem;
                 bottom: -0.4rem;
@@ -440,126 +437,277 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 font-sans leading-relaxed">
+<body class="antialiased">
 
-    <nav class="navbar w-full py-4 px-6 flex justify-center items-center">
-        <div class="flex space-x-4">
-            <a href="#summary" class="navbar-item">Resumen</a>
-            <a href="#skills" class="navbar-item">Habilidades</a>
-            <a href="#experience" class="navbar-item">Experiencia</a>
-            <a href="#education" class="navbar-item">Educación</a>
-            <a href="#partners" class="navbar-item">Aliados</a>
-            <a href="#contact" class="navbar-item">Contacto</a>
+    <nav class="navbar py-4 px-6 flex justify-center items-center">
+        <div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <a href="#resumen" class="navbar-item">Resumen</a>
+            <a href="#habilidades" class="navbar-item">Habilidades</a>
+            <a href="#experiencia" class="navbar-item">Experiencia</a>
+            <a href="#educacion" class="navbar-item">Educación</a>
+            <a href="#certificaciones" class="navbar-item">Certificaciones</a>
+            <a href="#contacto" class="navbar-item">Contacto</a>
+            <a href="#aliados-estrategicos" class="navbar-item">Aliados Estratégicos</a>
         </div>
     </nav>
 
-    <div class="cv-container max-w-5xl mx-auto my-8 p-0">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 cv-container my-8 max-w-4xl">
 
-        <header class="header-section text-center px-8 sm:px-12 md:px-16 lg:px-20 relative">
-            <div class="flex flex-col items-center justify-center">
-                <img src="https://via.placeholder.com/150/6b8e23/FFFFFF?text=Tu+Foto" alt="Foto de Perfil" class="profile-pic rounded-full mb-4">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2 leading-tight">Zenythos S.A.S.</h1>
-                <p class="text-lg sm:text-xl md:text-2xl font-light text-gray-100">Soluciones Tecnológicas Integrales</p>
-                <div class="flex space-x-6 mt-6 text-2xl sm:text-3xl">
-                    <a href="https://www.linkedin.com/company/zenythos" target="_blank" class="text-white hover:text-gray-200 transition-colors duration-300">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:info@zenythos.com" class="text-white hover:text-gray-200 transition-colors duration-300">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="tel:+573206680517" class="text-white hover:text-gray-200 transition-colors duration-300">
-                        <i class="fas fa-phone"></i>
-                    </a>
-                </div>
+        <header class="text-center header-section mb-8 pb-4 relative z-10">
+            <img src="images/foto-perfil.jpeg" alt="Foto de Perfil de Martha Liliana Rodríguez Romo" class="w-40 h-40 rounded-full mx-auto mb-4 profile-pic object-cover">
+
+            <div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1 leading-tight">Martha Liliana Rodríguez Romo</h1>
+                <p class="text-lg sm:text-xl lg:text-2xl font-medium text-green-100 mb-5">Relacionista Pública</p>
             </div>
-            <p class="mt-8 text-md sm:text-lg max-w-3xl mx-auto text-gray-100">
-                En Zenythos S.A.S., estamos a la vanguardia de la tecnología, ofreciendo soluciones innovadoras y personalizadas que impulsan el crecimiento y la eficiencia de nuestros clientes. Nuestra experiencia abarca desde el desarrollo de software y aplicaciones móviles, hasta consultoría tecnológica y transformación digital.
-            </p>
+
+            <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-md sm:text-lg text-green-100">
+                <a href="tel:+573145092255" class="hover:text-white transition-colors duration-200 flex items-center">
+                    <i class="fas fa-phone-alt mr-2 text-green-200"></i> +57 314 509 2255
+                </a>
+                <a href="mailto:liliromo56@gmail.com" class="hover:text-white transition-colors duration-200 flex items-center">
+                    <i class="fas fa-envelope mr-2 text-green-200"></i> liliromo56@gmail.com
+                </a>
+                <span class="flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2 text-green-200"></i> San Antonio del Tequendama, Cundinamarca
+                </span>
+            </div>
+
+            <div class="mt-6">
+                <a href="https://cavlir.com/" target="_blank" rel="noopener noreferrer" class="p-3 bg-white rounded-lg shadow-lg inline-block">
+                    <img src="images/logo-cavlir.png" alt="Logo de Cambiando Vidas LR SAS" class="h-10 w-auto">
+                </a>
+            </div>
         </header>
 
-        <main class="p-8 sm:p-12 md:p-16 lg:p-20">
+        <main class="p-6 sm:p-8 lg:p-10">
 
-            <section id="summary" class="mb-16 section-hidden">
+            <section id="resumen" class="mb-10 section-hidden">
                 <h2 class="section-title">Resumen</h2>
-                <div class="text-lg text-gray-700 leading-relaxed">
-                    <p class="mb-4">
-                        Con un equipo de profesionales altamente calificados, Zenythos S.A.S. se dedica a convertir desafíos empresariales en oportunidades a través de la tecnología. Nuestra pasión por la innovación y el compromiso con la excelencia nos permiten entregar resultados que superan las expectativas. Nos especializamos en crear ecosistemas digitales robustos que optimizan operaciones y mejoran la experiencia del usuario final.
-                    </p>
-                    <p>
-                        Creemos firmemente en la construcción de relaciones duraderas con nuestros clientes, basadas en la confianza, la transparencia y la entrega constante de valor. Nuestro enfoque es integral, acompañando a las empresas en cada etapa de su viaje digital, desde la concepción de la idea hasta la implementación y el soporte post-lanzamiento.
-                    </p>
+                <p class="text-base text-gray-700 leading-relaxed">
+                    Soy una Relacionista Pública enfocada en ayuda social en Colombia. Fundé Cambiando Vidas LR SAS, liderando
+                    iniciativas para apoyar a adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de
+                    derechos humanos, conservación ambiental, y apoyo a animales en estado de vulnerabilidad. Con experiencia en
+                    orquídeologia y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.
+                </p>
+            </section>
+
+            <section id="habilidades" class="mb-10 section-hidden">
+                <h2 class="section-title">Habilidades Blandas</h2>
+                <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+                    <span class="skill-tag">Comunicación Efectiva</span>
+                    <span class="skill-tag">Trabajo en Equipo</span>
+                    <span class="skill-tag">Empatía</span>
+                    <span class="skill-tag">Liderazgo</span>
+                    <span class="skill-tag">Coordinación de Proyectos</span>
+                    <span class="skill-tag">Gestión de Recursos</span>
+                    <span class="skill-tag">Trabajo con Comunidades Vulnerables</span>
+                    <span class="skill-tag">Conservación Ambiental</span>
+                    <span class="skill-tag">Organización de Eventos</span>
+                    <span class="skill-tag">Adaptable</span>
+                    <span class="skill-tag">Orientada a Resultados</span>
+                    <span class="skill-tag">Empírica</span>
+                    <span class="skill-tag">Relaciones Públicas</span>
                 </div>
             </section>
 
-            <section id="skills" class="mb-16 section-hidden">
-                <h2 class="section-title">Habilidades</h2>
-                <div class="flex flex-wrap gap-3 justify-center">
-                    <span class="skill-tag">Desarrollo Web Full-Stack</span>
-                    <span class="skill-tag">Desarrollo de Aplicaciones Móviles</span>
-                    <span class="skill-tag">Inteligencia Artificial & Machine Learning</span>
-                    <span class="skill-tag">Consultoría Tecnológica</span>
-                    <span class="skill-tag">Ciberseguridad</span>
-                    <span class="skill-tag">Cloud Computing (AWS, Azure, GCP)</span>
-                    <span class="skill-tag">Big Data & Análisis</span>
-                    <span class="skill-tag">Gestión de Proyectos Ágiles (Scrum, Kanban)</span>
-                    <span class="skill-tag">DevOps & Automatización</span>
-                    <span class="skill-tag">UX/UI Design</span>
-                    <span class="skill-tag">Blockchain</span>
-                </div>
-            </section>
-
-            <section id="experience" class="mb-16 section-hidden">
-                <h2 class="section-title">Experiencia</h2>
+            <section id="experiencia" class="mb-10 section-hidden">
+                <h2 class="section-title">Experiencia Laboral</h2>
 
                 <div class="experience-item">
-                    <h3>Proyecto "AgriTech Connect"</h3>
-                    <h4>Desarrollo e Implementación de Plataforma Agrícola</h4>
-                    <p class="text-sm text-gray-500 mb-4">Julio 2023 - Presente</p>
-                    <p>
-                        Diseño y desarrollo de una plataforma integral para la gestión de cultivos y optimización de recursos agrícolas.
-                    </p>
-                    <ul>
-                        <li>Implementación de IoT para monitoreo de condiciones del suelo y clima.</li>
-                        <li>Desarrollo de algoritmos de Machine Learning para predicción de cosechas y detección de enfermedades.</li>
-                        <li>Integración con drones para mapeo y análisis de datos en tiempo real.</li>
+                    <h3>Secretaria Diplomática</h3>
+                    <h4>Mission Human Rights Internacional (Colombia – Europa)</h4>
+                    <p class="text-sm text-gray-500 mb-2">Julio 2023 – Hoy</p>
+                    <ul class="list-disc ml-5 text-gray-600">
+                        <li>Ejercicio de funciones diplomáticas de alto nivel como representante institucional de Mission Human Rights en Colombia, articulando esfuerzos nacionales e internacionales en favor de la protección y promoción de los derechos humanos.</li>
+                        <li>Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.</li>
+                        <li>Coordinación de la incidencia diplomática y política ante sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.</li>
+                        <li>Supervisión de la gestión nacional, velando por la alineación estratégica con la misión institucional y promoviendo la transparencia, la integridad y la articulación efectiva de los órganos directivos.</li>
+                        <li>Facilitación de relaciones con organismos multilaterales, cooperantes y aliados estratégicos para la proyección internacional de la organización y la consolidación de su estructura operativa.</li>
                     </ul>
                 </div>
 
                 <div class="experience-item">
-                    <h3>Transformación Digital "RetailX"</h3>
-                    <h4>Consultoría y Desarrollo de Ecosistema Digital para Retail</h4>
-                    <p class="text-sm text-gray-500 mb-4">Enero 2022 - Junio 2023</p>
-                    <p>
-                        Liderazgo en la estrategia y ejecución de la transformación digital de una cadena de retail nacional.
-                    </p>
-                    <ul>
-                        <li>Desarrollo de una aplicación móvil de compra y fidelización de clientes.</li>
-                        <li>Implementación de un sistema CRM avanzado para la gestión de relaciones con clientes.</li>
-                        <li>Optimización de la cadena de suministro mediante soluciones de Big Data.</li>
+                    <h3>CEO</h3>
+                    <h4>Cambiando Vidas LR S.A.S.</h4>
+                    <p class="text-sm text-gray-500 mb-2">Julio 2023 – Hoy | San Antonio del Tequendama, CO</p>
+                    <ul class="list-disc ml-5 text-gray-600">
+                        <li>Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.</li>
+                        <li>Gestión e implementación de una alianza internacional con la organización ABILITYTOHELP, mediante la cual se logró la distribución de 15.000 becas de formación en inglés (niveles A1 a B1), así como becas para estudios técnicos en Conducta Humana Aplicada, beneficiando a jóvenes y adultos en condiciones de vulnerabilidad.</li>
+                        <li>Facilitación de procesos estratégicos para el posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo la visibilidad y el fortalecimiento de sus marcas en colaboración directa con la con Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, y la Agencia Mundial de Prensa.</li>
+                        <li>Desarrollo de programas de formación, capacitación e impulso emprendedor, dirigidos especialmente a mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar a través del trabajo en conjunto con la organización Mecedora de mis Ancestros.</li>
+                        <li>Coordinación de una red nacional de productores para optimizar la comercialización de sus productos, fortalecer sus emprendimientos y posicionar a los agricultores colombianos en mercados nacionales e internacionales.</li>
+                        <li>Promoción de iniciativas culturales innovadoras que integran el arte y la identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional por medio de una alianza cultural con el Maestro Siaucho.</li>
+                        <li>Liderazgo en Sembrando Semillas, un proyecto de Cambiando Vidas LR S.A.S que impactó a más de 1,500 clientes a través de la venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para fomentar el desarrollo sostenible del sector.</li>
+                        <li>Facilitamos el acceso a capacitaciones en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, captando recursos para el programa Colombia Mayor.</li>
+                        <li>Colaboro con la Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en la promoción y defensa de los derechos humanos a nivel nacional.</li>
+                        <li>Coordiné la capacitación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas a través de la Fundación FMEC.</li>
+                        <li>Organizo eventos en Bogotá, con la fundación PROASOCIADOS conectando a inversores internacionales con emprendedores nacionales, logrando que más de 200 emprendedores formalicen y escalen sus negocios.</li>
+                        <li>Conecté a estudiantes de territorios remotos con la Fundación TLS, facilitando su acceso a becas de la Georgia Tech International Corporation para su titulación universitaria.</li>
+                        <li>Brindamos capacitaciones a las personas con discapacidad, a través de la alianza con el movimiento latinoamericano de personas con discapacidad, para facilitar su integración a la sociedad.</li>
+                        <li>Capacito a víctimas del conflicto armado sobre sus derechos y brindándoles apoyo continuo.</li>
+                        <li>Coordiné la gestión y postulación de proyectos en Cundinamarca y Antioquía junto a Dismartek, cumpliendo con todos los requerimientos y plazos establecidos.</li>
+                        <li>Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.</li>
+                        <li>Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.</li>
+                        <li>Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.</li>
+                        <li>Apoyó a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
+                        <li>Apoyó en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
+                        <li>Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.</li>
                     </ul>
                 </div>
 
                 <div class="experience-item">
-                    <h3>"EduFuture" Plataforma Educativa</h3>
-                    <h4>Creación de Entorno Virtual de Aprendizaje</h4>
-                    <p class="text-sm text-gray-500 mb-4">Marzo 2020 - Diciembre 2021</p>
-                    <p>
-                        Desarrollo de una plataforma e-learning gamificada para la educación superior.
-                    </p>
-                    <ul>
-                        <li>Diseño de módulos interactivos y evaluaciones dinámicas.</li>
-                        <li>Integración de herramientas de videoconferencia y colaboración en tiempo real.</li>
-                        <li>Implementación de un sistema de análisis de rendimiento estudiantil basado en IA.</li>
+                    <h3>Relacionista Comercial</h3>
+                    <h4>ATSEI de Colombia</h4>
+                    <p class="text-sm text-gray-500 mb-2">Febrero 2016 – Hoy | San Antonio del Tequendama, CO</p>
+                    <ul class="list-disc ml-5 text-gray-600">
+                        <li>Impulsé la comercialización e implementación de paneles solares a nivel nacional, logrando su adopción exitosa en 5 ciudades.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Fundadora</h3>
+                    <h4>Construyendo Sonrisas</h4>
+                    <p class="text-sm text-gray-500 mb-2">2012 – 2016 | Lima, PE</p>
+                    <ul class="list-disc ml-5 text-gray-600">
+                        <li>Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
+                        <li>Colaboró con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
+                        <li>Organizó talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
+                        <li>Dirigí la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
+                        <li>Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
                     </ul>
                 </div>
             </section>
 
-            <section id="education" class="mb-16 section-hidden">
-                <h2 class="section-title">Educación</h2>
+            <section id="educacion" class="mb-10 section-hidden">
+                <h2 class="section-title">Educación Extendida</h2>
 
-                <div class="experience-item !pl-6">
-                    <h3>Ingeniería de Software</h3>
-                    <h4>Universidad Nacional de Colombia</h4>
-                    <p class="text-sm text-gray-500 mb-4">2010 - 2015</p>
-                    <p>
-                        Enfoque en desarrollo
+                <div class="experience-item">
+                    <h3>Diplomado de Derechos Humanos</h3>
+                    <h4>Capellanía Armada Mundial de Paz de México</h4>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Técnico Agropecuario</h3>
+                    <h4>Instituto Tomás Moro</h4>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Diplomado en Inclusión</h3>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Derechos Humanos</h3>
+                    <h4>Escuela Nacional de Formación Comunitaria</h4>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Diplomado en Círculo de Maestros Conocimientos y Saberes</h3>
+                    <h4>Federación de Discapacidad Cuidadores de Colombia y el Movimiento Guajira Disruptiva</h4>
+                </div>
+            </section>
+
+            <section id="certificaciones" class="mb-10 section-hidden">
+                <h2 class="section-title">Certificaciones</h2>
+
+                <div class="experience-item">
+                    <h3>Alta Distinción «Honor, Dignidad y Gloria»</h3>
+                    <h4>Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.</h4>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Doctor Honoris Causa en Derechos Humanos</h3>
+                </div>
+            </section>
+
+            <section id="contacto" class="section-hidden">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contact-form-section">
+                    <p class="text-base text-gray-700 mb-5 text-center">
+                        Si mi perfil se alinea con tus necesidades o deseas explorar posibles colaboraciones, no dudes en contactarme.
+                    </p>
+                    <form class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo</label>
+                            <input type="text" id="name" name="name" class="w-full" placeholder="Tu nombre">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" class="w-full" placeholder="tu.correo@example.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" class="w-full" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="contact-button text-white">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <section id="aliados-estrategicos" class="partners-section p-6 sm:p-8 lg:p-10 section-hidden">
+            <h2 class="section-title text-center">Aliados Estratégicos</h2>
+            <div class="flex flex-wrap justify-center items-center gap-6 mt-8">
+                <a href="https://www.abilitytohelp.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/ability.jpg" alt="Logo de ABILITYTOHELP" class="partner-logo">
+                </a>
+                <a href="https://fip.org.co/" target="_blank" rel="noopener noreferrer"> <img src="images/fip.jpg" alt="Logo de FIP" class="partner-logo">
+                </a>
+                <a href="https://inclusion.org.co/" target="_blank" rel="noopener noreferrer"> <img src="images/inclo.jpg" alt="Logo de INCLO" class="partner-logo">
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" style="max-height: 65px;"> <img src="images/linkelink.png" alt="Logo de LinkedIn" class="partner-logo">
+                </a>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 text-sm mt-10 p-5 border-t border-gray-200">
+            <p>&copy; 2025 Martha Liliana Rodríguez Romo. Todos los derechos reservados.</p>
+            <p class="mt-1">Diseñado con <i class="fas fa-heart text-red-500"></i> y código creativo por Zenythos 2.0.</p>
+        </footer>
+
+    </div>
+
+    <a href="https://wa.me/573145092255" target="_blank" rel="noopener noreferrer" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // JavaScript for scroll-triggered animations (Intersection Observer)
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section-hidden');
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('section-hidden');
+                        entry.target.classList.add('section-visible');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Navbar sticky effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { // Adjust this value to when you want the navbar to change
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
