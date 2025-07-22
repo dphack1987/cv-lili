@@ -21,8 +21,8 @@
         }
 
         body {
-            background-color: var(--blue-lighter); /* Fondo general muy suave */
-            color: var(--text-gray-dark);
+            background-color: var(--blue-lighter); /* Fondo general muy suave, usando la variable */
+            color: var(--text-gray-dark); /* Color de texto general, usando la variable */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -215,6 +215,12 @@
             box-shadow: 0 4px 10px var(--shadow-subtle);
         }
 
+        /* Para el logo de cavlir si es más ancho */
+        .logo-cavlir-alliance {
+            max-width: 7.5rem !important; /* Un poco más grande para que se vea bien en esta sección */
+            height: auto;
+        }
+
         /* Sección Contacto - Fondo azul claro */
         #contacto {
             background-color: var(--blue-light);
@@ -371,7 +377,7 @@
 
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
 
     <div class="max-w-4xl">
 
@@ -392,7 +398,9 @@
             </div>
 
             <div class="flex items-center space-x-8 flex-col md:flex-row text-center md:text-left">
-                <img src="./images/foto-perfil.jpg" alt="Foto de Perfil de Martha Liliana Rodríguez Romo" class="profile-img">
+                <a href="https://cavlir.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/logo-cavlir.png" alt="Logo de Grupo Educativo CAVLR como foto de perfil" class="profile-img">
+                </a>
 
                 <div class="mt-4 md:mt-0">
                     <h1>Martha Liliana Rodríguez Romo</h1>
@@ -405,10 +413,7 @@
                 </div>
             </div>
 
-            <div class="mt-6 text-center">
-                <img src="./images/1.jpg" alt="Logo de Grupo Educativo CAVLR" class="header-logo">
-            </div>
-        </header>
+            </header>
 
         <nav id="mobile-menu">
             <button id="close-mobile-menu">&times;</button>
@@ -472,10 +477,7 @@
                         <img src="./images/fip.jpg" alt="Logo de FIP">
                         <img src="./images/inclo.jpg" alt="Logo de Inclusión">
                         <img src="./images/linkelink.png" alt="Logo de LinkedIn">
-                        <img src="./images/2.jpg" alt="Logo Alianza Adicional 1">
-                        <img src="./images/3.jpg" alt="Logo Alianza Adicional 2">
-                        <img src="./images/6.jpg" alt="Logo Alianza Adicional 3">
-                        <img src="./images/7.jpg" alt="Logo Alianza Adicional 4">
+                        <img src="./images/logo-mujeres-solidarias.png" alt="Logo Mujeres Solidarias">
                     </div>
                     <ul class="custom-list">
                         <li>Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.</li>
@@ -543,10 +545,16 @@
                 <div class="certification-images">
                     <img src="./images/certificado-cidhu.jpg" alt="Certificado CIDHU">
                     <img src="./images/credencial-cidhu.jpg" alt="Credencial CIDHU">
-                    <img src="./images/4.jpg" alt="Certificado Adicional 1">
-                    <img src="./images/5.jpg" alt="Certificado Adicional 2">
-                    <img src="./images/8.jpg" alt="Certificado Adicional 3">
-                    <img src="./images/9.jpg" alt="Certificado Adicional 4">
+                    <img src="./images/1.jpg" alt="Certificado 1">
+                    <img src="./images/2.jpg" alt="Certificado 2">
+                    <img src="./images/3.jpg" alt="Certificado 3">
+                    <img src="./images/4.jpg" alt="Certificado 4">
+                    <img src="./images/4-1.jpg" alt="Certificado 4-1">
+                    <img src="./images/5.jpg" alt="Certificado 5">
+                    <img src="./images/6.jpg" alt="Certificado 6">
+                    <img src="./images/7.jpg" alt="Certificado 7">
+                    <img src="./images/8.jpg" alt="Certificado 8">
+                    <img src="./images/9.jpg" alt="Certificado 9">
                 </div>
             </section>
 
@@ -557,15 +565,15 @@
                 <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
                     <div>
                         <label for="name" class="block text-md font-medium mb-1">Nombre Completo</label>
-                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required class="w-full">
                     </div>
                     <div>
                         <label for="email" class="block text-md font-medium mb-1">Correo Electrónico</label>
-                        <input type="email" id="email" name="_replyto" placeholder="tu.email@ejemplo.com" required>
+                        <input type="email" id="email" name="_replyto" placeholder="tu.email@ejemplo.com" required class="w-full">
                     </div>
                     <div>
                         <label for="message" class="block text-md font-medium mb-1">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tu mensaje aquí..." required></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Tu mensaje aquí..." required class="w-full"></textarea>
                     </div>
                     <div>
                         <button type="submit" class="w-full">
@@ -580,9 +588,9 @@
 
                 <p class="text-xl font-semibold mt-8 text-center">O contáctame directamente:</p>
                 <ul class="list-none flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 text-lg contact-links">
-                    <li><a href="mailto:liliromo56@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>liliromo56@gmail.com</a></li>
-                    <li><a href="tel:+573145092255"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 1.956A4 4 0 018.82 7.93l-1.8 1.8a12.86 12.86 0 005.171 5.171l1.8-1.8a4 4 0 012.146.955l1.956.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.163 18 2 12.837 2 6V3z"/></svg>+57 314 5092255</a></li>
-                    <li><a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764c0 .974-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>Perfil de LinkedIn</a></li>
+                    <li><a href="mailto:liliromo56@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 inline-block" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>liliromo56@gmail.com</a></li>
+                    <li><a href="tel:+573145092255"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 inline-block" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 1.956A4 4 0 018.82 7.93l-1.8 1.8a12.86 12.86 0 005.171 5.171l1.8-1.8a4 4 0 012.146.955l1.956.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.163 18 2 12.837 2 6V3z"/></svg>+57 314 5092255</a></li>
+                    <li><a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764c0 .974-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>Perfil de LinkedIn</a></li>
                 </ul>
             </section>
 
@@ -595,4 +603,31 @@
     </div>
 
     <a href="https://wa.me/573145092255" target="_blank" class="whatsapp-button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.911C.151 6.57 6.009.055 13.34 0c7.33 0 13.187 6.516 13.187 14.577 0 8.062-5.857 14.577-13.188 14.577-2.34 0-4.66-.745-6.61-2.14L.057 24zm6.865-3.076l-.413-.245c-1.39-2.028-2.12-4.417-2.12-6.932 0-5.727 4.14-10.371 9.243-10.371 2.536 0 4.939 1.05 6.747 2.923 1.81 1.873 2.763 4.388 2.763 7.025 0 5.727-4.14 10.371-9.243 10.371-1.954 0-3.905-.674-5.59-1.97l-.37-.218-3.868 1.029 1.04-3.715zm9.57-2.078c-.292-.146-1.72-.845-1.996-.94s-.478-.146-.68.146c-.2.292-.782.939-.958 1.134-.176.196-.353.21-.65.064-.296-.146-1.25-.462-2.384-1.47-2.587-2.736-2.887-2.905-3.033-3.15-.146-.245-.015-.38.128-.525.127-.146.292-.38.438-.582.146-.2.196-.345.292-.582.096-.237.048-.44-.02-.613-.065-.173-.59-.974-.812-1.29-.224-.315-.175-.262-.35-.582.
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.911C.151 6.57 6.009.055 13.34 0c7.33 0 13.187 6.516 13.187 14.577 0 8.062-5.857 14.577-13.188 14.577-2.34 0-4.66-.745-6.61-2.14L.057 24zm6.865-3.076l-.413-.245c-1.39-2.028-2.12-4.417-2.12-6.932 0-5.727 4.14-10.371 9.243-10.371 2.536 0 4.939 1.05 6.747 2.923 1.81 1.873 2.763 4.388 2.763 7.025 0 5.727-4.14 10.371-9.243 10.371-1.954 0-3.905-.674-5.59-1.97l-.37-.218-3.868 1.029 1.04-3.715zm9.57-2.078c-.292-.146-1.72-.845-1.996-.94s-.478-.146-.68.146c-.2-.2-1.223-.51-2.347-.999-1.124-.49-1.834-.82-2.329-1.022-.49-.203-.94-.15-.65.145.29.292.845 1.022.94 1.223.097.2.193.22.357.073.16-.145.548-.202 1.084-.23.535-.027 1.156-.005 1.764.195.608.2.98.49 1.18.82.2.33.22.583.15 1.08-.07.498-.61 1.223-1.084 1.798-.476.574-.972.94-1.353 1.18-.38.242-.71.37-1.35.146s-2.34-.867-3.237-1.464c-.895-.597-1.488-1.332-1.996-2.078-.506-.745-.05-1.15.35-1.55l.292-.29c.175-.175.292-.292.438-.366.146-.074.292-.047.438.074.146.12.29.29.438.438.146.146.242.175.438.292.196.116.29.073.2-.05-.097-.175-.39-.94-.535-1.286-.146-.34-.1-.292-.2-.584.097-.29.438-.61.63-.845.195-.235.29-.49.39-.73.097-.24.047-.45-.047-.68-.098-.23-.65-.583-.895-.82-.245-.235-.413-.2-.59-.2-.174 0-.39.027-.59.027-.206 0-.34-.028-.535-.146-.195-.12-.74-.61-1.022-.895-.285-.29-.24-.2-.535-.2-.292 0-.63.028-.97.028-.34 0-.895-.12-1.35-.437-.45-.316-1.588-1.545-1.588-3.957 0-2.41 1.72-3.663 3.44-3.663 1.723 0 3.197 1.296 3.197 3.238 0 .235-.027.47-.05.65-.028.174-.05.29-.08.438-.027.146-.05.2-.02.34.02.145.39.29.63.438.235.146.49.2.82.2.33 0 2.238-.867 2.922-1.464.685-.597 1.022-1.15 1.12-1.33.098-.174.195-.174.292-.174.097 0 .61-.027 1.04-.027.43-.002 1.12.146 1.63.413.51.27 1.22.845 1.41 1.18.19.33.29.583.193.998-.097.414-.74 1.24-.97 1.417-.236.175-.49.29-.73.437-.245.146-.478.2-.71.27-.235.074-.34.12-.2.34.14.22.61.94.895 1.286.285.34.478.438.82.68.34.24.63.438.895.584.262.146.437.262.63.34.19.073.35.1.535.1.2.02.583.02 1.06-.026.47-.053 1.22-.49 1.396-.94.174-.45.285-.71.43-.895.145-.196.262-.24.47-.2.2.04.476.236.71.413.235.174.39.366.535.59.146.223.23.49.17.71-.05.22-.39.63-.535.797-.146.175-.29.23-.43.345-.14.115-.285.2-.285.39.0.19.29.477.43.68.14.19.23.33.3.48.07.145.1.2.02.34-.07.146-.61.71-1.22 1.306-.61.596-1.223 1.084-1.307 1.157-.08.073-.2.12-.32.097z"/>
+        </svg>
+    </a>
+
+    <script>
+        // JavaScript para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            mobileMenuOverlay.classList.add('open');
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            mobileMenuOverlay.classList.remove('open');
+        }
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu); // Cierra el menú si se hace clic fuera
+    </script>
+</body>
+</html>
