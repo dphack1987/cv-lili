@@ -97,16 +97,19 @@
             transform: scale(1.08);
         }
 
-        /* Navegación Desktop */
+        /* Navegación Desktop - MEJORADO */
         header nav.md\:block ul li a {
             color: var(--white);
             font-weight: 600;
-            transition: color 0.2s ease, transform 0.2s ease;
+            padding: 0.5rem 1rem; /* Añadido padding */
+            border-radius: 0.5rem; /* Bordes redondeados */
+            transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
         }
         header nav.md\:block ul li a:hover {
-            color: var(--blue-lighter);
+            background-color: rgba(255, 255, 255, 0.2); /* Fondo sutil al pasar el mouse */
+            color: var(--white); /* Asegura que el color del texto no cambie demasiado */
             transform: translateY(-2px);
-            text-decoration: underline;
+            text-decoration: none; /* Quitamos el subrayado por el fondo */
         }
 
         /* Encabezados de sección */
@@ -383,8 +386,7 @@
 
         <header>
             <nav class="absolute top-5 right-5 z-10 hidden md:block">
-                <ul class="flex space-x-8">
-                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <ul class="flex space-x-4"> <li><a href="#sobre-mi">Sobre Mí</a></li>
                     <li><a href="#habilidades">Habilidades</a></li>
                     <li><a href="#experiencia">Experiencia</a></li>
                     <li><a href="#educacion">Educación</a></li>
@@ -535,7 +537,7 @@
                     <li>Técnico Agropecuario, instituto Tomás Moro.</li>
                     <li>Diplomado en Inclusión.</li>
                     <li>Derechos humanos, Escuela nacional de formación comunitaria.</li>
-                    <li>Diplomado en Circulo De Maestros Conocimientos Y Saberes De La Federación De Discapacidad Cuidadores De Colombia Y El Movimiento Guajira Disruptiva.</li>
+                    <li>Diplomado en Círculo De Maestros Conocimientos Y Saberes De La Federación De Discapacidad Cuidadores De Colombia Y El Movimiento Guajira Disruptiva.</li>
                 </ul>
             </section>
 
