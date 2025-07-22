@@ -155,23 +155,32 @@
 
         /* Logo de Cavlir en el header */
         header .header-logo-cavlir {
-            position: absolute; /* Posicionamiento absoluto */
-            bottom: 1.5rem; /* Margen desde abajo */
-            left: 2.5rem; /* Margen desde la izquierda, ajustado para el diseño de la imagen */
+            /* Por defecto, posicionamiento relativo en móvil */
+            position: relative; 
+            margin-top: 2rem; /* Espacio debajo de la info principal en móvil */
+            left: auto;
+            bottom: auto;
+            display: block; /* Asegurarse de que ocupe su propio espacio */
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content; /* Ajustar ancho al contenido */
             max-height: 3.5rem; /* Tamaño ajustado para ser más pequeño */
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
             transition: transform 0.2s ease, filter 0.2s ease;
             background-color: transparent; /* Asegurar que no haya fondo blanco si es PNG transparente */
         }
-        @media (max-width: 767px) { /* Ajustar posición en móviles si es necesario */
+        header .header-logo-cavlir img {
+            max-height: 3.5rem; /* Controlar el tamaño de la imagen dentro del contenedor */
+            width: auto; /* Mantener la proporción */
+        }
+
+        @media (min-width: 768px) { /* Para desktop, posicionamiento absoluto */
             header .header-logo-cavlir {
-                position: relative; /* Vuelve a flujo normal en móviles */
-                margin-top: 1.5rem; /* Espacio arriba */
-                left: auto;
-                bottom: auto;
-                display: block; /* Asegurarse de que ocupe su propio espacio */
-                margin-left: auto;
-                margin-right: auto;
+                position: absolute; 
+                bottom: 1.5rem; /* Margen desde abajo */
+                left: 2.5rem; /* Margen desde la izquierda */
+                margin-top: 0; /* Resetear margen superior */
+                max-height: 3.5rem; /* Asegurar el tamaño en desktop */
             }
         }
         header .header-logo-cavlir:hover {
