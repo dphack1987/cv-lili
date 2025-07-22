@@ -1,532 +1,578 @@
-<style>
-    :root {
-        /* Colores */
-        --blue-darkest: #001f3f; /* Azul muy oscuro */
-        --blue-dark: #003366;    /* Azul oscuro */
-        --blue-medium: #0056b3;  /* Azul medio */
-        --blue-light: #6699cc;   /* Azul claro */
-        --white: #ffffff;
-        --gray-light: #f4f4f4;
-        --gray-medium: #cccccc;
-        --gray-dark: #555555;
-        --shadow-light: rgba(0, 0, 0, 0.1);
-        --shadow-medium: rgba(0, 0, 0, 0.2);
-        --shadow-dark: rgba(0, 0, 0, 0.4);
-    }
+:root {
+    /* Colores */
+    --blue-darkest: #001f3f; /* Azul muy oscuro */
+    --blue-dark: #003366;    /* Azul oscuro */
+    --blue-medium: #0056b3;  /* Azul medio */
+    --blue-light: #6699cc;   /* Azul claro */
+    --white: #ffffff;
+    --gray-light: #f4f4f4;
+    --gray-medium: #cccccc;
+    --gray-dark: #555555;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+}
 
-    /* Estilos generales */
-    body {
-        font-family: 'Arial', sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: var(--gray-light);
-        color: var(--gray-dark);
-    }
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--gray-light);
+    color: var(--gray-dark);
+}
 
-    .max-w-4xl {
-        max-width: 900px; /* Ajusta el ancho máximo según necesites */
-        margin: 0 auto;
-        background-color: var(--white);
-        box-shadow: 0 0 20px var(--shadow-light);
-        position: relative;
-        z-index: 1;
-    }
+.max-w-4xl {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--white);
+    box-shadow: 0 0 20px var(--shadow-light);
+    position: relative;
+    z-index: 1;
+}
 
-    /* Encabezado */
-    header {
-        background: linear-gradient(135deg, var(--blue-darkest), var(--blue-dark));
-        color: var(--white);
-        padding: 2.5rem 2rem 1.5rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden; /* Para contener las imágenes posicionadas absolutamente */
-    }
+/* Encabezado */
+header {
+    background: linear-gradient(135deg, var(--blue-darkest), var(--blue-dark));
+    color: var(--white);
+    padding: 2.5rem 2rem 1.5rem;
+    text-align: center;
+    position: relative;
+    /* overflow: hidden; */ /* Mantener comentado o eliminado */
+}
 
+/* Selector de Idioma - NUEVOS ESTILOS */
+.language-selector {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10; /* Asegura que esté por encima de otros elementos del header */
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lang-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lang-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.lang-button.active {
+    background-color: var(--blue-medium); /* Color diferente para el idioma activo */
+    border-color: var(--blue-medium);
+    transform: translateY(0);
+}
+
+
+header .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header .profile-img-container {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 1rem;
+}
+
+header .profile-img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.3rem solid var(--white);
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    transition: transform 0.2s ease;
+}
+
+header .profile-img:hover {
+    transform: scale(1.05);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+header .subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+header .contact-info p {
+    font-size: 1rem;
+    margin: 0.4rem 0;
+}
+
+header .contact-info a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+header .contact-info a:hover {
+    color: var(--gray-light);
+    text-decoration: underline;
+}
+
+/* Logo CAVLR */
+.header-logo-cavlir {
+    width: 150px;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-logo-cavlir img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+/* Navegación Desktop */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--blue-medium);
+    transform: translateY(-2px);
+}
+
+/* Secciones de Contenido */
+main {
+    padding: 2rem;
+    background-color: var(--white);
+}
+
+.section-header {
+    font-size: 2rem;
+    color: var(--blue-darkest);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--blue-medium);
+    border-radius: 2px;
+}
+
+section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: var(--gray-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+section:last-of-type {
+    margin-bottom: 0;
+}
+
+section h3 {
+    font-size: 1.4rem;
+    color: var(--blue-dark);
+    margin-bottom: 0.5rem;
+}
+
+section ul.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+section ul.custom-list li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+section ul.custom-list li::before {
+    content: '✔️';
+    position: absolute;
+    left: 0;
+    color: var(--blue-medium);
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Habilidades */
+#habilidades .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    text-align: center;
+}
+
+#habilidades .grid span {
+    background-color: var(--blue-light);
+    color: var(--white);
+    padding: 0.7rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#habilidades .grid span:hover {
+    background-color: var(--blue-dark);
+    transform: translateY(-2px);
+}
+
+/* Experiencia Profesional Logos de Alianza */
+.alliance-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.alliance-logos img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(80%) opacity(70%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.alliance-logos img:hover {
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.05);
+}
+
+/* Certificaciones */
+.certification-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.certification-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    transition: transform 0.3s ease;
+}
+
+.certification-images img:hover {
+    transform: scale(1.03);
+}
+
+/* Contacto */
+#contacto form div {
+    margin-bottom: 1rem;
+}
+
+#contacto label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--blue-dark);
+    font-weight: 600;
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid var(--gray-medium);
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#contacto input[type="text"]:focus,
+#contacto input[type="email"]:focus,
+#contacto textarea:focus {
+    border-color: var(--blue-medium);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+}
+
+#contacto button[type="submit"] {
+    background-color: var(--blue-dark);
+    color: var(--white);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+#contacto button[type="submit"]:hover {
+    background-color: var(--blue-medium);
+    transform: translateY(-2px);
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 2rem;
+    margin-top: 1rem;
+}
+
+.contact-links li {
+    display: flex;
+    align-items: center;
+}
+
+.contact-links a {
+    color: var(--blue-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-links a:hover {
+    color: var(--blue-medium);
+    transform: translateY(-2px);
+}
+
+.contact-links svg {
+    margin-right: 0.5rem;
+    color: var(--blue-medium);
+}
+
+/* Pie de página */
+footer {
+    background-color: var(--blue-darkest);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Botón de WhatsApp flotante */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    background-color: #1da851;
+}
+
+/* Media Queries para Responsive */
+@media (min-width: 768px) {
     header .profile-section {
-        display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
         align-items: center;
-        text-align: center;
-        margin-top: 1rem;
-        position: relative;
-        z-index: 2; /* Asegurar que la info principal esté sobre las imágenes */
     }
 
     header .profile-img-container {
-        width: 10rem;
-        height: 10rem;
-        margin-bottom: 1rem;
-    }
-
-    header .profile-img {
-        width: 10rem;
-        height: 10rem;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 0.3rem solid var(--white);
-        box-shadow: 0 4px 10px var(--shadow-medium);
-        transition: transform 0.2s ease;
-    }
-
-    header .profile-img:hover {
-        transform: scale(1.05);
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-    }
-
-    header .subtitle {
-        font-size: 1.4rem;
-        margin-bottom: 1.5rem;
-        font-weight: 400;
-        opacity: 0.9;
-    }
-
-    header .contact-info p {
-        font-size: 1rem;
-        margin: 0.4rem 0;
-    }
-
-    header .contact-info a {
-        color: var(--white);
-        text-decoration: none;
-        transition: color 0.2s ease;
-    }
-
-    header .contact-info a:hover {
-        color: var(--gray-light);
-        text-decoration: underline;
-    }
-
-    /* Logo CAVLR */
-    .header-logo-cavlir {
-        position: absolute;
-        bottom: 1rem;
-        left: 1rem;
-        width: 80px; /* Ajusta el tamaño si es necesario */
-        height: auto;
-        z-index: 2;
-    }
-
-    .header-logo-cavlir img {
-        width: 100%;
-        height: auto;
-        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3)); /* Sombra para que destaque */
-    }
-
-    /* Navegación Desktop */
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem; /* Espacio entre los ítems del menú */
-    }
-
-    nav ul li a {
-        color: var(--white);
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.05rem;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-
-    nav ul li a:hover {
-        background-color: var(--blue-medium);
-        transform: translateY(-2px);
-    }
-
-    /* Secciones de Contenido */
-    main {
-        padding: 2rem;
-        background-color: var(--white);
-    }
-
-    .section-header {
-        font-size: 2rem;
-        color: var(--blue-darkest);
-        margin-bottom: 1.5rem;
-        text-align: center;
-        position: relative;
-        padding-bottom: 0.5rem;
-    }
-
-    .section-header::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        width: 60px;
-        height: 4px;
-        background-color: var(--blue-medium);
-        border-radius: 2px;
-    }
-
-    section {
-        margin-bottom: 2.5rem;
-        padding: 1.5rem;
-        background-color: var(--gray-light);
-        border-radius: 8px;
-        box-shadow: 0 2px 8px var(--shadow-light);
-    }
-
-    section:last-of-type {
+        margin-right: 2rem;
         margin-bottom: 0;
     }
 
-    section h3 {
-        font-size: 1.4rem;
-        color: var(--blue-dark);
-        margin-bottom: 0.5rem;
+    header h1 {
+        font-size: 3rem;
     }
 
-    section ul.custom-list {
-        list-style: none; /* Elimina los puntos predeterminados */
-        padding-left: 0;
+    header .subtitle {
+        font-size: 1.6rem;
     }
 
-    section ul.custom-list li {
-        position: relative;
-        padding-left: 1.5em; /* Espacio para el icono personalizado */
-        margin-bottom: 0.5em;
-    }
-
-    section ul.custom-list li::before {
-        content: '✔️'; /* O un icono de Font Awesome, por ejemplo */
-        position: absolute;
-        left: 0;
-        color: var(--blue-medium); /* Color del icono */
-        font-size: 1.1em;
-        line-height: 1.6; /* Alinea con el texto */
-    }
-
-    /* Habilidades */
-    #habilidades .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 0.75rem;
-        text-align: center;
-    }
-
-    #habilidades .grid span {
-        background-color: var(--blue-light);
-        color: var(--white);
-        padding: 0.7rem 1rem;
-        border-radius: 20px;
-        font-weight: 500;
-        font-size: 0.95rem;
-        transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-
-    #habilidades .grid span:hover {
-        background-color: var(--blue-dark);
-        transform: translateY(-2px);
-    }
-
-    /* Experiencia Profesional Logos de Alianza */
-    .alliance-logos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .alliance-logos img {
-        height: 40px; /* Tamaño de los logos */
-        width: auto;
-        object-fit: contain;
-        filter: grayscale(80%) opacity(70%); /* Estilo por defecto */
-        transition: filter 0.3s ease, transform 0.3s ease;
-    }
-
-    .alliance-logos img:hover {
-        filter: grayscale(0%) opacity(100%); /* Color al pasar el ratón */
-        transform: scale(1.05);
-    }
-
-    /* Certificaciones */
-    .certification-images {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        margin-top: 1.5rem;
-    }
-
-    .certification-images img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px var(--shadow-medium);
-        transition: transform 0.3s ease;
-    }
-
-    .certification-images img:hover {
-        transform: scale(1.03);
-    }
-
-    /* Contacto */
-    #contacto form div {
-        margin-bottom: 1rem;
-    }
-
-    #contacto label {
-        display: block;
-        margin-bottom: 0.5rem;
-        color: var(--blue-dark);
-        font-weight: 600;
-    }
-
-    #contacto input[type="text"],
-    #contacto input[type="email"],
-    #contacto textarea {
-        width: calc(100% - 20px); /* Ajusta por el padding */
-        padding: 10px;
-        border: 1px solid var(--gray-medium);
-        border-radius: 5px;
-        font-size: 1rem;
-        box-sizing: border-box; /* Incluye padding y borde en el ancho */
-    }
-
-    #contacto input[type="text"]:focus,
-    #contacto input[type="email"]:focus,
-    #contacto textarea:focus {
-        border-color: var(--blue-medium);
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
-    }
-
-    #contacto button[type="submit"] {
-        background-color: var(--blue-dark);
-        color: var(--white);
-        padding: 12px 20px;
-        border: none;
-        border-radius: 5px;
+    header .contact-info p {
         font-size: 1.1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        width: 100%;
     }
 
-    #contacto button[type="submit"]:hover {
-        background-color: var(--blue-medium);
-        transform: translateY(-2px);
+    /* Logo CAVLR en Desktop */
+    .header-logo-cavlir {
+        width: 180px;
+        margin-top: 0;
+        margin-left: 2rem;
+        margin-right: 0;
+        align-self: center;
     }
 
-    .contact-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem 2rem;
-        margin-top: 1rem;
-    }
-
-    .contact-links li {
-        display: flex;
-        align-items: center;
-    }
-
-    .contact-links a {
-        color: var(--blue-dark);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        transition: color 0.2s ease, transform 0.2s ease;
-    }
-
-    .contact-links a:hover {
-        color: var(--blue-medium);
-        transform: translateY(-2px);
-    }
-
-    .contact-links svg {
-        margin-right: 0.5rem;
-        color: var(--blue-medium); /* Color de los iconos */
-    }
-
-    /* Pie de página */
-    footer {
-        background-color: var(--blue-darkest);
-        color: var(--white);
-        text-align: center;
-        padding: 1.5rem;
-        font-size: 0.9rem;
-        position: relative;
-        z-index: 1;
-    }
-
-    /* Botón de WhatsApp flotante */
-    .whatsapp-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #25d366; /* Color de WhatsApp */
-        color: white;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        z-index: 100;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .whatsapp-button:hover {
-        transform: scale(1.1);
-        background-color: #1da851;
-    }
-
-    /* Media Queries para Responsive */
-    @media (min-width: 768px) {
-        header .profile-section {
-            flex-direction: row;
-            text-align: left;
-            justify-content: flex-start;
-            padding-left: 2rem;
-            padding-top: 1rem;
-        }
-
-        header .profile-img-container {
-            margin-right: 2rem;
-            margin-bottom: 0;
-        }
-
-        header h1 {
-            font-size: 3rem;
-        }
-
-        header .subtitle {
-            font-size: 1.6rem;
-        }
-
-        header .contact-info p {
-            font-size: 1.1rem;
-        }
-
-        .header-logo-cavlir {
-            position: absolute;
-            top: 1.5rem;
-            right: 2rem;
-            bottom: auto;
-            left: auto;
-            width: 100px; /* Más grande en desktop */
-        }
-
-        /* Ocultar botón de menú móvil en desktop */
-        .md\:hidden {
-            display: none;
-        }
-
-        /* Menú Desktop (asegurarse de que se muestre) */
-        nav.md\:block {
-            display: block; /* Muestra el menú de navegación completo */
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-        }
-
-        nav.md\:block ul {
-            display: flex;
-            justify-content: flex-end;
-            gap: 1.5rem;
-        }
-
-        nav.md\:block ul li a {
-            padding: 0.75rem 1.2rem;
-        }
-
-        main {
-            padding: 3rem;
-        }
-
-        .section-header {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-    }
-
-    /* Menú Móvil */
-    .md\:hidden { /* Usar Tailwind's md:hidden para ocultar en desktop */
+    /* Ocultar botón de menú móvil en desktop */
+    .md\:hidden {
         display: none;
     }
-    @media (max-width: 767px) { /* Mostrar solo en móviles */
-        .md\:hidden {
-            display: block; /* O flex si es un contenedor */
-        }
+
+    /* Menú Desktop (asegurarse de que se muestre) */
+    nav.md\:block {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
     }
 
-    #mobile-menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 75%;
-        max-width: 320px;
-        background-color: var(--blue-darkest);
-        color: var(--white);
-        box-shadow: -6px 0 15px rgba(0, 0, 0, 0.3);
-        z-index: 50;
-        padding: 2rem;
+    nav.md\:block ul {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
+        justify-content: flex-end;
+        gap: 1.5rem;
     }
-    #mobile-menu.open {
-        transform: translateX(0);
+
+    nav.md\:block ul li a {
+        padding: 0.75rem 1.2rem;
     }
-    #mobile-menu button#close-mobile-menu {
-        color: var(--white);
+
+    main {
+        padding: 3rem;
+    }
+
+    .section-header {
         font-size: 2.5rem;
-        align-self: flex-end;
-        margin-bottom: 1.5rem;
-        background: none;
-        border: none;
-        cursor: pointer;
+        margin-bottom: 2rem;
     }
-    #mobile-menu ul li a {
-        display: block;
-        padding: 0.75rem 0;
+
+    /* Ajuste para el selector de idioma en desktop */
+    .language-selector {
+        top: 2rem;
+        left: 2rem;
+    }
+}
+
+/* Menú Móvil - BOTÓN (visibilidad controlada por media queries) */
+@media (max-width: 767px) {
+    .md\:hidden {
+        display: block; /* O flex si es un contenedor */
+        background-color: transparent;
         color: var(--white);
-        font-size: 1.15rem;
-        font-weight: 500;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        transition: background-color 0.2s ease;
-        text-decoration: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0.5rem;
     }
-    #mobile-menu ul li a:hover {
-        background-color: rgba(255, 255, 255, 0.08);
-    }
-    #mobile-menu ul li:last-child a {
-        border-bottom: none;
-    }
-    #mobile-menu-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        z-index: 40;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    }
-    #mobile-menu-overlay.open {
-        opacity: 1;
-        visibility: visible;
-    }
-</style>
+}
+
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 75%;
+    max-width: 320px;
+    background-color: var(--blue-darkest);
+    color: var(--white);
+    box-shadow: -6px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 50;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+#mobile-menu.open {
+    transform: translateX(0);
+}
+#mobile-menu button#close-mobile-menu {
+    color: var(--white);
+    font-size: 2.5rem;
+    align-self: flex-end;
+    margin-bottom: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#mobile-menu ul li a {
+    display: block;
+    padding: 0.75rem 0;
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+}
+#mobile-menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+#mobile-menu ul li:last-child a {
+    border-bottom: none;
+}
+#mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+#mobile-menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
