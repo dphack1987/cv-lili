@@ -87,7 +87,7 @@
             text-decoration: underline;
         }
 
-        /* Logos en el header */
+        /* Logos en el header (si aplica) */
         header .header-logo {
             height: 7rem; /* Un poco más grande */
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Sombra para el logo */
@@ -398,9 +398,7 @@
             </div>
 
             <div class="flex items-center space-x-8 flex-col md:flex-row text-center md:text-left">
-                <a href="https://cavlir.com/" target="_blank" rel="noopener noreferrer">
-                    <img src="./images/logo-cavlir.png" alt="Logo de Grupo Educativo CAVLR como foto de perfil" class="profile-img">
-                </a>
+                <img src="./images/foto-perfil.jpg" alt="Foto de Perfil de Martha Liliana Rodríguez Romo" class="profile-img">
 
                 <div class="mt-4 md:mt-0">
                     <h1>Martha Liliana Rodríguez Romo</h1>
@@ -413,7 +411,12 @@
                 </div>
             </div>
 
-            </header>
+            <div class="mt-6 text-center">
+                <a href="https://cavlir.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/logo-cavlir.png" alt="Logo de Grupo Educativo CAVLR" class="header-logo">
+                </a>
+            </div>
+        </header>
 
         <nav id="mobile-menu">
             <button id="close-mobile-menu">&times;</button>
@@ -518,7 +521,7 @@
                     <ul class="custom-list">
                         <li>Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
                         <li>Colaboró con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
-                        <li>Organicé talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
+                        <li>Organizó talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
                         <li>Dirigí la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
                         <li>Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
                     </ul>
@@ -581,10 +584,6 @@
                         </button>
                     </div>
                 </form>
-
-                <p class="text-sm mt-6 text-center text-gray-600">
-                    **¡IMPORTANTE!** Para que este formulario funcione, debes **reemplazar `https://formspree.io/f/YOUR_FORMSPREE_ID`** en el atributo `action` de la etiqueta `<form>` con la **URL única que obtuviste de Formspree.io** al crear tu formulario. Si no lo haces, el formulario no enviará correos.
-                </p>
 
                 <p class="text-xl font-semibold mt-8 text-center">O contáctame directamente:</p>
                 <ul class="list-none flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 text-lg contact-links">
