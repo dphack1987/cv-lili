@@ -158,9 +158,9 @@
             position: absolute; /* Posicionamiento absoluto */
             bottom: 1.5rem; /* Margen desde abajo */
             left: 2.5rem; /* Margen desde la izquierda, ajustado para el diseño de la imagen */
-            max-height: 4rem; /* Tamaño para integrar mejor */
+            max-height: 3.5rem; /* Tamaño ajustado para ser más pequeño */
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, filter 0.2s ease;
             background-color: transparent; /* Asegurar que no haya fondo blanco si es PNG transparente */
         }
         @media (max-width: 767px) { /* Ajustar posición en móviles si es necesario */
@@ -176,6 +176,7 @@
         }
         header .header-logo-cavlir:hover {
             transform: scale(1.08);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
         }
 
         /* Navegación Desktop */
