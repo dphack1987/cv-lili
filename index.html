@@ -3,537 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Profesional - Liliana Rodríguez Romo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Perfil de Martha Liliana Rodríguez Romo</title>
     <style>
-        /* Variables CSS para una gestión sencilla de colores y fuentes */
-        :root {
-            --color-primary: #34495E; /* Azul Grisáceo Oscuro - Profesional */
-            --color-secondary: #ECF0F1; /* Gris Claro - Fondo Suave */
-            --color-accent: #E67E22; /* Naranja Terracota - Calidez y Énfasis */
-            --color-text-dark: #2C3E50; /* Azul Oscuro Casi Negro - Para texto principal */
-            --color-text-light: #FFFFFF; /* Blanco - Para texto sobre fondos oscuros */
-            --font-serif: 'Playfair Display', serif;
-            --font-sans: 'Montserrat', sans-serif;
-            --spacing-unit: 1rem; /* Unidad base para espaciado */
-        }
-
-        /* Reset y estilos generales */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Estilos básicos para que se vea un poco más organizado */
         body {
-            font-family: var(--font-sans);
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: var(--color-text-dark);
-            background-color: var(--color-secondary);
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Alinea al inicio del eje principal (arriba) */
-            min-height: 100vh;
-            padding: 2rem;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
         }
-
         .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            max-width: 1000px;
-            width: 100%;
-            background-color: var(--color-text-light);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            animation: fadeIn 1s ease-out;
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 25px;
         }
-
-        /* Sección de la barra lateral (Información de contacto y foto) */
-        .sidebar {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
-            padding: 2.5rem 2rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sidebar::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            border-radius: 50%;
-            opacity: 0.8;
-        }
-         .sidebar::after {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            border-radius: 50%;
-            opacity: 0.8;
-        }
-
-
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--color-accent);
-            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-picture:hover {
-            transform: scale(1.05);
-        }
-
-        .contact-info {
+        ul {
             list-style: none;
             padding: 0;
-            width: 100%;
         }
-
-        .contact-info li {
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
+        ul li:before {
+            content: '• ';
+            color: #3498db;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .header-section {
             display: flex;
             align-items: center;
-            justify-content: center; /* Centrar elementos en dispositivos grandes */
-            gap: 0.8rem;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
+            gap: 20px;
+            margin-bottom: 20px;
         }
-        .contact-info li:hover {
-            opacity: 1;
+        .profile-photo {
+            max-width: 150px; /* Ajusta el tamaño de la foto de perfil */
+            height: auto;
+            border-radius: 50%; /* Para hacerla redonda */
+            border: 3px solid #3498db;
         }
-
-        .contact-info i {
-            color: var(--color-accent);
-            font-size: 1.1rem;
-            width: 20px; /* Ancho fijo para alinear iconos */
-            text-align: center;
+        .main-logo {
+            max-width: 200px; /* Ajusta el tamaño del logo principal */
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto; /* Centra el logo principal */
         }
-
-        .contact-info a {
-            color: var(--color-text-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: var(--color-accent);
-        }
-
-        /* Sección de contenido principal */
-        .main-content {
-            padding: 2.5rem;
-        }
-
-        h1 {
-            font-family: var(--font-serif);
-            font-size: 2.8rem;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-
-        h2 {
-            font-family: var(--font-sans);
-            font-size: 1.2rem;
-            color: var(--color-accent);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-
-        section {
-            margin-bottom: 2.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            animation: slideInRight 0.8s ease-out forwards;
-            opacity: 0; /* Empieza oculto */
-        }
-        section:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        /* Retraso de animación para secciones sucesivas */
-        section:nth-of-type(1) { animation-delay: 0.2s; }
-        section:nth-of-type(2) { animation-delay: 0.4s; }
-        section:nth-of-type(3) { animation-delay: 0.6s; }
-        section:nth-of-type(4) { animation-delay: 0.8s; }
-        section:nth-of-type(5) { animation-delay: 1.0s; }
-        section:nth-of-type(6) { animation-delay: 1.2s; } /* Para la nueva sección de certificaciones */
-
-
-        h3 {
-            font-family: var(--font-sans);
-            font-size: 1.6rem;
-            color: var(--color-primary);
-            margin-bottom: 1.2rem;
-            position: relative;
-            padding-left: 20px; /* Espacio para el icono */
-        }
-        h3 i {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--color-accent);
-            font-size: 1.3rem;
-        }
-
-        .experience-item, .education-item {
-            margin-bottom: 1.5rem;
-            padding-left: 1rem;
-            border-left: 3px solid var(--color-accent);
-            transition: background-color 0.3s ease;
-        }
-        .experience-item:hover, .education-item:hover {
-            background-color: rgba(230, 126, 34, 0.05); /* Fondo suave al pasar el mouse */
-        }
-
-        .experience-item:last-child, .education-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .job-title, .degree {
-            font-weight: 600;
-            color: var(--color-primary);
-            font-size: 1.15rem;
-        }
-
-        .company-name, .institution-name {
-            font-weight: 500;
-            color: #555;
-            margin-top: 0.2rem;
-        }
-
-        .dates {
-            font-size: 0.9rem;
-            color: #777;
-            margin-top: 0.2rem;
-            font-style: italic;
-        }
-
-        .job-description ul {
-            list-style: none; /* Elimina viñetas predeterminadas */
-            padding-left: 0;
-            margin-top: 0.8rem;
-        }
-
-        .job-description li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .job-description li::before {
-            content: '\2022'; /* Código de viñeta • */
-            color: var(--color-accent);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1.5em;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Habilidades */
-        .skills-grid {
+        .alliance-logos {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.7rem;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
-
-        .skill-item {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+        .alliance-logos img {
+            max-width: 80px; /* Tamaño para los logos de alianzas */
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .skill-item:hover {
-            background-color: var(--color-accent);
-            transform: translateY(-3px);
-        }
-
-        /* Proyectos (similar a experiencia pero con enfoque en logros) */
-        .project-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .project-title {
-            font-weight: 600;
-            color: var(--color-primary);
-            font-size: 1.15rem;
-        }
-
-        .project-description {
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
-        }
-        .project-description ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 0.8rem;
-        }
-        .project-description li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-        .project-description li::before {
-            content: '\2713'; /* Marca de verificación ✓ */
-            color: var(--color-accent);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1.5em;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Estilos para la nueva sección de certificaciones */
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 3-4 columnas */
-            gap: 1.5rem;
-            justify-items: center; /* Centrar imágenes en la cuadrícula */
-            margin-top: 1rem;
-        }
-
-        .certification-item img {
+        .experience-image {
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .certification-item img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-
-        /* Media Queries para diseño responsivo */
-        @media (min-width: 768px) {
-            .container {
-                grid-template-columns: 300px 1fr; /* Sidebar fija y contenido flexible */
-            }
-            .contact-info li {
-                justify-content: flex-start; /* Alinear a la izquierda en desktop */
-            }
-            h1, h2 {
-                text-align: left; /* Alinear títulos a la izquierda en desktop */
-            }
-            .main-content {
-                padding-left: 3rem; /* Más espacio a la izquierda para el contenido */
-            }
-        }
-
-        @media (max-width: 767px) {
-            body {
-                padding: 1rem; /* Menos padding en pantallas pequeñas */
-            }
-            .sidebar {
-                padding: 1.5rem;
-            }
-            .main-content {
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            h2 {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
-            h3 {
-                font-size: 1.4rem;
-                margin-bottom: 1rem;
-            }
-            section {
-                margin-bottom: 2rem;
-                padding-bottom: 1rem;
-            }
-            .certifications-grid {
-                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Más columnas en móvil si hay espacio */
-                gap: 1rem;
-            }
+            display: block;
+            margin: 15px 0;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <aside class="sidebar">
-            <img src="URL_DE_TU_FOTO_DE_PERFIL.jpg" alt="Foto de Perfil de Liliana Rodríguez Romo" class="profile-picture">
-            <h2>Liliana Rodríguez Romo</h2>
-            <p>Relacionista Pública | Gestora de Proyectos Sociales</p>
+        <header>
+            <div class="header-section">
+                <img src="images/foto-perfil.png" alt="Foto de Perfil de Martha Liliana Rodríguez Romo" class="profile-photo">
 
-            <ul class="contact-info">
-                <li><i class="fas fa-envelope"></i> <a href="mailto:tu.email@example.com">tu.email@example.com</a></li>
-                <li><i class="fas fa-phone"></i> <a href="tel:+573001234567">+57 300 123 4567</a></li>
-                <li><i class="fas fa-map-marker-alt"></i> Armenia, Quindío, Colombia</li>
-                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tuperfil" target="_blank">LinkedIn/tuperfil</a></li>
-                </ul>
-        </aside>
+                <div>
+                    <h1>Martha Liliana Rodríguez Romo, Relacionista Pública.</h1>
+                    <div class="contact-info">
+                        <p>San Antonio del Tequendama, Cundinamarca</p>
+                        <p>Email: <a href="mailto:liliromo56@gmail.com">liliromo56@gmail.com</a></p>
+                        <p>Teléfono: +573145092255</p>
+                    </div>
+                </div>
+            </div>
+            <img src="images/Gemini_Generated_Image_kmyroakmyroakmyr.png" alt="Logo de Grupo Educativo CAVLR" class="main-logo">
+            </header>
 
-        <main class="main-content">
-            <section id="about">
-                <h3><i class="fas fa-user-circle"></i> Sobre Mí</h3>
-                <p>Profesional apasionada con más de [X] años de experiencia en el desarrollo y gestión de proyectos de impacto social, especialmente enfocados en comunidades rurales. Mi trayectoria se ha centrado en fortalecer la base asociativa, impulsar la economía local sostenible y promover la inclusión de poblaciones vulnerables como personas con discapacidad, mujeres cabeza de familia y víctimas del conflicto armado en Colombia. Mi compromiso es generar un desarrollo equitativo y digno para todos, a través de estrategias innovadoras y alianzas estratégicas.</p>
-            </section>
+        <section>
+            <h2>Resumen</h2>
+            <p>Soy una Relacionista Pública enfocada en ayuda social en Colombia. Fundé Cambiando Vidas LR SAS, liderando iniciativas para apoyar a adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de derechos humanos, conservación ambiental, y apoyo a animales en estado de vulnerabilidad. Con experiencia en orquídeología y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.</p>
+        </section>
 
-            <section id="experience">
-                <h3><i class="fas fa-briefcase"></i> Experiencia Profesional</h3>
-                <div class="experience-item">
-                    <div class="job-title">Representante Legal</div>
-                    <div class="company-name">Asociación Productiva Rural CLAVIR para el Desarrollo Local Sostenible – ASPROCAVLIR</div>
-                    <div class="dates">Julio 2025 – Presente</div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Liderazgo en la constitución y registro formal de la asociación.</li>
-                            <li>Definición e implementación de estrategias para promover el desarrollo económico y social rural, con enfoque en procesos productivos avícolas sostenibles.</li>
-                            <li>Gestión y articulación con entidades públicas, privadas, nacionales e internacionales para la obtención de recursos y establecimiento de alianzas.</li>
-                            <li>Fomento de la participación activa y el bienestar de los miembros, incluyendo poblaciones vulnerables.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="job-title">[Tu Otro Cargo Anterior]</div>
-                    <div class="company-name">[Nombre de la Empresa/Organización Anterior]</div>
-                    <div class="dates">[Fecha de Inicio] – [Fecha de Fin]</div>
-                    <div class="job-description">
-                        <ul>
-                            <li>[Logro o Responsabilidad clave 1]</li>
-                            <li>[Logro o Responsabilidad clave 2]</li>
-                            <li>[Logro o Responsabilidad clave 3]</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+        <section>
+            <h2>Habilidades blandas</h2>
+            <ul>
+                <li>Comunicación efectiva</li>
+                <li>Trabajo en equipo</li>
+                <li>Empatía</li>
+                <li>Liderazgo</li>
+                <li>Coordinación de proyectos</li>
+                <li>Gestión de recursos</li>
+                <li>Trabajo con comunidades vulnerables</li>
+                <li>Conservación ambiental</li>
+                <li>Organización de eventos</li>
+                <li>Adaptable</li>
+                <li>Orientada a resultados</li>
+                <li>Empírica</li>
+                <li>Relaciones públicas</li>
+            </ul>
+        </section>
 
-            <section id="education">
-                <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
-                <div class="education-item">
-                    <div class="degree">[Tu Título Universitario/Posgrado]</div>
-                    <div class="institution-name">[Nombre de la Universidad/Institución]</div>
-                    <div class="dates">[Año de Inicio] – [Año de Finalización]</div>
-                </div>
-                <div class="education-item">
-                    <div class="degree">[Otro Título/Diploma]</div>
-                    <div class="institution-name">[Otra Institución]</div>
-                    <div class="dates">[Año de Inicio] – [Año de Finalización]</div>
-                </div>
-            </section>
+        <section>
+            <h2>Experiencia</h2>
 
-            <section id="skills">
-                <h3><i class="fas fa-tools"></i> Habilidades</h3>
-                <div class="skills-grid">
-                    <span class="skill-item">Gestión de Proyectos Sociales</span>
-                    <span class="skill-item">Relaciones Públicas</span>
-                    <span class="skill-item">Desarrollo Comunitario</span>
-                    <span class="skill-item">Formulación y Evaluación de Proyectos</span>
-                    <span class="skill-item">Comunicación Estratégica</span>
-                    <span class="skill-item">Liderazgo de Equipos</span>
-                    <span class="skill-item">Mediación y Resolución de Conflictos</span>
-                    <span class="skill-item">Inclusión Social</span>
-                    <span class="skill-item">Sostenibilidad Rural</span>
-                    <span class="skill-item">Manejo de Office 365</span>
-                    <span class="skill-item">Investigación Social</span>
-                </div>
-            </section>
+            <h3>Secretaria Diplomática, Mission Human Rights (Colombia – Europa)</h3>
+            <p><em>07/2023 – Hoy</em></p>
+            <ul>
+                <li>Ejercicio de funciones diplomáticas de alto nivel como representante institucional de Mission Human Rights en Colombia, articulando esfuerzos nacionales e internacionales en favor de la protección y promoción de los derechos humanos.</li>
+                <li>Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.</li>
+                <li>Coordinación de la incidencia diplomática y política ante sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.</li>
+                <li>Supervisión de la gestión nacional, velando por la alineación estratégica con la misión institucional y promoviendo la transparencia, la integridad y la articulación efectiva de los órganos directivos.</li>
+                <li>Facilitación de relaciones con organismos multilaterales, cooperantes y aliados estratégicos para la proyección internacional de la organización y la consolidación de su estructura operativa.</li>
+            </ul>
 
-            <section id="projects">
-                <h3><i class="fas fa-lightbulb"></i> Proyectos Destacados</h3>
-                <div class="project-item">
-                    <div class="project-title">Constitución y Operación de ASPROCAVLIR</div>
-                    <div class="project-description">
-                        <ul>
-                            <li>Liderazgo integral en la fase fundacional, legal y operativa de la asociación.</li>
-                            <li>Establecimiento de alianzas clave para el desarrollo avícola sostenible.</li>
-                            <li>Implementación de mecanismos de gobernanza transparente y rendición de cuentas.</li>
-                        </ul>
-                    </div>
+            <h3>CEO, Cambiando Vidas LR S.A.S.</h3>
+            <p><em>07/2023 – Hoy | San Antonio del Tequendama, CO</em></p>
+            <div class="alliance-logos">
+                <img src="images/ability.png" alt="Logo de ABILITYTOHELP">
+                <img src="images/fip.png" alt="Logo de FIP">
+                <img src="images/inclo.png" alt="Logo de Inclusión">
+                <img src="images/linkvelink.png" alt="Logo de LinkedIn">
+                <img src="images/logo-mujeres-solidarias.png" alt="Logo de Fundación Mujeres Solidarias">
                 </div>
-                <div class="project-item">
-                    <div class="project-title">[Nombre de Otro Proyecto]</div>
-                    <div class="project-description">
-                        <ul>
-                            <li>[Logro clave del proyecto 1]</li>
-                            <li>[Logro clave del proyecto 2]</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <ul>
+                <li>Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.</li>
+                <li>Gestión e implementación de una alianza internacional con la organización ABILITYTOHELP, mediante la cual se logró la distribución de 15.000 becas de formación en inglés (niveles A1 a B1), así como becas para estudios técnicos en Conducta Humana Aplicada, beneficiando a jóvenes y adultos en condiciones de vulnerabilidad.</li>
+                <li>Facilitación de procesos estratégicos para el posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo la visibilidad y el fortalecimiento de sus marcas en colaboración directa con la con Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, y la Agencia Mundial de Prensa.</li>
+                <li>Desarrollo de programas de formación, capacitación e impulso emprendedor, dirigidos especialmente a mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar a través del trabajo en conjunto con la organización Mecedora de mis Ancestros.</li>
+                <li>Coordinación de una red nacional de productores para optimizar la comercialización de sus productos, fortalecer sus emprendimientos y posicionar a los agricultores colombianos en mercados nacionales e internacionales.</li>
+                <li>Promoción de iniciativas culturales innovadoras que integran el arte y la identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional por medio de una alianza cultural con el Maestro Siaucho.</li>
+                <li>Liderazgo en Sembrando Semillas, un proyecto de Cambiando Vidas LR S.A.S que impactó a más de 1,500 clientes a través de la venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para fomentar el desarrollo sostenible del sector.</li>
+                <li>Facilitamos el acceso a capacitaciones en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, captando recursos para el programa Colombia Mayor.</li>
+                <li>Colaboro con la Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en la promoción y defensa de los derechos humanos a nivel nacional.</li>
+                <li>Coordiné la capacitación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas a través de la Fundación FMEC.</li>
+                <li>Organizo eventos en Bogotá, con la fundación PROASOCIADOS conectando a inversores internacionales con emprendedores nacionales, logrando que más de 200 emprendedores formalicen y escalen sus negocios.</li>
+                <li>Conecté a estudiantes de territorios remotos con la Fundación TLS, facilitando su acceso a becas de la Georgia Tech International Corporation para su titulación universitaria.</li>
+                <li>Brindamos capacitaciones a las personas con discapacidad, a través de la alianza con el movimiento latinoamericano de personas con discapacidad, para facilitar su integración a la sociedad.</li>
+                <li>Capacito a víctimas del conflicto armado sobre sus derechos y brindándoles apoyo continuo.</li>
+                <li>Coordiné la gestión y postulación de proyectos en Cundinamarca y Antioquía junto a Dismartek, cumpliendo con todos los requerimientos y plazos establecidos.</li>
+                <li>Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.</li>
+                <li>Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.</li>
+                <li>Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.</li>
+                <li>Apoyó a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
+                <li>Apoyó en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
+                <li>Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.</li>
+            </ul>
 
-            <section id="certifications">
-                <h3><i class="fas fa-award"></i> Certificaciones y Reconocimientos</h3>
-                <div class="certifications-grid">
-                    <div class="certification-item">
-                        <img src="images/1.jpg" alt="Certificación 1">
-                    </div>
-                    <div class="certification-item">
-                        <img src="images/2.jpg" alt="Certificación 2">
-                    </div>
-                    <div class="certification-item">
-                        <img src="images/3.jpg" alt="Certificación 3">
-                    </div>
-                    <div class="certification-item">
-                        <img src="images/4.jpg" alt="Certificación 4">
-                    </div>
-                    <div class="certification-item">
-                        <img src="images/5.jpg" alt="Certificación 5">
-                    </div>
-                    <div class="certification-item">
-                        <img src="images/6.jpg" alt="Certificación 6">
-                    </div>
-                    <div class="certification-item">
-                        <img src="images/7.jpg" alt="Certificación 7">
-                    </div>
-                    <div class="certification-item">
-                        <img src="images/8.jpg" alt="Certificación 8">
-                    </div>
-                    <div class="certification-item">
-                        <img src="images/9.jpg" alt="Certificación 9">
-                    </div>
-                </div>
-                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9em; color: #777;">Estos logos representan certificaciones y reconocimientos clave en mi trayectoria profesional.</p>
-            </section>
-        </main>
+            <h3>Relacionista comercial, ATSEI de Colombia.</h3>
+            <p><em>02/2016 – Hoy | San Antonio del Tequendama, CO</em></p>
+            <ul>
+                <li>Impulsé la comercialización e implementación de paneles solares a nivel nacional, logrando su adopción exitosa en 5 ciudades.</li>
+            </ul>
+
+            <h3>Fundadora, Construyendo Sonrisas.</h3>
+            <p><em>2012 – 2016 | Lima, PE</em></p>
+            <ul>
+                <li>Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
+                <li>Colaboré con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
+                <li>Organicé talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
+                <li>Dirigí la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
+                <li>Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Educación extendida</h2>
+            <ul>
+                <li>Diplomado de derechos humanos con la Capellanía Armada Mundial de Paz de México.</li>
+                <li>Técnico Agropecuario, instituto Tomás Moro.</li>
+                <li>Diplomado en Inclusión.</li>
+                <li>Derechos humanos, Escuela nacional de formación comunitaria.</li>
+                <li>Diplomado en Circulo De Maestros Conocimientos Y Saberes De La Federación De Discapacidad Cuidadores De Colombia Y El Movimiento Guajira Disruptiva.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Certificaciones</h2>
+            <ul>
+                <li>Alta Distinción «Honor, Dignidad y Gloria» Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.</li>
+                <li>Doctor Honoris Causa en: Derechos Humanos.</li>
+            </ul>
+        </section>
     </div>
 </body>
 </html>
