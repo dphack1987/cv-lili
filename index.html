@@ -26,6 +26,8 @@
             color: var(--text-gray-dark); /* Color de texto general */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            margin: 0; /* Eliminar margen por defecto del body */
+            padding: 0; /* Eliminar padding por defecto del body */
         }
 
         .max-w-4xl {
@@ -53,7 +55,7 @@
             align-items: center; /* Centrar ítems en móviles */
             text-align: center; /* Centrar texto en móviles */
             min-height: 250px; /* Altura mínima para asegurar espacio para el logo y foto */
-            padding-bottom: 4rem; /* Espacio extra para el logo en la esquina */
+            padding-bottom: 6rem; /* Espacio extra para el logo en la esquina inferior */
         }
 
         @media (min-width: 768px) { /* Para desktop */
@@ -63,25 +65,44 @@
                 align-items: center; /* Alinear al centro verticalmente */
                 text-align: left; /* Alinear texto a la izquierda */
                 padding: 3rem 2.5rem; /* Más padding para desktop */
-                padding-bottom: 4rem; /* Mantener espacio para el logo */
+                padding-bottom: 6rem; /* Mantener espacio para el logo */
             }
         }
 
-        header .profile-container {
-            position: relative;
-            margin-bottom: 1.5rem; /* Espacio debajo de la imagen en móviles */
-            flex-shrink: 0; /* Evita que la imagen se achique */
-            margin-right: 2rem; /* Espacio entre imagen y texto en desktop */
+        header .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem; /* Espacio debajo de la imagen y texto en móviles */
+            width: 100%; /* Ocupa todo el ancho disponible para su contenido */
         }
 
         @media (min-width: 768px) {
-            header .profile-container {
+            header .profile-section {
+                flex-direction: row; /* En fila para desktop */
+                margin-bottom: 0; /* Reset en desktop */
+                align-items: center;
+                justify-content: flex-start; /* Alinear al inicio */
+            }
+        }
+
+        header .profile-img-container {
+            flex-shrink: 0; /* Evita que la imagen se achique */
+            margin-right: 2.5rem; /* Espacio entre imagen y texto en desktop */
+            margin-bottom: 1rem; /* Espacio debajo de la imagen en móviles */
+            position: relative; /* Para texto del placeholder si se usa */
+            display: flex; /* Para centrar contenido si es placeholder */
+            justify-content: center; /* Para centrar contenido si es placeholder */
+            align-items: center; /* Para centrar contenido si es placeholder */
+        }
+        @media (min-width: 768px) {
+            header .profile-img-container {
                 margin-bottom: 0; /* Reset en desktop */
             }
         }
 
         header .profile-img {
-            width: 10rem; /* Un poco más grande */
+            width: 10rem; /* Tamaño de la imagen */
             height: 10rem;
             border-radius: 50%;
             object-fit: cover;
@@ -95,6 +116,12 @@
 
         header .main-info {
             flex-grow: 1; /* Permite que la información principal ocupe espacio */
+            text-align: center; /* Centrar texto en móviles */
+        }
+        @media (min-width: 768px) {
+            header .main-info {
+                text-align: left; /* Alinear texto a la izquierda en desktop */
+            }
         }
 
         header h1 {
@@ -119,6 +146,7 @@
         header .contact-info a {
             color: var(--blue-lighter);
             transition: color 0.2s ease;
+            text-decoration: none; /* Asegurar que los enlaces no tengan subrayado por defecto */
         }
         header .contact-info a:hover {
             color: var(--white);
@@ -141,6 +169,9 @@
                 margin-top: 1.5rem; /* Espacio arriba */
                 left: auto;
                 bottom: auto;
+                display: block; /* Asegurarse de que ocupe su propio espacio */
+                margin-left: auto;
+                margin-right: auto;
             }
         }
         header .header-logo-cavlir:hover {
@@ -153,12 +184,17 @@
             top: 1.5rem;
             right: 2.5rem;
         }
+        header nav.md\:block ul {
+            display: flex;
+            gap: 1rem; /* Espacio entre elementos del menú */
+        }
         header nav.md\:block ul li a {
             color: var(--white);
             font-weight: 600;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+            text-decoration: none; /* Quitar subrayado por defecto */
         }
         header nav.md\:block ul li a:hover {
             background-color: rgba(255, 255, 255, 0.2);
@@ -223,6 +259,7 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             transition: transform 0.2s ease, background-color 0.2s ease;
             text-align: center;
+            display: inline-block; /* Asegurarse de que el span se comporte como un bloque en línea */
         }
         #habilidades .grid span:hover {
             transform: translateY(-3px);
@@ -268,11 +305,11 @@
             border-radius: 0.5rem;
             box-shadow: 0 2px 6px var(--shadow-subtle);
             transition: transform 0.2s ease, filter 0.2s ease;
-            filter: grayscale(70%);
+            filter: grayscale(70%); /* Iniciar con escala de grises para efecto hover */
         }
         .alliance-logos img:hover, .certification-images img:hover {
             transform: scale(1.1);
-            filter: grayscale(0%);
+            filter: grayscale(0%); /* Color al pasar el ratón */
             box-shadow: 0 4px 10px var(--shadow-subtle);
         }
 
@@ -327,6 +364,7 @@
             color: var(--blue-primary);
             font-weight: 500;
             transition: color 0.2s ease;
+            text-decoration: none;
         }
         #contacto .contact-links li a svg {
             fill: var(--blue-primary);
@@ -361,6 +399,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
         }
         .whatsapp-button:hover {
             transform: scale(1.1);
@@ -368,6 +407,15 @@
         }
 
         /* Menú Móvil */
+        .md\:hidden { /* Usar Tailwind's md:hidden para ocultar en desktop */
+            display: none;
+        }
+        @media (max-width: 767px) { /* Mostrar solo en móviles */
+            .md\:hidden {
+                display: block; /* O flex si es un contenedor */
+            }
+        }
+
         #mobile-menu {
             position: fixed;
             top: 0;
@@ -406,6 +454,7 @@
             font-weight: 500;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: background-color 0.2s ease;
+            text-decoration: none;
         }
         #mobile-menu ul li a:hover {
             background-color: rgba(255, 255, 255, 0.08);
@@ -438,7 +487,7 @@
 
         <header>
             <nav class="absolute top-5 right-5 z-10 hidden md:block">
-                <ul class="flex space-x-4">
+                <ul>
                     <li><a href="#sobre-mi">Sobre Mí</a></li>
                     <li><a href="#habilidades">Habilidades</a></li>
                     <li><a href="#experiencia">Experiencia</a></li>
@@ -452,12 +501,12 @@
                 <button id="mobile-menu-button">☰</button>
             </div>
 
-            <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left w-full">
-                <div class="profile-container">
+            <div class="profile-section">
+                <div class="profile-img-container">
                     <img src="./images/foto-perfil.jpg" alt="Foto de Perfil de Martha Liliana Rodríguez Romo" class="profile-img">
                 </div>
 
-                <div class="main-info mt-4 md:mt-0">
+                <div class="main-info">
                     <h1>Martha Liliana Rodríguez Romo</h1>
                     <p class="subtitle">Relacionista Pública</p>
                     <div class="mt-4 contact-info">
