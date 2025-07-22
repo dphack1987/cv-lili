@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Martha Liliana Rodríguez Romo - Relacionista Pública</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>CV Profesional - [Tu Nombre] (Tema Verde)</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3WdfZpG/nU6qD4G0T6JtN0c5W1y6x9A7Z9G3P1O/T5U5w5d5R5v5w5d5R5v5w5d5R5v5w5d5R5v5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Custom Tailwind Configuration and Global Styles */
+        /* Custom Tailwind Configuration and Global Styles - Colores Tema Verde */
         :root {
-            --color-primary-light: #6b8e23; /* Olive Drab - a nice olive green */
-            --color-primary-dark: #556b2f;  /* Dark Olive Green */
-            --color-accent-light: #9acd32; /* Yellow Green - brighter green accent */
-            --color-accent-dark: #3a5f0b;  /* Darker Olive Green */
-            --color-text-dark: #1f2937;    /* Gray 800 */
-            --color-text-medium: #4b5563;  /* Gray 600 */
-            --color-bg-light: #f9fafb;     /* Gray 50 */
-            --color-bg-medium: #e5e7eb;    /* Gray 200 */
-            --color-bg-subtle: #f3f4f6;    /* Gray 100 */
+            --color-primary-light: #1B5E20; /* Darker Green (Forest Green) */
+            --color-primary-dark: #0F3812;  /* Very Dark Green */
+            --color-accent-light: #4CAF50; /* Medium Green (Lime Green) */
+            --color-accent-dark: #388E3C;  /* Slightly darker accent green */
+            --color-text-dark: #212121;    /* Dark gray for main text */
+            --color-text-medium: #616161;  /* Medium gray for secondary text */
+            --color-bg-light: #F9FBE7;     /* Very light pale green/yellowish background */
+            --color-bg-medium: #E8F5E9;    /* Light green background */
+            --color-bg-subtle: #DCEDC8;    /* More subtle green background */
         }
 
         body {
@@ -83,7 +82,7 @@
             position: relative;
             padding-bottom: 1rem;
             margin-bottom: 2.5rem;
-            color: var(--color-text-dark);
+            color: var(--color-primary-light);
             font-weight: 800;
             font-size: 2.8rem;
             text-transform: uppercase;
@@ -97,7 +96,7 @@
             bottom: 0;
             width: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
+            background: linear-gradient(90deg, var(--color-accent-light) 0%, var(--color-accent-dark) 100%);
             border-radius: 9999px;
             animation: lineExpandSimple 1s ease-out forwards;
             animation-delay: 0.2s;
@@ -120,7 +119,7 @@
 
         /* Skill Tags Styling - clean and friendly */
         .skill-tag {
-            background: linear-gradient(45deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
+            background: linear-gradient(45deg, var(--color-accent-light) 0%, var(--color-accent-dark) 100%);
             color: white;
             font-weight: 600;
             padding: 0.6rem 1.2rem;
@@ -131,7 +130,7 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .skill-tag:hover {
-            background: linear-gradient(45deg, var(--color-primary-dark) 0%, var(--color-accent-dark) 100%);
+            background: linear-gradient(45deg, var(--color-primary-dark) 0%, var(--color-accent-light) 100%);
             transform: translateY(-3px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
         }
@@ -160,10 +159,10 @@
             top: 2rem;
             width: 18px;
             height: 18px;
-            background: var(--color-primary-light);
+            background: var(--color-accent-light);
             border-radius: 50%;
-            border: 3px solid var(--color-accent-light);
-            box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.2);
+            border: 3px solid var(--color-primary-light);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); /* Accent light with alpha */
             z-index: 1;
         }
         /* Timeline vertical line */
@@ -184,7 +183,7 @@
             margin-bottom: 0.5rem;
         }
         .experience-item h4 {
-            color: var(--color-primary-light);
+            color: var(--color-accent-dark);
             font-weight: 700;
             font-size: 1.2rem;
             margin-bottom: 0.75rem;
@@ -223,13 +222,13 @@
         }
         .contact-form-section input:focus,
         .contact-form-section textarea:focus {
-            border-color: var(--color-primary-light);
-            box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.3);
+            border-color: var(--color-accent-light);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3); /* Accent light with alpha */
             outline: none;
             background-color: var(--color-bg-light);
         }
         .contact-button {
-            background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+            background: linear-gradient(90deg, var(--color-accent-light) 0%, var(--color-accent-dark) 100%);
             font-weight: 700;
             padding: 1.2rem 2.5rem;
             border-radius: 1rem;
@@ -237,19 +236,20 @@
             transition: all 0.3s ease;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+            color: white;
         }
         .contact-button:hover {
-            background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-accent-dark) 100%);
+            background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-accent-light) 100%);
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
-        /* Floating WhatsApp Button */
+        /* Floating WhatsApp Button - Keep the distinct WhatsApp green */
         .whatsapp-button {
             position: fixed;
             bottom: 2.5rem;
             right: 2.5rem;
-            background-color: #25D366;
+            background-color: #25D366; /* Standard WhatsApp green */
             color: white;
             border-radius: 9999px;
             padding: 1.25rem;
@@ -263,7 +263,7 @@
         }
         .whatsapp-button:hover {
             transform: scale(1.1);
-            background-color: #1DA851;
+            background-color: #1DA851; /* Darker WhatsApp green on hover */
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
@@ -273,6 +273,7 @@
             padding-bottom: 2.5rem;
             border-top: 1px solid var(--color-bg-medium);
             text-align: center;
+            background-color: var(--color-bg-light);
         }
 
         .partner-logo {
@@ -312,22 +313,28 @@
             padding: 0.75rem 1rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, color 0.3s ease;
-            white-space: nowrap; /* Prevent text wrapping */
+            text-decoration: none;
         }
 
         .navbar-item:hover {
-            background-color: var(--color-primary-light);
+            background-color: var(--color-accent-light);
             color: white;
         }
 
         /* Responsive adjustments */
-        @media (max-width: 1024px) { /* Adjust for smaller laptops/large tablets */
+        @media (min-width: 1025px) {
+            .navbar-item {
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 1024px) {
             .navbar .flex {
                 flex-wrap: wrap;
                 justify-content: center;
             }
             .navbar-item {
-                margin: 0.25rem 0.5rem; /* Add some margin between items when wrapped */
+                margin: 0.25rem 0.5rem;
             }
         }
 
@@ -368,13 +375,13 @@
                 padding: 0.5rem 1rem;
             }
             .navbar .flex {
-                flex-direction: row; /* Keep row for wider screens, wrap if needed */
+                flex-direction: row;
                 justify-content: center;
             }
             .navbar-item {
                 font-size: 0.85rem;
                 padding: 0.6rem 0.8rem;
-                margin: 0.15rem 0.3rem; /* Tighter spacing */
+                margin: 0.15rem 0.3rem;
             }
         }
 
@@ -426,7 +433,7 @@
                 max-height: 40px;
             }
             .navbar .flex {
-                flex-direction: column; /* Stack items vertically on very small screens */
+                flex-direction: column;
             }
             .navbar-item {
                 width: 100%;
@@ -437,4 +444,197 @@
         }
     </style>
 </head>
-<body class="antialiased
+<body class="relative">
+
+    <nav class="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-center space-x-4">
+            <a href="#about" class="navbar-item">Sobre Mí</a>
+            <a href="#skills" class="navbar-item">Habilidades</a>
+            <a href="#experience" class="navbar-item">Experiencia</a>
+            <a href="#contact" class="navbar-item">Contacto</a>
+            <a href="#partners" class="navbar-item">Socios</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto p-4 md:p-8 relative">
+        <div class="cv-container">
+
+            <header id="header" class="header-section text-center p-8 section-hidden">
+                <img src="./images/your-profile-pic.jpg" alt="Tu Foto de Perfil" class="profile-pic rounded-full mx-auto mb-6 shadow-lg">
+                <h1 class="text-5xl font-extrabold mb-2">Tu Nombre Completo</h1>
+                <p class="text-xl font-light opacity-90 mb-4">Tu Título Profesional / Rol Principal</p>
+                <div class="flex justify-center space-x-6 text-2xl">
+                    <a href="mailto:tu.email@example.com" class="hover:text-gray-300 transition-colors duration-300" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+1234567890" class="hover:text-gray-300 transition-colors duration-300" aria-label="Teléfono"><i class="fas fa-phone"></i></a>
+                    <a href="https://linkedin.com/in/tuperfil" target="_blank" class="hover:text-gray-300 transition-colors duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/tuusuario" target="_blank" class="hover:text-gray-300 transition-colors duration-300" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </header>
+
+            <section id="about" class="p-8 md:p-12 section-hidden">
+                <h2 class="section-title">Sobre Mí</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Soy un profesional altamente motivado y con experiencia en [Tu Campo Principal]. Mi pasión radica en [Menciona un interés clave o lo que te impulsa]. A lo largo de mi carrera, he cultivado un enfoque proactivo en [Habilidad clave 1] y [Habilidad clave 2], buscando siempre la innovación y la eficiencia en cada proyecto. Estoy comprometido con el aprendizaje continuo y la aplicación de mis habilidades para lograr resultados excepcionales y contribuir al éxito de equipos dinámicos.
+                </p>
+            </section>
+
+            <section id="skills" class="p-8 md:p-12 border-t border-gray-200 section-hidden">
+                <h2 class="section-title">Habilidades</h2>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <span class="skill-tag">Gestión de Proyectos</span>
+                    <span class="skill-tag">Liderazgo de Equipos</span>
+                    <span class="skill-tag">Análisis de Datos</span>
+                    <span class="skill-tag">Comunicación Efectiva</span>
+                    <span class="skill-tag">Resolución de Problemas</span>
+                    <span class="skill-tag">Marketing Digital</span>
+                    <span class="skill-tag">Desarrollo Web (Front-end)</span>
+                    <span class="skill-tag">Diseño UX/UI</span>
+                    <span class="skill-tag">Automatización de Procesos</span>
+                    <span class="skill-tag">CRM y ERP</span>
+                    <span class="skill-tag">Idiomas (Inglés C1)</span>
+                    <span class="skill-tag">Metodologías Ágiles (Scrum)</span>
+                </div>
+            </section>
+
+            <section id="experience" class="p-8 md:p-12 border-t border-gray-200 section-hidden">
+                <h2 class="section-title">Experiencia</h2>
+
+                <div class="experience-item">
+                    <h3>Gerente de Proyectos</h3>
+                    <h4>Empresa X, Ciudad, País</h4>
+                    <p class="text-gray-600 mb-3">Julio 2022 – Presente</p>
+                    <ul class="text-gray-600">
+                        <li>Liderar equipos multidisciplinarios para la entrega exitosa de proyectos clave, mejorando la eficiencia en un 15%.</li>
+                        <li>Gestionar el ciclo de vida completo del proyecto, desde la planificación hasta el cierre, asegurando la adherencia al presupuesto y cronograma.</li>
+                        <li>Implementar nuevas metodologías ágiles, resultando en una reducción del 10% en el tiempo de entrega de tareas.</li>
+                        <li>Establecer y mantener relaciones sólidas con stakeholders y clientes.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Especialista en Marketing Digital</h3>
+                    <h4>Agencia Y, Ciudad, País</h4>
+                    <p class="text-gray-600 mb-3">Enero 2019 – Junio 2022</p>
+                    <ul class="text-gray-600">
+                        <li>Diseñar y ejecutar campañas de marketing digital integrales, incrementando el engagement en redes sociales en un 25%.</li>
+                        <li>Optimizar estrategias SEO y SEM, logrando un aumento del tráfico orgánico del 30%.</li>
+                        <li>Analizar el rendimiento de las campañas y generar informes detallados para la toma de decisiones.</li>
+                        <li>Gestionar presupuestos de publicidad digital de hasta $50,000 mensuales.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Asistente Administrativo</h3>
+                    <h4>Compañía Z, Ciudad, País</h4>
+                    <p class="text-gray-600 mb-3">Septiembre 2017 – Diciembre 2018</p>
+                    <ul class="text-gray-600">
+                        <li>Coordinar la agenda de la gerencia, gestionando reuniones y viajes.</li>
+                        <li>Preparar informes y presentaciones, asegurando la precisión de los datos.</li>
+                        <li>Optimizar procesos de archivo y documentación, mejorando la organización en la oficina.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="contact" class="p-8 md:p-12 border-t border-gray-200 section-hidden">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contact-form-section text-center">
+                    <p class="text-lg text-gray-700 mb-6">¿Interesado en colaborar o tienes alguna pregunta? No dudes en contactarme.</p>
+                    <form action="#" method="POST" class="max-w-lg mx-auto grid grid-cols-1 gap-6">
+                        <input type="text" name="name" placeholder="Tu Nombre" class="w-full" required>
+                        <input type="email" name="email" placeholder="Tu Correo Electrónico" class="w-full" required>
+                        <textarea name="message" rows="5" placeholder="Tu Mensaje" class="w-full resize-y" required></textarea>
+                        <button type="submit" class="contact-button w-full text-white">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="partners" class="partners-section p-8 md:p-12 border-t border-gray-200 section-hidden">
+                <h2 class="section-title !text-center">Socios Estratégicos</h2>
+                <div class="flex flex-wrap justify-center items-center gap-6 mt-8">
+                    <a href="https://example.com/partner1" target="_blank" aria-label="Logo Socio 1">
+                        <img src="./images/logo-partner1.png" alt="Logo Socio 1" class="partner-logo">
+                    </a>
+                    <a href="https://example.com/partner2" target="_blank" aria-label="Logo Socio 2">
+                        <img src="./images/logo-partner2.png" alt="Logo Socio 2" class="partner-logo">
+                    </a>
+                    <a href="https://example.com/partner3" target="_blank" aria-label="Logo Socio 3">
+                        <img src="./images/logo-partner3.png" alt="Logo Socio 3" class="partner-logo">
+                    </a>
+                    <a href="https://example.com/partner4" target="_blank" aria-label="Logo Socio 4">
+                        <img src="./images/logo-linkedin.png" alt="Logo LinkedIn" class="partner-logo"> </a>
+                    </div>
+                <p class="text-lg text-gray-700 mt-8">Agradecemos el apoyo de nuestros valiosos socios que hacen posible nuestra misión.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <a href="https://wa.me/tunumerodetelefono" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky Navbar on Scroll
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for section animations
+        const sections = document.querySelectorAll('section, header');
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the section must be visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('section-hidden');
+                    entry.target.classList.add('section-visible');
+                    // Stop observing once it's visible if you only want it to animate once
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            section.classList.add('section-hidden'); // Ensure all start hidden
+            observer.observe(section);
+        });
+
+        // Initial check for header visibility (if it's already in viewport on load)
+        const header = document.getElementById('header');
+        if (header) {
+            const headerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('section-hidden');
+                        entry.target.classList.add('section-visible');
+                        headerObserver.unobserve(entry.target); // Stop observing after first view
+                    }
+                });
+            }, { threshold: 0.1 });
+            headerObserver.observe(header);
+        }
+
+    </script>
+</body>
+</html>
