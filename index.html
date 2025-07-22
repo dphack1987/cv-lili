@@ -1,447 +1,320 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="docTitle">CV Martha Liliana Rodríguez Romo - Relacionista Pública</title>
-    <link rel="stylesheet" href="./images/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title id="docTitle">Résumé Professionnel</title>
+    <style>
+        /* Estilos básicos para navegación y diseño */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            background: #005f73;
+            padding: 10px;
+            margin: 0;
+        }
+        nav ul li {
+            margin-right: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+        nav ul li:hover, .lang-button.active {
+            text-decoration: underline;
+        }
+        header, section, footer {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h2 {
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        form button {
+            margin-top: 15px;
+            background: #005f73;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background: #0a9396;
+        }
+        /* Botones idioma */
+        .lang-buttons {
+            text-align: right;
+            margin: 10px 20px;
+        }
+        .lang-button {
+            cursor: pointer;
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: 1px solid #005f73;
+            border-radius: 3px;
+            background: white;
+            color: #005f73;
+            font-weight: bold;
+        }
+        .lang-button.active {
+            background: #005f73;
+            color: white;
+        }
+        /* Menú móvil */
+        #mobile-menu-button, #close-mobile-menu {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            nav ul {
+                display: none;
+            }
+            #mobile-menu-button {
+                display: block;
+                background: #005f73;
+                color: white;
+                border: none;
+                padding: 10px;
+                font-size: 18px;
+                cursor: pointer;
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                z-index: 1001;
+            }
+            #mobile-menu {
+                position: fixed;
+                top: 0; right: -250px;
+                width: 250px;
+                height: 100%;
+                background: #0a9396;
+                color: white;
+                transition: right 0.3s ease;
+                padding: 20px;
+                z-index: 1000;
+            }
+            #mobile-menu.open {
+                right: 0;
+            }
+            #mobile-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+            #mobile-menu ul li {
+                margin: 15px 0;
+            }
+            #close-mobile-menu {
+                display: block;
+                background: none;
+                color: white;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+            #mobile-menu-overlay {
+                display: none;
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 999;
+            }
+            #mobile-menu-overlay.open {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="max-w-4xl">
+    <button id="mobile-menu-button" aria-label="Open menu">☰ Menu</button>
 
-        <header>
-            <div class="language-selector">
-                <button class="lang-button active" data-lang="es">ES</button>
-                <button class="lang-button" data-lang="en">EN</button>
-                <button class="lang-button" data-lang="fr">FR</button>
-            </div>
+    <nav id="mobile-menu" aria-label="Mobile navigation">
+        <button id="close-mobile-menu" aria-label="Close menu">×</button>
+        <ul>
+            <li data-translate="navCertifications">Certifications</li>
+            <li data-translate="navContact">Contact</li>
+        </ul>
+    </nav>
+    <div id="mobile-menu-overlay"></div>
 
-            <nav class="absolute top-5 right-5 z-10 hidden md:block">
-                <ul>
-                    <li><a href="#sobre-mi" data-translate="navAboutMe">Sobre Mí</a></li>
-                    <li><a href="#habilidades" data-translate="navSkills">Habilidades</a></li>
-                    <li><a href="#experiencia" data-translate="navExperience">Experiencia</a></li>
-                    <li><a href="#educacion" data-translate="navEducation">Educación</a></li>
-                    <li><a href="#certificaciones" data-translate="navCertifications">Certificaciones</a></li>
-                    <li><a href="#contacto" data-translate="navContact">Contacto</a></li>
-                </ul>
-            </nav>
+    <nav>
+        <ul>
+            <li data-translate="navCertifications">Certifications</li>
+            <li data-translate="navContact">Contact</li>
+        </ul>
+    </nav>
 
-            <div class="md:hidden absolute top-3 right-3 z-10">
-                <button id="mobile-menu-button">☰</button>
-            </div>
-
-            <div class="profile-section">
-                <div class="profile-img-container">
-                    <img src="./images/foto-perfil.jpeg" alt="Foto de Perfil de Martha Liliana Rodríguez Romo" class="profile-img">
-                </div>
-
-                <div class="main-info">
-                    <h1 data-translate="profileName">Martha Liliana Rodríguez Romo</h1>
-                    <p class="subtitle" data-translate="profileTitle">Relacionista Pública</p>
-                    <div class="mt-4 contact-info">
-                        <p><span data-translate="locationPrefix">📍</span> San Antonio del Tequendama, Cundinamarca</p>
-                        <p><span data-translate="emailPrefix">✉️</span> <a href="mailto:liliromo56@gmail.com">liliromo56@gmail.com</a></p>
-                        <p><span data-translate="phonePrefix">📞</span> <a href="tel:+573145092255">+57 314 5092255</a></p>
-                    </div>
-                </div>
-
-                <div class="header-logo-cavlir mt-4">
-                    <a href="https://cavlir.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="./images/logo-cavlir.png" alt="Logo de Grupo Educativo CAVLR">
-                    </a>
-                </div>
-            </div> </header>
-
-        <nav id="mobile-menu">
-            <button id="close-mobile-menu">&times;</button>
-            <ul>
-                <li><a href="#sobre-mi" onclick="closeMobileMenu()" data-translate="navAboutMe">Sobre Mí</a></li>
-                <li><a href="#habilidades" onclick="closeMobileMenu()" data-translate="navSkills">Habilidades</a></li>
-                <li><a href="#experiencia" onclick="closeMobileMenu()" data-translate="navExperience">Experiencia</a></li>
-                <li><a href="#educacion" onclick="closeMobileMenu()" data-translate="navEducation">Educación</a></li>
-                <li><a href="#certificaciones" onclick="closeMobileMenu()" data-translate="navCertifications">Certificaciones</a></li>
-                <li><a href="#contacto" onclick="closeMobileMenu()" data-translate="navContact">Contacto</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-overlay" class="md:hidden"></div>
-
-        <main class="p-8">
-
-            <section id="sobre-mi">
-                <h2 class="section-header" data-translate="aboutMeHeader">Resumen Profesional</h2>
-                <p data-translate="aboutMeContent">Soy una Relacionista Pública enfocada en ayuda social en Colombia. Fundé Cambiando Vidas LR SAS, liderando iniciativas para apoyar a adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de derechos humanos, conservación ambiental, y apoyo a animales en estado de vulnerabilidad. Con experiencia en orquídeologia y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.</p>
-            </section>
-
-            <section id="habilidades">
-                <h2 class="section-header" data-translate="skillsHeader">Habilidades Clave</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <span data-translate="skill1">Comunicación efectiva</span>
-                    <span data-translate="skill2">Trabajo en equipo</span>
-                    <span data-translate="skill3">Empatía</span>
-                    <span data-translate="skill4">Liderazgo</span>
-                    <span data-translate="skill5">Coordinación de proyectos</span>
-                    <span data-translate="skill6">Gestión de recursos</span>
-                    <span data-translate="skill7">Trabajo con comunidades vulnerables</span>
-                    <span data-translate="skill8">Conservación ambiental</span>
-                    <span data-translate="skill9">Organización de eventos</span>
-                    <span data-translate="skill10">Adaptable</span>
-                    <span data-translate="skill11">Orientada a resultados</span>
-                    <span data-translate="skill12">Empírica</span>
-                    <span data-translate="skill13">Relaciones públicas</span>
-                </div>
-            </section>
-
-            <section id="experiencia">
-                <h2 class="section-header" data-translate="experienceHeader">Experiencia Profesional</h2>
-
-                <div>
-                    <h3 data-translate="exp1Title">Secretaria Diplomática, Mission Human Rights (Colombia – Europa)</h3>
-                    <p class="text-sm" data-translate="exp1Duration"><em>Julio 2023 – Hoy</em></p>
-                    <ul class="custom-list">
-                        <li data-translate="exp1Desc1">Ejercicio de funciones diplomáticas de alto nivel como representante institucional de Mission Human Rights en Colombia, articulando esfuerzos nacionales e internacionales en favor de la protección y promoción de los derechos humanos.</li>
-                        <li data-translate="exp1Desc2">Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.</li>
-                        <li data-translate="exp1Desc3">Coordinación de la incidencia diplomática y política ante sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.</li>
-                        <li data-translate="exp1Desc4">Supervisión de la gestión nacional, velando por la alineación estratégica con la misión institucional y promoviendo la transparencia, la integridad y la articulación efectiva de los órganos directivos.</li>
-                        <li data-translate="exp1Desc5">Facilitación de relaciones con organismos multilaterales, cooperantes y aliados estratégicos para la proyección internacional de la organización y la consolidación de su estructura operativa.</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 data-translate="exp2Title">CEO, Cambiando Vidas LR S.A.S.</h3>
-                    <p class="text-sm" data-translate="exp2Duration"><em>Julio 2023 – Hoy | San Antonio del Tequendama, CO</em></p>
-                    <div class="alliance-logos">
-                        <img src="./images/abilitytohelp.jpg" alt="Logo de ABILITYTOHELP">
-                        <img src="./images/fip.jpg" alt="Logo de FIP">
-                        <img src="./images/inclo.jpg" alt="Logo de Inclusión">
-                        <img src="./images/linkelink.png" alt="Logo de LinkedIn">
-                        <img src="./images/logo-mujeres-solidarias.png" alt="Logo Mujeres Solidarias">
-                    </div>
-                    <ul class="custom-list">
-                        <li data-translate="exp2Desc1">Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.</li>
-                        <li data-translate="exp2Desc2">Gestión e implementación de una alianza internacional con la organización ABILITYTOHELP, mediante la cual se logró la distribución de 15.000 becas de formación en inglés (niveles A1 a B1), así como becas para estudios técnicos en Conducta Humana Aplicada, beneficiando a jóvenes y adultos en condiciones de vulnerabilidad.</li>
-                        <li data-translate="exp2Desc3">Facilitación de procesos estratégicos para el posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo la visibilidad y el fortalecimiento de sus marcas en colaboración directa con la la Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, y la Agencia Mundial de Prensa.</li>
-                        <li data-translate="exp2Desc4">Desarrollo de programas de formación, capacitación e impulso emprendedor, dirigidos especialmente a mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar a través del trabajo en conjunto con la organización Mecedora de mis Ancestros.</li>
-                        <li data-translate="exp2Desc5">Coordinación de una red nacional de productores para optimizar la comercialización de sus productos, fortalecer sus emprendimientos y posicionar a los agricultores colombianos en mercados nacionales e internacionales.</li>
-                        <li data-translate="exp2Desc6">Promoción de iniciativas culturales innovadoras que integran el arte y la identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional por medio de una alianza cultural con el Maestro Siaucho.</li>
-                        <li data-translate="exp2Desc7">Liderazgo en Sembrando Semillas, un proyecto de Cambiando Vidas LR S.A.S que impactó a más de 1,500 clientes a través de la venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para fomentar el desarrollo sostenible del sector.</li>
-                        <li data-translate="exp2Desc8">Facilitamos el acceso a capacitaciones en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, captando recursos para el programa Colombia Mayor.</li>
-                        <li data-translate="exp2Desc9">Colaboro con la Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en la promoción y defensa de los derechos humanos a nivel nacional.</li>
-                        <li data-translate="exp2Desc10">Coordiné la capacitación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas a través de la Fundación FMEC.</li>
-                        <li data-translate="exp2Desc11">Organizo eventos en Bogotá, con la fundación PROASOCIADOS conectando a inversores internacionales con emprendedores nacionales, logrando que más de 200 emprendedores formalicen y escalen sus negocios.</li>
-                        <li data-translate="exp2Desc12">Conecté a estudiantes de territorios remotos con la Fundación TLS, facilitando su acceso a becas de la Georgia Tech International Corporation para su titulación universitaria.</li>
-                        <li data-translate="exp2Desc13">Brindamos capacitaciones a las personas con discapacidad, a través de la alianza con el movimiento latinoamericano de personas con discapacidad, para facilitar su integración a la sociedad.</li>
-                        <li data-translate="exp2Desc14">Capacito a víctimas del conflicto armado sobre sus derechos y brindándoles apoyo continuo.</li>
-                        <li data-translate="exp2Desc15">Coordiné la gestión y postulación de proyectos en Cundinamarca y Antioquía junto a Dismartek, cumpliendo con todos los requerimientos y plazos establecidos.</li>
-                        <li data-translate="exp2Desc16">Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.</li>
-                        <li data-translate="exp2Desc17">Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.</li>
-                        <li data-translate="exp2Desc18">Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.</li>
-                        <li data-translate="exp2Desc19">Apoyó a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
-                        <li data-translate="exp2Desc20">Apoyó en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
-                        <li data-translate="exp2Desc21">Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 data-translate="exp3Title">Relacionista comercial, ATSEI de Colombia.</h3>
-                    <p class="text-sm" data-translate="exp3Duration"><em>Febrero 2016 – Hoy | San Antonio del Tequendama, CO</em></p>
-                    <ul class="custom-list">
-                        <li data-translate="exp3Desc1">Impulsé la comercialización e implementación de paneles solares a nivel nacional, logrando su adopción exitosa en 5 ciudades.</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 data-translate="exp4Title">Fundadora, Construyendo Sonrisas.</h3>
-                    <p class="text-sm" data-translate="exp4Duration"><em>2012 – 2016 | Lima, PE</em></p>
-                    <ul class="custom-list">
-                        <li data-translate="exp4Desc1">Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
-                        <li data-translate="exp4Desc2">Colaboró con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
-                        <li data-translate="exp4Desc3">Organizó talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
-                        <li data-translate="exp4Desc4">Dirigí la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
-                        <li data-translate="exp4Desc5">Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="educacion">
-                <h2 class="section-header" data-translate="educationHeader">Educación Extendida</h2>
-                <ul class="custom-list">
-                    <li data-translate="edu1">Diplomado de derechos humanos con la Capellanía Armada Mundial de Paz de México.</li>
-                    <li data-translate="edu2">Técnico Agropecuario, instituto Tomás Moro.</li>
-                    <li data-translate="edu3">Diplomado en Inclusión.</li>
-                    <li data-translate="edu4">Derechos humanos, Escuela nacional de formación comunitaria.</li>
-                    <li data-translate="edu5">Diplomado en Círculo De Maestros Conocimientos Y Saberes De La Federación De Discapacidad Cuidadores De Colombia Y El Movimiento Guajira Disruptiva.</li>
-                </ul>
-            </section>
-
-            <section id="certificaciones">
-                <h2 class="section-header" data-translate="certificationsHeader">Certificaciones</h2>
-                <ul class="custom-list">
-                    <li data-translate="cert1">Alta Distinción «Honor, Dignidad y Gloria» Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.</li>
-                    <li data-translate="cert2">Doctor Honoris Causa en: Derechos Humanos.</li>
-                </ul>
-                <div class="certification-images">
-                    <img src="./images/certificado-cidhu.jpg" alt="Certificado CIDHU">
-                    <img src="./images/credencial-cidhu.jpg" alt="Credencial CIDHU">
-                    <img src="./images/1.jpg" alt="Certificado 1">
-                    <img src="./images/2.jpg" alt="Certificado 2">
-                    <img src="./images/3.jpg" alt="Certificado 3">
-                    <img src="./images/4.jpg" alt="Certificado 4">
-                    <img src="./images/4-1.jpg" alt="Certificado 4-1">
-                    <img src="./images/5.jpg" alt="Certificado 5">
-                    <img src="./images/6.jpg" alt="Certificado 6">
-                    <img src="./images/7.jpg" alt="Certificado 7">
-                    <img src="./images/8.jpg" alt="Certificado 8">
-                    <img src="./images/9.jpg" alt="Certificado 9">
-                </div>
-            </section>
-
-            <section id="contacto">
-                <h2 class="section-header" data-translate="contactHeader">Contáctame</h2>
-                <p data-translate="contactIntro">Estoy abierta a nuevas oportunidades y colaboraciones. No dudes en enviarme un mensaje.</p>
-
-                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-md font-medium mb-1" data-translate="formNameLabel">Nombre Completo</label>
-                        <input type="text" id="name" name="name" placeholder="Tu nombre" required class="w-full" data-translate-placeholder="formNamePlaceholder">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-md font-medium mb-1" data-translate="formEmailLabel">Correo Electrónico</label>
-                        <input type="email" id="email" name="_replyto" placeholder="tu.email@ejemplo.com" required class="w-full" data-translate-placeholder="formEmailPlaceholder">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-md font-medium mb-1" data-translate="formMessageLabel">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tu mensaje aquí..." required class="w-full" data-translate-placeholder="formMessagePlaceholder"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" class="w-full" data-translate="formSubmitButton">
-                            Enviar Mensaje
-                        </button>
-                    </div>
-                </form>
-
-                <p class="text-xl font-semibold mt-8 text-center" data-translate="orContactDirectly">O contáctame directamente:</p>
-                <ul class="list-none flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 text-lg contact-links">
-                    <li><a href="mailto:liliromo56@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 inline-block" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>liliromo56@gmail.com</a></li>
-                    <li><a href="tel:+573145092255"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 inline-block" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 1.956A4 4 0 018.82 7.93l-1.8 1.8a12.86 12.86 0 005.171 5.171l1.8-1.8a4 4 0 012.146.955l1.956.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.163 18 2 12.837 2 6V3z"/></svg>+57 314 5092255</a></li>
-                    <li><a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank" rel="noopener noreferrer" data-translate="linkedinProfile">Perfil de LinkedIn</a></li>
-                </ul>
-            </section>
-
-        </main>
-
-        <footer>
-            <p data-translate="footerText">&copy; 2025 Martha Liliana Rodríguez Romo. Todos los derechos reservados.</p>
-        </footer>
-
+    <div class="lang-buttons" aria-label="Language selection">
+        <button class="lang-button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang-button" data-lang="es" aria-pressed="false">ES</button>
+        <button class="lang-button" data-lang="en" aria-pressed="false">EN</button>
     </div>
 
-    <a href="https://wa.me/573145092255" target="_blank" class="whatsapp-button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.911C.151 6.57 6.009.055 13.34 0c7.33 0 13.187 6.516 13.187 14.577 0 8.062-5.857 14.577-13.188 14.577-2.34 0-4.66-.745-6.61-2.14L.057 24zm6.865-3.076l-.413-.245c-1.39-2.028-2.12-4.417-2.12-6.932 0-5.727 4.14-10.371 9.243-10.371 2.536 0 4.939 1.05 6.747 2.923 1.81 1.873 2.763 4.388 2.763 7.025 0 5.727-4.14 10.371-9.243 10.371-1.954 0-3.905-.674-5.59-1.97l-.37-.218-3.868 1.029 1.04-3.715zm9.57-2.078c-.292-.146-1.72-.845-1.996-.94s-.478-.146-.68.146c-.2-.2-1.223-.51-2.347-.999-1.124-.49-1.834-.82-2.329-1.022-.49-.203-.94-.15-.65.145.29.292.845 1.022.94 1.223.097.2.193.22.357.073.16-.145.548-.202 1.084-.23.535-.027 1.156-.005 1.764.195.608.2.98.49 1.18.82.2.33.22.583.15 1.08-.07.498-.61 1.223-1.084 1.798-.476.574-.972.94-1.353 1.18-.38.242-.71.37-1.35.146s-2.34-.867-3.237-1.464c-.895-.597-1.488-1.332-1.996-2.078-.506-.745-.05-1.15.35-1.55l.292-.29c.175-.175.292-.292.438-.366.146-.074.292-.047.438.074.146.12.29.29.438.438.146.146.242.175.438.292.196.116.29.073.2-.05-.097-.175-.39-.94-.535-1.286-.146-.34-.1-.292-.2-.584.097-.29.438-.61.63-.845.195-.235.29-.49.39-.73.097-.24.047-.45-.047-.68-.098-.23-.65-.583-.895-.82-.245-.235-.413-.2-.59-.2-.174 0-.39.027-.59.027-.206 0-.34-.028-.535-.146-.195-.12-.74-.61-1.022-.895-.285-.29-.24-.2-.535-.2-.292 0-.63.028-.97.028-.34 0-.895-.12-1.35-.437-.45-.316-1.588-1.545-1.588-3.957 0-2.41 1.72-3.663 3.44-3.663 1.723 0 3.197 1.296 3.197 3.238 0 .235-.027.47-.05.65-.028.174-.05.29-.08.438-.027.146-.05.2-.02.34.02.145.39.29.63.438.235.146.49.2.82.2.33 0 2.238-.867 2.922-1.464.685-.597 1.022-1.15 1.12-1.33.098-.174.195-.174.292-.174.097 0 .61-.027 1.04-.027.43-.002 1.12.146 1.63.413.51.27 1.22.845 1.41 1.18.19.33.29.583.193.998-.097.414-.74 1.24-.97 1.417-.236.175-.49.29-.73.437-.245.146-.478.2-.71.27-.235.074-.34.12-.2.34.14.22.61.94.895 1.286.285.34.478.438.82.68.34.24.63.438.895.584.262.146.437.262.63.34.19.073.35.1.535.1.2.02.583.02 1.06-.026.47-.053 1.22-.49 1.396-.94.174-.45.285-.71.43-.895.145-.196.262-.24.47-.2.2.04.476.236.71.413.235.174.39.366.535.59.146.223.23.49.17.71-.05.22-.39.63-.535.797-.146.175-.29.23-.43.345-.14.115-.285.2-.285.39.0.19.29.477.43.68.14.19.23.33.3.48.07.145.1.2.02.34-.07.146-.61.71-1.22 1.306-.61.596-1.223 1.084-1.307 1.157-.08.073-.2.12-.32.097z"/>
-        </svg>
-    </a>
+    <header>
+        <h1 id="docTitle" data-translate="aboutMeHeader">Résumé Professionnel</h1>
+    </header>
+
+    <main>
+        <section id="about-me">
+            <p data-translate="aboutMeContent">
+                Je suis une spécialiste en relations publiques axée sur l'aide sociale en Colombie. J'ai fondé Cambiando Vidas LR SAS, menant des initiatives pour soutenir les personnes âgées vulnérables et les femmes autonomes. J'ai travaillé sur des projets de droits humains, de conservation de l'environnement et de soutien aux animaux vulnérables. Avec une expérience en orchidologie et en commercialisation de panneaux solaires, je suis engagée dans le développement social et la durabilité.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2 data-translate="skillsHeader">Compétences Clés</h2>
+            <ul>
+                <li data-translate="skill1">Communication efficace</li>
+                <li data-translate="skill2">Travail d'équipe</li>
+                <li data-translate="skill3">Empathie</li>
+                <li data-translate="skill4">Leadership</li>
+                <li data-translate="skill5">Coordination de projets</li>
+                <li data-translate="skill6">Gestion des ressources</li>
+                <li data-translate="skill7">Travail avec les communautés vulnérables</li>
+                <li data-translate="skill8">Conservation environnementale</li>
+                <li data-translate="skill9">Organisation d'événements</li>
+                <li data-translate="skill10">Adaptable</li>
+                <li data-translate="skill11">Orientée résultats</li>
+                <li data-translate="skill12">Empirique</li>
+                <li data-translate="skill13">Relations publiques</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2 data-translate="experienceHeader">Expérience Professionnelle</h2>
+
+            <article>
+                <h3 data-translate="exp1Title">Secrétaire Diplomatique, Mission Droits de l'Homme (Colombie – Europe)</h3>
+                <p data-translate="exp1Duration">Juillet 2023 – Présent</p>
+                <ul>
+                    <li data-translate="exp1Desc1">Exercice de fonctions diplomatiques de haut niveau en tant que représentante institutionnelle de Mission Droits de l'Homme en Colombie, articulant les efforts nationaux et internationaux en faveur de la protection et de la promotion des droits humains.</li>
+                    <li data-translate="exp1Desc2">Leadership dans la formulation et la validation des Statuts de l'organisation, établissant les principes de gouvernance, de contrôle stratégique et de responsabilité institutionnelle.</li>
+                    <li data-translate="exp1Desc3">Coordination du plaidoyer diplomatique et politique auprès des systèmes internationaux des droits humains, incluant la participation aux forums multilatéraux et la rédaction de rapports et communications officiels.</li>
+                    <li data-translate="exp1Desc4">Supervision de la gestion nationale, assurant l'alignement stratégique avec la mission institutionnelle et promouvant la transparence, l'intégrité et l'articulation efficace des organes directeurs.</li>
+                    <li data-translate="exp1Desc5">Facilitation des relations avec les organisations multilatérales, les partenaires et les alliés stratégiques pour la projection internationale de l'organisation et la consolidation de sa structure opérationnelle.</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3 data-translate="exp2Title">PDG, Cambiando Vidas LR S.A.S.</h3>
+                <p data-translate="exp2Duration">Juillet 2023 – Présent | San Antonio del Tequendama, CO</p>
+                <ul>
+                    <li data-translate="exp2Desc1">Nommée Docteur Honoris Causa en Droits de l'Homme lors du Premier Sommet International de l'Ordre des Avocats Colombiens (juin 2025, Carthagène), en reconnaissance de sa trajectoire en leadership social, promotion des droits et contributions au renforcement de la justice et du plaidoyer à l'échelle internationale.</li>
+                    <li data-translate="exp2Desc2">Gestion et mise en œuvre d'une alliance internationale avec l'organisation ABILITYTOHELP, permettant la distribution de 15 000 bourses de formation en anglais (niveaux A1 à B1), ainsi que des bourses pour des études techniques en Comportement Humain Appliqué, bénéficiant aux jeunes et aux adultes en situation de vulnérabilité.</li>
+                    <li data-translate="exp2Desc3">Facilitation des processus stratégiques pour le positionnement des entreprises, organisations et individus sur les marchés nationaux et internationaux, promouvant la visibilité et le renforcement de leurs marques en collaboration directe avec Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, et l'Agence Mondiale de Presse.</li>
+                    <li data-translate="exp2Desc4">Développement de programmes de formation, de renforcement des capacités et de soutien à l'entrepreneuriat, spécialement destinés aux femmes afro-descendantes et autochtones, avec un impact direct sur plus de 800 familles dans le département de Cesar grâce à une collaboration avec l'organisation Mecedora de mis Ancestros.</li>
+                    <li data-translate="exp2Desc5">Coordination d'un réseau national de producteurs pour optimiser la commercialisation de leurs produits, renforcer leurs entreprises et positionner les agriculteurs colombiens sur les marchés nationaux et internationaux.</li>
+                    <li data-translate="exp2Desc6">Promotion d'initiatives culturelles innovantes qui intègrent l'art et l'identité locale, générant un impact sur les communautés participantes et renforçant leur connexion avec la culture nationale par le biais d'une alliance culturelle avec Maestro Siaucho.</li>
+                    <li data-translate="exp2Desc7">Leadership dans Sembrando Semillas, un projet de Cambiando Vidas LR S.A.S ayant impacté plus de 1 500 clients par la vente de graines d'orchidées, formalisant plus de 300 pépinières et travaillant directement avec 400 agriculteurs pour favoriser le développement durable du secteur.</li>
+                    <li data-translate="exp2Desc8">Nous facilitons l'accès à des formations sur les droits de l'homme, l'alphabétisation et des événements gratuits pour les personnes âgées vulnérables, en collectant des fonds pour le programme Colombia Mayor.</li>
+                    <li data-translate="exp2Desc9">Je collabore avec le Veeduría por una Colombia Honesta aux côtés de Leonardo Bernal Caballero, travaillant à la promotion et à la défense des droits de l'homme au niveau national.</li>
+                    <li data-translate="exp2Desc10">J'ai coordonné la formation et le suivi de plus de 200 femmes à Magdalena et Cundinamarca, les autonomisant grâce à la Fondation FMEC.</li>
+                    <li data-translate="exp2Desc11">J'organise des événements à Bogotá, avec la fondation PROASOCIADOS, connectant des investisseurs internationaux avec des entrepreneurs nationaux, permettant à plus de 200 entrepreneurs de formaliser et de développer leurs activités.</li>
+                    <li data-translate="exp2Desc12">J'ai connecté des étudiants de territoires reculés avec la Fondation TLS, facilitant leur accès aux bourses de la Georgia Tech International Corporation pour leur diplôme universitaire.</li>
+                    <li data-translate="exp2Desc13">Nous proposons des formations aux personnes handicapées, par le biais de l'alliance avec le mouvement latino-américain des personnes handicapées, pour faciliter leur intégration dans la société.</li>
+                    <li data-translate="exp2Desc14">Je forme les victimes du conflit armé sur leurs droits et leur apporte un soutien continu.</li>
+                    <li data-translate="exp2Desc15">J'ai coordonné la gestion et la candidature de projets à Cundinamarca et Antioquia avec Dismartek, respectant toutes les exigences et les délais.</li>
+                    <li data-translate="exp2Desc16">Je fais partie du Gran Red de Antioquia via AppAntioquia, et je collabore avec l'Association Populaire et la Table des Médias Départementale. Contribuant à la Fédération Antioquienne des Arts et à l'Association Artistes Unis (NIT 90027942-5), unis à l'Industrie Créative Nationale dirigée conjointement par James Arboleda et moi-même.</li>
+                    <li data-translate="exp2Desc17">Je soutiens la protection des animaux en état de vulnérabilité à Cundinamarca, finançant des initiatives sociales par l'intermédiaire d'Inverfina SAC, une entreprise de construction péruvienne, depuis 10 ans.</li>
+                    <li data-translate="exp2Desc18">J'ai contribué à la conservation de l'environnement en Colombie, au Pérou et en Équateur, menant des expéditions en Amazonie pour identifier et préserver les espèces endémiques pendant 8 ans. J'ai réussi à créer de nouvelles hybridations qui renforcent la biodiversité et soutiennent les efforts de conservation.</li>
+                    <li data-translate="exp2Desc19">Soutien à la communauté de Nueva Jerusalen à Ibagué, en collaboration avec Mme Flora Imelda Perez, Présidente du conseil d'action communautaire.</li>
+                    <li data-translate="exp2Desc20">Soutien aux personnes handicapées sur le territoire colombien, en collaboration avec l'organisation FEDISCOL.</li>
+                    <li data-translate="exp2Desc21">J'ai travaillé main dans la main avec la fédération nationale des déplacés pour la défense des droits de l'homme, ANDEDH.</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3 data-translate="exp3Title">Spécialiste en Relations Commerciales, ATSEI de Colombie.</h3>
+                <p data-translate="exp3Duration">Février 2016 – Présent | San Antonio del Tequendama, CO</p>
+                <ul>
+                    <li data-translate="exp3Desc1">J'ai promu la commercialisation et la mise en œuvre de panneaux solaires à l'échelle nationale, réussissant leur adoption dans 5 villes.</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3 data-translate="exp4Title">Fondatrice, Construyendo Sonrisas.</h3>
+                <p data-translate="exp4Duration">2012 – 2016 | Lima, PE</p>
+                <ul>
+                    <li data-translate="exp4Desc1">J'ai commencé il y a 12 ans dans le quartier défavorisé de Pachacutec à Lima, au Pérou, en apportant un soutien aux enfants et aux animaux des rues par le biais du projet "Construyendo Sonrisas".</li>
+                    <li data-translate="exp4Desc2">J'ai collaboré avec des artistes des beaux-arts à Lima, stimulant l'économie locale par la promotion et la commercialisation de leurs œuvres.</li>
+                    <li data-translate="exp4Desc3">J'ai organisé des ateliers de recyclage de bois provenant de maisons démolies, axés sur la réhabilitation environnementale et le soutien de 10 jeunes ayant des problèmes de toxicomanie.</li>
+                    <li data-translate="exp4Desc4">J'ai dirigé la galerie "Suma_rte" au Pérou, soulignant l'importance des huacas et autres espaces traditionnels à travers des peintures rupestres et des pierres semi-précieuses.</li>
+                    <li data-translate="exp4Desc5">J'ai réussi à soutenir plus de 70 animaux sans abri par le passé et je m'occupe actuellement de 18 chiens, en leur offrant des soins vétérinaires, de la nourriture et un foyer sûr.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="education">
+            <h2 data-translate="educationHeader">Éducation Approfondie</h2>
+            <ul>
+                <li data-translate="edu1">Diplôme en droits de l'homme avec la Chapellenie Armée Mondiale de la Paix du Mexique.</li>
+                <li data-translate="edu2">Technicien agricole, Institut Tomás Moro.</li>
+                <li data-translate="edu3">Diplôme en Inclusion.</li>
+                <li data-translate="edu4">Droits de l'homme, École nationale de formation communautaire.</li>
+                <li data-translate="edu5">Diplôme en Cercle des Maîtres Connaissances et Savoirs de la Fédération Colombienne des Soignants Handicapés et du Mouvement Guajira Disruptiva.</li>
+            </ul>
+        </section>
+
+        <section id="certifications">
+            <h2 data-translate="certificationsHeader">Certifications</h2>
+            <ul>
+                <li data-translate="cert1">Haute Distinction «Honneur, Dignité et Gloire» Adolfo Pérez Esquivel 2024 en Commémoration de la Journée Universelle des Droits de l'Homme.</li>
+                <li data-translate="cert2">Docteur Honoris Causa en : Droits de l'Homme.</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2 data-translate="contactHeader">Contactez-moi</h2>
+            <p data-translate="contactIntro">Je suis ouverte à de nouvelles opportunités et collaborations. N'hésitez pas à m'envoyer un message.</p>
+            <form id="contact-form">
+                <label for="name" data-translate="formNameLabel">Nom Complet</label>
+                <input type="text" id="name" name="name" placeholder="" data-translate-placeholder="formNamePlaceholder" required>
+
+                <label for="email" data-translate="formEmailLabel">Adresse e-mail</label>
+                <input type="email" id="email" name="email" placeholder="" data-translate-placeholder="formEmailPlaceholder" required>
+
+                <label for="message" data-translate="formMessageLabel">Message</label>
+                <textarea id="message" name="message" placeholder="" data-translate-placeholder="formMessagePlaceholder" required></textarea>
+
+                <button type="submit" data-translate="formSubmitButton">Envoyer Message</button>
+            </form>
+            <p data-translate="orContactDirectly">Ou contactez-moi directement :</p>
+            <p>Email: example@example.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p data-translate="footerText">&copy; 2025 Martha Liliana Rodríguez Romo. Tous droits réservés.</p>
+    </footer>
 
     <script>
-        // Objeto de traducciones
+        // Traducciones para los textos
         const translations = {
-            es: {
-                docTitle: "CV Martha Liliana Rodríguez Romo - Relacionista Pública",
-                profileTitle: "Relacionista Pública",
-                locationPrefix: "📍",
-                emailPrefix: "✉️",
-                phonePrefix: "📞",
-                linkedinProfile: "Perfil de LinkedIn",
-                navAboutMe: "Sobre Mí",
-                navSkills: "Habilidades",
-                navExperience: "Experiencia",
-                navEducation: "Educación",
-                navCertifications: "Certificaciones",
-                navContact: "Contacto",
-                aboutMeHeader: "Resumen Profesional",
-                aboutMeContent: "Soy una Relacionista Pública enfocada en ayuda social en Colombia. Fundé Cambiando Vidas LR SAS, liderando iniciativas para apoyar a adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de derechos humanos, conservación ambiental, y apoyo a animales en estado de vulnerabilidad. Con experiencia en orquídeologia y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.",
-                skillsHeader: "Habilidades Clave",
-                skill1: "Comunicación efectiva",
-                skill2: "Trabajo en equipo",
-                skill3: "Empatía",
-                skill4: "Liderazgo",
-                skill5: "Coordinación de proyectos",
-                skill6: "Gestión de recursos",
-                skill7: "Trabajo con comunidades vulnerables",
-                skill8: "Conservación ambiental",
-                skill9: "Organización de eventos",
-                skill10: "Adaptable",
-                skill11: "Orientada a resultados",
-                skill12: "Empírica",
-                skill13: "Relaciones públicas",
-                experienceHeader: "Experiencia Profesional",
-                exp1Title: "Secretaria Diplomática, Mission Human Rights (Colombia – Europa)",
-                exp1Duration: "Julio 2023 – Hoy",
-                exp1Desc1: "Ejercicio de funciones diplomáticas de alto nivel como representante institucional de Mission Human Rights en Colombia, articulando esfuerzos nacionales e internacionales en favor de la protección y promoción de los derechos humanos.",
-                exp1Desc2: "Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.",
-                exp1Desc3: "Coordinación de la incidencia diplomática y política ante sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.",
-                exp1Desc4: "Supervisión de la gestión nacional, velando por la alineación estratégica con la misión institucional y promoviendo la transparencia, la integridad y la articulación efectiva de los órganos directivos.",
-                exp1Desc5: "Facilitación de relaciones con organismos multilaterales, cooperantes y aliados estratégicos para la proyección internacional de la organización y la consolidación de su estructura operativa.",
-                exp2Title: "CEO, Cambiando Vidas LR S.A.S.",
-                exp2Duration: "Julio 2023 – Hoy | San Antonio del Tequendama, CO",
-                exp2Desc1: "Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.",
-                exp2Desc2: "Gestión e implementación de una alianza internacional con la organización ABILITYTOHELP, mediante la cual se logró la distribución de 15.000 becas de formación en inglés (niveles A1 a B1), así como becas para estudios técnicos en Conducta Humana Aplicada, beneficiando a jóvenes y adultos en condiciones de vulnerabilidad.",
-                exp2Desc3: "Facilitación de procesos estratégicos para el posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo la visibilidad y el fortalecimiento de sus marcas en colaboración directa con la con Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, y la Agencia Mundial de Prensa.",
-                exp2Desc4: "Desarrollo de programas de formación, capacitación e impulso emprendedor, dirigidos especialmente a mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar a través del trabajo en conjunto con la organización Mecedora de mis Ancestros.",
-                exp2Desc5: "Coordinación de una red nacional de productores para optimizar la comercialización de sus productos, fortalecer sus emprendimientos y posicionar a los agricultores colombianos en mercados nacionales e internacionales.",
-                exp2Desc6: "Promoción de iniciativas culturales innovadoras que integran el arte y la identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional por medio de una alianza cultural con el Maestro Siaucho.",
-                exp2Desc7: "Liderazgo en Sembrando Semillas, un proyecto de Cambiando Vidas LR S.A.S que impactó a más de 1,500 clientes a través de la venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para fomentar el desarrollo sostenible del sector.",
-                exp2Desc8: "Facilitamos el acceso a capacitaciones en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, captando recursos para el programa Colombia Mayor.",
-                exp2Desc9: "Colaboro con la Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en la promoción y defensa de los derechos humanos a nivel nacional.",
-                exp2Desc10: "Coordiné la capacitación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas a través de la Fundación FMEC.",
-                exp2Desc11: "Organizo eventos en Bogotá, con la fundación PROASOCIADOS conectando a inversores internacionales con emprendedores nacionales, logrando que más de 200 emprendedores formalicen y escalen sus negocios.",
-                exp2Desc12: "Conecté a estudiantes de territorios remotos con la Fundación TLS, facilitando su acceso a becas de la Georgia Tech International Corporation para su titulación universitaria.",
-                exp2Desc13: "Brindamos capacitaciones a las personas con discapacidad, a través de la alianza con el movimiento latinoamericano de personas con discapacidad, para facilitar su integración a la sociedad.",
-                exp2Desc14: "Capacito a víctimas del conflicto armado sobre sus derechos y brindándoles apoyo continuo.",
-                exp2Desc15: "Coordiné la gestión y postulación de proyectos en Cundinamarca y Antioquía junto a Dismartek, cumpliendo con todos los requerimientos y plazos establecidos.",
-                exp2Desc16: "Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.",
-                exp2Desc17: "Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.",
-                exp2Desc18: "Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.",
-                exp2Desc19: "Apoyó a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.",
-                exp2Desc20: "Apoyó en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.",
-                exp2Desc21: "Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.",
-                exp3Title: "Relacionista comercial, ATSEI de Colombia.",
-                exp3Duration: "Febrero 2016 – Hoy | San Antonio del Tequendama, CO",
-                exp3Desc1: "Impulsé la comercialización e implementación de paneles solares a nivel nacional, logrando su adopción exitosa en 5 ciudades.",
-                exp4Title: "Fundadora, Construyendo Sonrisas.",
-                exp4Duration: "2012 – 2016 | Lima, PE",
-                exp4Desc1: "Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto \"Construyendo Sonrisas\".",
-                exp4Desc2: "Colaboró con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.",
-                exp4Desc3: "Organizó talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.",
-                exp4Desc4: "Dirigí la galería \"Suma_rte\" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.",
-                exp4Desc5: "Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.",
-                educationHeader: "Educación Extendida",
-                edu1: "Diplomado de derechos humanos con la Capellanía Armada Mundial de Paz de México.",
-                edu2: "Técnico Agropecuario, instituto Tomás Moro.",
-                edu3: "Diplomado en Inclusión.",
-                edu4: "Derechos humanos, Escuela nacional de formación comunitaria.",
-                edu5: "Diplomado en Círculo De Maestros Conocimientos Y Saberes De La Federación De Discapacidad Cuidadores De Colombia Y El Movimiento Guajira Disruptiva.",
-                certificationsHeader: "Certificaciones",
-                cert1: "Alta Distinción «Honor, Dignidad y Gloria» Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.",
-                cert2: "Doctor Honoris Causa en: Derechos Humanos.",
-                contactHeader: "Contáctame",
-                contactIntro: "Estoy abierta a nuevas oportunidades y colaboraciones. No dudes en enviarme un mensaje.",
-                formNameLabel: "Nombre Completo",
-                formNamePlaceholder: "Tu nombre",
-                formEmailLabel: "Correo Electrónico",
-                formEmailPlaceholder: "tu.email@ejemplo.com",
-                formMessageLabel: "Mensaje",
-                formMessagePlaceholder: "Tu mensaje aquí...",
-                formSubmitButton: "Enviar Mensaje",
-                orContactDirectly: "O contáctame directamente:",
-                footerText: "&copy; 2025 Martha Liliana Rodríguez Romo. Todos los derechos reservados."
-            },
-            en: {
-                docTitle: "CV Martha Liliana Rodríguez Romo - Public Relations Specialist",
-                profileTitle: "Public Relations Specialist",
-                locationPrefix: "📍",
-                emailPrefix: "✉️",
-                phonePrefix: "📞",
-                linkedinProfile: "LinkedIn Profile",
-                navAboutMe: "About Me",
-                navSkills: "Skills",
-                navExperience: "Experience",
-                navEducation: "Education",
-                navCertifications: "Certifications",
-                navContact: "Contact",
-                aboutMeHeader: "Professional Summary",
-                aboutMeContent: "I am a Public Relations Specialist focused on social aid in Colombia. I founded Cambiando Vidas LR SAS, leading initiatives to support vulnerable seniors and empowered women. I have worked on human rights projects, environmental conservation, and support for vulnerable animals. With experience in orchidology and solar panel commercialization, committed to social development and sustainability.",
-                skillsHeader: "Key Skills",
-                skill1: "Effective communication",
-                skill2: "Teamwork",
-                skill3: "Empathy",
-                skill4: "Leadership",
-                skill5: "Project coordination",
-                skill6: "Resource management",
-                skill7: "Work with vulnerable communities",
-                skill8: "Environmental conservation",
-                skill9: "Event organization",
-                skill10: "Adaptable",
-                skill11: "Results-oriented",
-                skill12: "Empirical",
-                skill13: "Public relations",
-                experienceHeader: "Professional Experience",
-                exp1Title: "Diplomatic Secretary, Mission Human Rights (Colombia – Europe)",
-                exp1Duration: "July 2023 – Present",
-                exp1Desc1: "Exercising high-level diplomatic functions as institutional representative of Mission Human Rights in Colombia, articulating national and international efforts in favor of the protection and promotion of human rights.",
-                exp1Desc2: "Leadership in the formulation and validation of the organization's Statutes, establishing principles of governance, strategic control, and institutional responsibility.",
-                exp1Desc3: "Coordination of diplomatic and political advocacy before international human rights systems, including participation in multilateral forums and drafting official reports and communications.",
-                exp1Desc4: "Supervision of national management, ensuring strategic alignment with the institutional mission and promoting transparency, integrity, and effective articulation of governing bodies.",
-                exp1Desc5: "Facilitation of relationships with multilateral organizations, partners, and strategic allies for the international projection of the organization and the consolidation of its operational structure.",
-                exp2Title: "CEO, Cambiando Vidas LR S.A.S.",
-                exp2Duration: "July 2023 – Present | San Antonio del Tequendama, CO",
-                exp2Desc1: "Appointed Doctor Honoris Causa in Human Rights during the First International Summit of the Colombian Bar Association (June 2025, Cartagena), in recognition of her trajectory in social leadership, rights promotion, and contributions to strengthening justice and advocacy internationally.",
-                exp2Desc2: "Management and implementation of an international alliance with the ABILITYTOHELP organization, through which the distribution of 15,000 English training scholarships (A1 to B1 levels) was achieved, as well as scholarships for technical studies in Applied Human Behavior, benefiting young people and adults in vulnerable conditions.",
-                exp2Desc3: "Facilitation of strategic processes for the positioning of companies, organizations, and individuals in national and international markets, promoting the visibility and strengthening of their brands in direct collaboration with Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, and the World Press Agency.",
-                exp2Desc4: "Development of training, capacity building, and entrepreneurial support programs, especially aimed at Afro-descendant and indigenous women, with direct impact on over 800 families in the Cesar department through joint work with the Mecedora de mis Ancestros organization.",
-                exp2Desc5: "Coordination of a national network of producers to optimize the commercialization of their products, strengthen their ventures, and position Colombian farmers in national and international markets.",
-                exp2Desc6: "Promotion of innovative cultural initiatives that integrate art and local identity, generating impact on participating communities and strengthening their connection with national culture through a cultural alliance with Maestro Siaucho.",
-                exp2Desc7: "Leadership in Sembrando Semillas, a Cambiando Vidas LR S.A.S project that impacted over 1,500 clients through the sale of orchid seeds, formalizing over 300 nurseries and working directly with 400 farmers to foster sustainable sector development.",
-                exp2Desc8: "We facilitate access to human rights training, literacy, and free events for vulnerable seniors, raising funds for the Colombia Mayor program.",
-                exp2Desc9: "I collaborate with the Veeduría por una Colombia Honesta alongside Leonardo Bernal Caballero, working on the promotion and defense of human rights at the national level.",
-                exp2Desc10: "I coordinated the training and monitoring of over 200 women in Magdalena and Cundinamarca, empowering them through the FMEC Foundation.",
-                exp2Desc11: "I organize events in Bogotá, with the PROASOCIADOS foundation connecting international investors with national entrepreneurs, enabling over 200 entrepreneurs to formalize and scale their businesses.",
-                exp2Desc12: "I connected students from remote territories with the TLS Foundation, facilitating their access to Georgia Tech International Corporation scholarships for their university degrees.",
-                exp2Desc13: "We provide training to people with disabilities, through the alliance with the Latin American movement of people with disabilities, to facilitate their integration into society.",
-                exp2Desc14: "I train victims of armed conflict about their rights and provide ongoing support.",
-                exp2Desc15: "I coordinated the management and application of projects in Cundinamarca and Antioquia with Dismartek, meeting all requirements and deadlines.",
-                exp2Desc16: "I am part of the Gran Red de Antioquia through AppAntioquia, and I collaborate with the Popular Association and the Departmental Media Table. Contributing to the Antioquian Federation of Arts and the United Artists Association (NIT 90027942-5), united with the National Creative Industry led jointly by James Arboleda and myself.",
-                exp2Desc17: "I support the protection of vulnerable animals in Cundinamarca, financing social initiatives through Inverfina SAC, a Peruvian construction company, for the last 10 years.",
-                exp2Desc18: "I contributed to environmental conservation in Colombia, Peru, and Ecuador, leading Amazon expeditions to identify and preserve endemic species for 8 years. I managed to create new hybridizations that strengthen biodiversity and support conservation efforts.",
-                exp2Desc19: "Supported the community of Nueva Jerusalen in Ibagué together with Ms. Flora Imelda Perez, President of the community action board.",
-                exp2Desc20: "Supported people with disabilities in Colombian territory together with the FEDISCOL organization.",
-                exp2Desc21: "I worked hand in hand with the national federation of displaced persons in defense of human rights, ANDEDH.",
-                exp3Title: "Commercial Relations Specialist, ATSEI de Colombia.",
-                exp3Duration: "February 2016 – Present | San Antonio del Tequendama, CO",
-                exp3Desc1: "I promoted the commercialization and implementation of solar panels nationwide, achieving successful adoption in 5 cities.",
-                exp4Title: "Founder, Construyendo Sonrisas.",
-                exp4Duration: "2012 – 2016 | Lima, PE",
-                exp4Desc1: "I started 12 years ago in the Pachacutec human settlement in Lima, Peru, providing support to street children and animals through the \"Construyendo Sonrisas\" project.",
-                exp4Desc2: "I collaborated with fine arts artists in Lima, boosting the local economy by promoting and marketing their works.",
-                exp4Desc3: "I organized recycling workshops for wood from demolished houses, focused on environmental rehabilitation and supporting 10 young people with drug addiction problems.",
-                exp4Desc4: "I directed the \"Suma_rte\" gallery in Peru, highlighting the importance of huacas and other traditional spaces through rock paintings and semi-precious stones.",
-                exp4Desc5: "I managed to support over 70 homeless animals in the past and currently care for 18 dogs, providing them with medical attention, food, and a safe home.",
-                educationHeader: "Extended Education",
-                edu1: "Diploma in Human Rights with the World Peace Chaplaincy of Mexico.",
-                edu2: "Agricultural Technician, Tomás Moro Institute.",
-                edu3: "Diploma in Inclusion.",
-                edu4: "Human Rights, National Community Training School.",
-                edu5: "Diploma in Circle of Masters Knowledge and Wisdom of the Federation of Disability Caregivers of Colombia and the Guajira Disruptiva Movement.",
-                certificationsHeader: "Certifications",
-                cert1: "High Distinction \"Honor, Dignity and Glory\" Adolfo Pérez Esquivel 2024 in Commemoration of Universal Human Rights Day.",
-                cert2: "Doctor Honoris Causa in: Human Rights.",
-                contactHeader: "Contact Me",
-                contactIntro: "I am open to new opportunities and collaborations. Feel free to send me a message.",
-                formNameLabel: "Full Name",
-                formNamePlaceholder: "Your name",
-                formEmailLabel: "Email Address",
-                formEmailPlaceholder: "your.email@example.com",
-                formMessageLabel: "Message",
-                formMessagePlaceholder: "Your message here...",
-                formSubmitButton: "Send Message",
-                orContactDirectly: "Or contact me directly:",
-                footerText: "&copy; 2025 Martha Liliana Rodríguez Romo. All rights reserved."
-            },
             fr: {
-                docTitle: "CV Martha Liliana Rodríguez Romo - Spécialiste en Relations Publiques",
-                profileTitle: "Spécialiste en Relations Publiques",
-                locationPrefix: "📍",
-                emailPrefix: "✉️",
-                phonePrefix: "📞",
-                linkedinProfile: "Profil LinkedIn",
-                navAboutMe: "À Propos",
-                navSkills: "Compétences",
-                navExperience: "Expérience",
-                navEducation: "Éducation",
+                docTitle: "Résumé Professionnel",
                 navCertifications: "Certifications",
                 navContact: "Contact",
                 aboutMeHeader: "Résumé Professionnel",
@@ -513,75 +386,234 @@
                 contactHeader: "Contactez-moi",
                 contactIntro: "Je suis ouverte à de nouvelles opportunités et collaborations. N'hésitez pas à m'envoyer un message.",
                 formNameLabel: "Nom Complet",
-                formNamePlaceholder: "Votre nom",
+                formNamePlaceholder: "Entrez votre nom complet",
                 formEmailLabel: "Adresse e-mail",
-                formEmailPlaceholder: "votre.email@exemple.com",
+                formEmailPlaceholder: "Entrez votre adresse e-mail",
                 formMessageLabel: "Message",
-                formMessagePlaceholder: "Votre message ici...",
+                formMessagePlaceholder: "Écrivez votre message ici...",
                 formSubmitButton: "Envoyer Message",
                 orContactDirectly: "Ou contactez-moi directement :",
-                footerText: "&copy; 2025 Martha Liliana Rodríguez Romo. Tous droits réservés."
+                footerText: "© 2025 Martha Liliana Rodríguez Romo. Tous droits réservés."
+            },
+            es: {
+                docTitle: "Resumen Profesional",
+                navCertifications: "Certificaciones",
+                navContact: "Contacto",
+                aboutMeHeader: "Resumen Profesional",
+                aboutMeContent: "Soy especialista en relaciones públicas con enfoque en ayuda social en Colombia. Fundadora de Cambiando Vidas LR SAS, liderando iniciativas para apoyar adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de derechos humanos, conservación ambiental y apoyo a animales vulnerables. Con experiencia en orquideología y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.",
+                skillsHeader: "Habilidades Clave",
+                skill1: "Comunicación efectiva",
+                skill2: "Trabajo en equipo",
+                skill3: "Empatía",
+                skill4: "Liderazgo",
+                skill5: "Coordinación de proyectos",
+                skill6: "Gestión de recursos",
+                skill7: "Trabajo con comunidades vulnerables",
+                skill8: "Conservación ambiental",
+                skill9: "Organización de eventos",
+                skill10: "Adaptable",
+                skill11: "Orientada a resultados",
+                skill12: "Empírica",
+                skill13: "Relaciones públicas",
+                experienceHeader: "Experiencia Profesional",
+                exp1Title: "Secretaria Diplomática, Misión de Derechos Humanos (Colombia – Europa)",
+                exp1Duration: "Julio 2023 – Presente",
+                exp1Desc1: "Ejercicio de funciones diplomáticas de alto nivel como representante institucional de la Misión de Derechos Humanos en Colombia, articulando esfuerzos nacionales e internacionales para la protección y promoción de los derechos humanos.",
+                exp1Desc2: "Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.",
+                exp1Desc3: "Coordinación de la incidencia diplomática y política ante los sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.",
+                exp1Desc4: "Supervisión de la gestión nacional, asegurando alineación estratégica con la misión institucional y promoviendo la transparencia, integridad y articulación efectiva de los órganos directivos.",
+                exp1Desc5: "Facilitación de relaciones con organizaciones multilaterales, socios y aliados estratégicos para la proyección internacional de la organización y consolidación de su estructura operativa.",
+                exp2Title: "CEO, Cambiando Vidas LR S.A.S.",
+                exp2Duration: "Julio 2023 – Presente | San Antonio del Tequendama, CO",
+                exp2Desc1: "Nombrada Doctora Honoris Causa en Derechos Humanos en el Primer Congreso Internacional de la Orden de Abogados Colombianos (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la incidencia a nivel internacional.",
+                exp2Desc2: "Gestión e implementación de alianza internacional con la organización ABILITYTOHELP, permitiendo la entrega de 15,000 becas de inglés (niveles A1 a B1), así como becas técnicas en Comportamiento Humano Aplicado para jóvenes y adultos en situación de vulnerabilidad.",
+                exp2Desc3: "Facilitación de procesos estratégicos para posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo visibilidad y fortalecimiento de sus marcas en colaboración directa con Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ y Agencia Mundial de Prensa.",
+                exp2Desc4: "Desarrollo de programas de formación, fortalecimiento de capacidades y apoyo al emprendimiento, especialmente para mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar en alianza con la organización Mecedora de mis Ancestros.",
+                exp2Desc5: "Coordinación de red nacional de productores para optimizar comercialización, fortalecer empresas y posicionar a agricultores colombianos en mercados nacionales e internacionales.",
+                exp2Desc6: "Promoción de iniciativas culturales innovadoras que integran arte e identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional a través de alianza cultural con Maestro Siaucho.",
+                exp2Desc7: "Liderazgo en Sembrando Semillas, proyecto de Cambiando Vidas LR S.A.S que ha impactado más de 1,500 clientes con venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para promover desarrollo sostenible del sector.",
+                exp2Desc8: "Facilitamos acceso a formación en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, recolectando fondos para programa Colombia Mayor.",
+                exp2Desc9: "Colaboro con Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en promoción y defensa de derechos humanos a nivel nacional.",
+                exp2Desc10: "He coordinado formación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas con la Fundación FMEC.",
+                exp2Desc11: "Organizo eventos en Bogotá, con fundación PROASOCIADOS, conectando inversionistas internacionales con emprendedores nacionales, permitiendo formalización y crecimiento de más de 200 emprendedores.",
+                exp2Desc12: "He conectado estudiantes de territorios remotos con la Fundación TLS, facilitando acceso a becas de Georgia Tech International Corporation para titulación universitaria.",
+                exp2Desc13: "Ofrecemos formación para personas con discapacidad, mediante alianza con el movimiento latinoamericano de personas con discapacidad para facilitar integración social.",
+                exp2Desc14: "Formo víctimas del conflicto armado en sus derechos y brindo acompañamiento permanente.",
+                exp2Desc15: "He coordinado gestión y presentación de proyectos en Cundinamarca y Antioquia con Dismartek, cumpliendo todas las exigencias y plazos.",
+                exp2Desc16: "Formo parte de la Gran Red de Antioquia vía AppAntioquia y colaboro con la Asociación Popular y Mesa de Medios Departamental. Aportando a la Federación Antioqueña de las Artes y Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Creativa Nacional liderada conjuntamente por James Arboleda y yo.",
+                exp2Desc17: "Apoyo protección de animales en situación de vulnerabilidad en Cundinamarca, financiando iniciativas sociales mediante Inverfina SAC, empresa constructora peruana, durante 10 años.",
+                exp2Desc18: "Contribuí a la conservación ambiental en Colombia, Perú y Ecuador, realizando expediciones en la Amazonía para identificar y preservar especies endémicas por 8 años. Logré crear nuevas hibridaciones que fortalecen biodiversidad y apoyan esfuerzos conservacionistas.",
+                exp2Desc19: "Apoyo a la comunidad Nueva Jerusalen en Ibagué, junto a la presidenta de la junta de acción comunal, Flora Imelda Pérez.",
+                exp2Desc20: "Apoyo a personas con discapacidad en territorio colombiano, junto con la organización FEDISCOL.",
+                exp2Desc21: "Trabajé de la mano con la federación nacional de desplazados para la defensa de derechos humanos, ANDEDH.",
+                exp3Title: "Especialista en Relaciones Comerciales, ATSEI de Colombia.",
+                exp3Duration: "Febrero 2016 – Presente | San Antonio del Tequendama, CO",
+                exp3Desc1: "Promoví comercialización e implementación de paneles solares a nivel nacional, logrando adopción en 5 ciudades.",
+                exp4Title: "Fundadora, Construyendo Sonrisas.",
+                exp4Duration: "2012 – 2016 | Lima, PE",
+                exp4Desc1: "Comencé hace 12 años en el barrio marginal Pachacutec en Lima, Perú, apoyando a niños y animales callejeros a través del proyecto “Construyendo Sonrisas”.",
+                exp4Desc2: "Colaboré con artistas de bellas artes en Lima, impulsando la economía local mediante promoción y comercialización de sus obras.",
+                exp4Desc3: "Organicé talleres de reciclaje de madera proveniente de casas demolidas, enfocados en rehabilitación ambiental y apoyo a 10 jóvenes con problemas de drogadicción.",
+                exp4Desc4: "Dirigí la galería “Suma_rte” en Perú, destacando la importancia de huacas y otros espacios tradicionales mediante pinturas rupestres y piedras semipreciosas.",
+                exp4Desc5: "Logré apoyar más de 70 animales sin hogar en el pasado y actualmente cuido 18 perros, brindándoles atención veterinaria, alimentación y un hogar seguro.",
+                educationHeader: "Educación Profunda",
+                edu1: "Título en derechos humanos con la Capellanía Ejército Mundial de la Paz de México.",
+                edu2: "Técnico agrícola, Instituto Tomás Moro.",
+                edu3: "Título en Inclusión.",
+                edu4: "Derechos humanos, Escuela Nacional de Formación Comunitaria.",
+                edu5: "Título en Círculo Maestros Conocimientos y Saberes de la Federación Colombiana de Cuidadores en Discapacidad y Movimiento Guajira Disruptiva.",
+                certificationsHeader: "Certificaciones",
+                cert1: "Alta Distinción “Honor, Dignidad y Gloria” Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.",
+                cert2: "Doctor Honoris Causa en: Derechos Humanos.",
+                contactHeader: "Contáctame",
+                contactIntro: "Estoy abierta a nuevas oportunidades y colaboraciones. No dudes en enviarme un mensaje.",
+                formNameLabel: "Nombre Completo",
+                formNamePlaceholder: "Ingrese su nombre completo",
+                formEmailLabel: "Correo electrónico",
+                formEmailPlaceholder: "Ingrese su correo electrónico",
+                formMessageLabel: "Mensaje",
+                formMessagePlaceholder: "Escribe tu mensaje aquí...",
+                formSubmitButton: "Enviar Mensaje",
+                orContactDirectly: "O contáctame directamente:",
+                footerText: "© 2025 Martha Liliana Rodríguez Romo. Todos los derechos reservados."
+            },
+            en: {
+                docTitle: "Professional Resume",
+                navCertifications: "Certifications",
+                navContact: "Contact",
+                aboutMeHeader: "Professional Resume",
+                aboutMeContent: "I am a public relations specialist focused on social aid in Colombia. Founder of Cambiando Vidas LR SAS, leading initiatives to support vulnerable elderly and empowered women. I have worked on human rights projects, environmental conservation, and support for vulnerable animals. With experience in orchidology and solar panel marketing, I am committed to social development and sustainability.",
+                skillsHeader: "Key Skills",
+                skill1: "Effective communication",
+                skill2: "Teamwork",
+                skill3: "Empathy",
+                skill4: "Leadership",
+                skill5: "Project coordination",
+                skill6: "Resource management",
+                skill7: "Working with vulnerable communities",
+                skill8: "Environmental conservation",
+                skill9: "Event organization",
+                skill10: "Adaptability",
+                skill11: "Results-oriented",
+                skill12: "Empirical",
+                skill13: "Public relations",
+                experienceHeader: "Professional Experience",
+                exp1Title: "Diplomatic Secretary, Human Rights Mission (Colombia – Europe)",
+                exp1Duration: "July 2023 – Present",
+                exp1Desc1: "High-level diplomatic functions as institutional representative of the Human Rights Mission in Colombia, coordinating national and international efforts for the protection and promotion of human rights.",
+                exp1Desc2: "Leadership in drafting and validating the organization's Statutes, establishing governance principles, strategic control, and institutional accountability.",
+                exp1Desc3: "Coordination of diplomatic and political advocacy before international human rights systems, including participation in multilateral forums and drafting official reports and communications.",
+                exp1Desc4: "Oversight of national management, ensuring strategic alignment with the institutional mission and promoting transparency, integrity, and effective articulation of governing bodies.",
+                exp1Desc5: "Facilitation of relationships with multilateral organizations, partners, and strategic allies for international projection and consolidation of the organization's operational structure.",
+                exp2Title: "CEO, Cambiando Vidas LR S.A.S.",
+                exp2Duration: "July 2023 – Present | San Antonio del Tequendama, CO",
+                exp2Desc1: "Awarded Doctor Honoris Causa in Human Rights at the First International Congress of the Colombian Bar Association (June 2025, Cartagena) in recognition of social leadership, rights promotion, and contributions to justice and advocacy strengthening at the international level.",
+                exp2Desc2: "Management and implementation of an international alliance with ABILITYTOHELP, distributing 15,000 English scholarships (levels A1 to B1), as well as technical scholarships in Applied Human Behavior for vulnerable youth and adults.",
+                exp2Desc3: "Facilitation of strategic processes for positioning companies, organizations, and individuals in national and international markets, promoting visibility and strengthening brands in direct collaboration with Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, and World Press Agency.",
+                exp2Desc4: "Development of training, capacity building, and entrepreneurship support programs, especially for Afro-descendant and indigenous women, impacting over 800 families in Cesar department through alliance with Mecedora de mis Ancestros.",
+                exp2Desc5: "Coordination of a national producers network to optimize marketing, strengthen businesses, and position Colombian farmers in national and international markets.",
+                exp2Desc6: "Promotion of innovative cultural initiatives integrating art and local identity, generating impact in participating communities and strengthening their connection with national culture through a cultural alliance with Maestro Siaucho.",
+                exp2Desc7: "Leadership in Sembrando Semillas, a project of Cambiando Vidas LR S.A.S impacting over 1,500 clients with orchid seed sales, formalizing over 300 nurseries and working directly with 400 farmers to promote sustainable sector development.",
+                exp2Desc8: "Facilitating access to human rights training, literacy, and free events for vulnerable elderly, fundraising for Colombia Mayor program.",
+                exp2Desc9: "Collaborating with Veeduría por una Colombia Honesta alongside Leonardo Bernal Caballero, working on national human rights promotion and defense.",
+                exp2Desc10: "Coordinated training and follow-up for over 200 women in Magdalena and Cundinamarca, empowering them through FMEC Foundation.",
+                exp2Desc11: "Organize events in Bogotá with PROASOCIADOS foundation, connecting international investors with national entrepreneurs, enabling formalization and growth of over 200 entrepreneurs.",
+                exp2Desc12: "Connected students from remote territories with TLS Foundation, facilitating access to Georgia Tech International Corporation scholarships for university degrees.",
+                exp2Desc13: "Offer training for people with disabilities via alliance with Latin American disability movement to facilitate social integration.",
+                exp2Desc14: "Train conflict victims on their rights and provide ongoing support.",
+                exp2Desc15: "Coordinated project management and applications in Cundinamarca and Antioquia with Dismartek, meeting all requirements and deadlines.",
+                exp2Desc16: "Part of Gran Red de Antioquia via AppAntioquia and collaborate with Popular Association and Departmental Media Table. Contributing to Antioquia Federation of Arts and United Artists Association (NIT 90027942-5), united with National Creative Industry jointly led by James Arboleda and myself.",
+                exp2Desc17: "Support animal protection in vulnerable situations in Cundinamarca, funding social initiatives through Inverfina SAC, a Peruvian construction company, for 10 years.",
+                exp2Desc18: "Contributed to environmental conservation in Colombia, Peru, and Ecuador, conducting expeditions in the Amazon to identify and preserve endemic species for 8 years. Achieved new hybridizations strengthening biodiversity and conservation efforts.",
+                exp2Desc19: "Support for Nueva Jerusalen community in Ibagué with Flora Imelda Perez, President of Community Action Board.",
+                exp2Desc20: "Support people with disabilities in Colombian territory alongside FEDISCOL organization.",
+                exp2Desc21: "Worked closely with national displaced federation for human rights defense, ANDEDH.",
+                exp3Title: "Commercial Relations Specialist, ATSEI de Colombia.",
+                exp3Duration: "February 2016 – Present | San Antonio del Tequendama, CO",
+                exp3Desc1: "Promoted commercialization and implementation of solar panels nationally, achieving adoption in 5 cities.",
+                exp4Title: "Founder, Construyendo Sonrisas.",
+                exp4Duration: "2012 – 2016 | Lima, PE",
+                exp4Desc1: "Started 12 years ago in the marginalized Pachacutec neighborhood in Lima, Peru, supporting street children and animals through the “Construyendo Sonrisas” project.",
+                exp4Desc2: "Collaborated with fine arts artists in Lima, boosting local economy through promotion and sale of their works.",
+                exp4Desc3: "Organized wood recycling workshops from demolished houses, focusing on environmental rehabilitation and support for 10 youths with drug addiction issues.",
+                exp4Desc4: "Managed “Suma_rte” gallery in Peru, highlighting importance of huacas and other traditional spaces through rock paintings and semi-precious stones.",
+                exp4Desc5: "Supported over 70 homeless animals in the past and currently care for 18 dogs, providing veterinary care, food, and a safe home.",
+                educationHeader: "Advanced Education",
+                edu1: "Degree in Human Rights with Chaplaincy World Peace Army of Mexico.",
+                edu2: "Agricultural Technician, Tomás Moro Institute.",
+                edu3: "Degree in Inclusion.",
+                edu4: "Human Rights, National School of Community Training.",
+                edu5: "Degree in Masters Circle Knowledge and Wisdom of Colombian Federation of Disability Caregivers and Guajira Disruptive Movement.",
+                certificationsHeader: "Certifications",
+                cert1: "High Distinction “Honor, Dignity and Glory” Adolfo Pérez Esquivel 2024 in Commemoration of Universal Human Rights Day.",
+                cert2: "Doctor Honoris Causa in: Human Rights.",
+                contactHeader: "Contact Me",
+                contactIntro: "I am open to new opportunities and collaborations. Feel free to send me a message.",
+                formNameLabel: "Full Name",
+                formNamePlaceholder: "Enter your full name",
+                formEmailLabel: "Email Address",
+                formEmailPlaceholder: "Enter your email address",
+                formMessageLabel: "Message",
+                formMessagePlaceholder: "Write your message here...",
+                formSubmitButton: "Send Message",
+                orContactDirectly: "Or contact me directly:",
+                footerText: "© 2025 Martha Liliana Rodríguez Romo. All rights reserved."
             }
         };
 
-        let currentLang = localStorage.getItem('lang') || 'es'; // Cargar idioma guardado o por defecto 'es'
+        // Función para cambiar idioma
+        function changeLanguage(lang) {
+            // Cambiar título documento
+            document.title = translations[lang].docTitle;
 
-        function setLanguage(lang) {
-            currentLang = lang;
-            document.documentElement.lang = lang; // Actualiza el atributo lang del <html>
-            localStorage.setItem('lang', lang); // Guarda el idioma seleccionado
-
-            // Actualizar el título del documento
-            document.getElementById('docTitle').textContent = translations[lang].docTitle;
-
-            // Actualizar elementos con data-translate
-            document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang][key]) {
-                    element.textContent = translations[lang][key];
+            // Actualizar texto en todos los elementos con data-translate
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if(translations[lang][key]) {
+                    el.textContent = translations[lang][key];
                 }
             });
 
-            // Actualizar placeholders
-            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
-                const key = element.getAttribute('data-translate-placeholder');
-                if (translations[lang][key]) {
-                    element.setAttribute('placeholder', translations[lang][key]);
+            // Actualizar placeholders en inputs y textarea
+            document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-translate-placeholder');
+                if(translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
                 }
             });
 
-            // Actualizar botones de idioma (estado activo)
-            document.querySelectorAll('.lang-button').forEach(button => {
-                if (button.dataset.lang === lang) {
-                    button.classList.add('active');
+            // Actualizar aria-pressed y clase active para botones idioma
+            document.querySelectorAll('.lang-button').forEach(btn => {
+                if(btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
                 } else {
-                    button.classList.remove('active');
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
                 }
             });
         }
 
-        // Event Listeners para los botones de idioma
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.lang-button').forEach(button => {
-                button.addEventListener('click', (event) => {
-                    setLanguage(event.target.dataset.lang);
-                });
+        // Event listeners para botones de idioma
+        document.querySelectorAll('.lang-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                changeLanguage(btn.dataset.lang);
             });
-            setLanguage(currentLang); // Cargar el idioma al iniciar la página
         });
 
+        // Inicializar idioma por defecto (fr)
+        changeLanguage('fr');
 
-        // JavaScript para el menú móvil
+        // Menú móvil
         const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
 
         function openMobileMenu() {
             mobileMenu.classList.add('open');
             mobileMenuOverlay.classList.add('open');
         }
-
         function closeMobileMenu() {
             mobileMenu.classList.remove('open');
             mobileMenuOverlay.classList.remove('open');
@@ -589,12 +621,14 @@
 
         mobileMenuButton.addEventListener('click', openMobileMenu);
         closeMobileMenuButton.addEventListener('click', closeMobileMenu);
-        mobileMenuOverlay.addEventListener('click', closeMobileMenu); // Cierra el menú si se hace clic fuera
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
 
-        // Cierre automático del menú móvil al hacer clic en un enlace
-        const mobileMenuLinks = document.querySelectorAll('#mobile-menu ul li a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
+        // Opcional: enviar formulario (demo)
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Message sent!');
+            contactForm.reset();
         });
     </script>
 </body>
