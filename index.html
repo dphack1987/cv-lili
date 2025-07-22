@@ -6,30 +6,26 @@
     <title>CV Martha Liliana Rodríguez Romo - Relacionista Pública</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Estilos personalizados para ajustar Tailwind si es necesario, o para elementos no cubiertos */
+        /* Estilos personalizados para ajustes finos o viñetas */
         .section-header {
-            border-bottom: 2px solid theme('colors.emerald.500'); /* Verde similar al que viste */
+            border-bottom: 2px solid theme('colors.emerald.500'); /* Verde vibrante para los encabezados */
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
         }
-        .list-item::before {
-            content: '• ';
+        /* Estilo para las viñetas personalizadas */
+        .custom-list li {
+            list-style: none; /* Elimina la viñeta por defecto */
+            position: relative;
+            padding-left: 1.5em; /* Espacio para la viñeta custom */
+            margin-bottom: 0.5em;
+        }
+        .custom-list li::before {
+            content: '•'; /* Carácter de viñeta */
             color: theme('colors.emerald.500'); /* Color de la viñeta */
             font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-        }
-        .custom-list {
-            list-style: none;
-            padding-left: 1.5em; /* Espacio para las viñetas personalizadas */
-        }
-        .container-padding {
-            padding: 2.5rem; /* Ajusta el padding general del contenido */
-        }
-        /* Estilos para que el scroll suave funcione con las anclas */
-        html {
-            scroll-behavior: smooth;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
         /* Estilo para el botón flotante de WhatsApp */
         .whatsapp-button {
@@ -44,209 +40,266 @@
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             z-index: 1000;
-            transition: transform 0.2s;
+            transition: transform 0.2s ease-in-out;
         }
         .whatsapp-button:hover {
             transform: scale(1.1);
+        }
+        /* Asegura el scroll suave para las anclas */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Estilos para los logos de alianzas */
+        .alliance-logos img {
+            max-width: 90px; /* Tamaño un poco más grande para los logos */
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .alliance-logos img:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        /* Estilo para el menú móvil */
+        #mobile-menu {
+            transition: transform 0.3s ease-out;
+            transform: translateX(100%); /* Oculto por defecto */
+        }
+        #mobile-menu.open {
+            transform: translateX(0); /* Abierto */
+        }
+        /* Superposición para el menú móvil */
+        #mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+        }
+        #mobile-menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <div class="max-w-4xl mx-auto shadow-lg rounded-lg overflow-hidden my-8 bg-white">
+    <div class="max-w-4xl mx-auto shadow-2xl rounded-xl overflow-hidden my-8 bg-white transform transition-all duration-300 hover:scale-[1.005]">
 
-        <header class="bg-emerald-700 text-white p-8 relative">
-            <nav class="absolute top-4 right-4 z-10">
-                <ul class="flex space-x-4">
-                    <li><a href="#sobre-mi" class="hover:underline text-white font-medium">Sobre Mí</a></li>
-                    <li><a href="#habilidades" class="hover:underline text-white font-medium">Habilidades</a></li>
-                    <li><a href="#experiencia" class="hover:underline text-white font-medium">Experiencia</a></li>
-                    <li><a href="#contacto" class="hover:underline text-white font-medium">Contacto</a></li>
+        <header class="bg-gradient-to-r from-emerald-700 to-green-600 text-white p-8 relative shadow-lg">
+            <nav class="absolute top-4 right-4 z-10 hidden md:block">
+                <ul class="flex space-x-6 text-lg font-semibold">
+                    <li><a href="#sobre-mi" class="hover:underline hover:text-emerald-200 transition-colors duration-200">Sobre Mí</a></li>
+                    <li><a href="#habilidades" class="hover:underline hover:text-emerald-200 transition-colors duration-200">Habilidades</a></li>
+                    <li><a href="#experiencia" class="hover:underline hover:text-emerald-200 transition-colors duration-200">Experiencia</a></li>
+                    <li><a href="#educacion" class="hover:underline hover:text-emerald-200 transition-colors duration-200">Educación</a></li>
+                    <li><a href="#certificaciones" class="hover:underline hover:text-emerald-200 transition-colors duration-200">Certificaciones</a></li>
+                    <li><a href="#contacto" class="hover:underline hover:text-emerald-200 transition-colors duration-200">Contacto</a></li>
                 </ul>
             </nav>
+            
+            <div class="md:hidden absolute top-4 right-4 z-10">
+                <button id="mobile-menu-button" class="text-white text-3xl focus:outline-none">☰</button>
+            </div>
 
-            <div class="flex items-center space-x-6">
-                <img src="images/foto-perfil.png" alt="Foto de Perfil de Martha Liliana Rodríguez Romo" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+            <div class="flex items-center space-x-6 flex-col md:flex-row text-center md:text-left pt-6 pb-4">
+                <img src="./images/foto-perfil.png" alt="Foto de Perfil de Martha Liliana Rodríguez Romo" class="w-36 h-36 rounded-full object-cover border-4 border-white shadow-lg transform transition-transform duration-300 hover:scale-105">
                 
-                <div>
-                    <h1 class="text-4xl font-bold mb-1">Martha Liliana Rodríguez Romo</h1>
-                    <p class="text-xl font-light">Relacionista Pública</p>
-                    <p class="text-md mt-2">San Antonio del Tequendama, Cundinamarca</p>
-                    <p class="text-md">Email: <a href="mailto:liliromo56@gmail.com" class="hover:underline">liliromo56@gmail.com</a></p>
-                    <p class="text-md">Teléfono: +573145092255</p>
+                <div class="mt-4 md:mt-0">
+                    <h1 class="text-5xl font-extrabold mb-1 tracking-tight">Martha Liliana Rodríguez Romo</h1>
+                    <p class="text-2xl font-light italic mt-1">Relacionista Pública</p>
+                    <div class="mt-4 text-lg">
+                        <p class="mb-1">📍 San Antonio del Tequendama, Cundinamarca</p>
+                        <p class="mb-1">✉️ <a href="mailto:liliromo56@gmail.com" class="hover:underline text-emerald-100">liliromo56@gmail.com</a></p>
+                        <p>📞 <a href="tel:+573145092255" class="hover:underline text-emerald-100">+57 314 5092255</a></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="mt-6 text-center">
-                <img src="images/Gemini_Generated_Image_kmyroakmyroakmyr.png" alt="Logo de Grupo Educativo CAVLR" class="h-24 mx-auto filter brightness-125 saturate-150">
+            <div class="mt-8 text-center">
+                <img src="./images/Gemini_Generated_Image_kmyroakmyroakmyr.png" alt="Logo de Grupo Educativo CAVLR" class="h-28 mx-auto filter brightness-125 saturate-150 transform transition-transform duration-300 hover:scale-105">
             </div>
         </header>
 
-        <main class="container-padding">
+        <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-3/4 bg-emerald-800 text-white shadow-lg z-50 p-6 flex flex-col items-start md:hidden">
+            <button id="close-mobile-menu" class="text-white text-4xl self-end mb-8">&times;</button>
+            <ul class="flex flex-col space-y-6 text-xl font-semibold w-full">
+                <li><a href="#sobre-mi" class="block w-full py-2 hover:bg-emerald-700 rounded-md transition-colors duration-200" onclick="closeMobileMenu()">Sobre Mí</a></li>
+                <li><a href="#habilidades" class="block w-full py-2 hover:bg-emerald-700 rounded-md transition-colors duration-200" onclick="closeMobileMenu()">Habilidades</a></li>
+                <li><a href="#experiencia" class="block w-full py-2 hover:bg-emerald-700 rounded-md transition-colors duration-200" onclick="closeMobileMenu()">Experiencia</a></li>
+                <li><a href="#educacion" class="block w-full py-2 hover:bg-emerald-700 rounded-md transition-colors duration-200" onclick="closeMobileMenu()">Educación</a></li>
+                <li><a href="#certificaciones" class="block w-full py-2 hover:bg-emerald-700 rounded-md transition-colors duration-200" onclick="closeMobileMenu()">Certificaciones</a></li>
+                <li><a href="#contacto" class="block w-full py-2 hover:bg-emerald-700 rounded-md transition-colors duration-200" onclick="closeMobileMenu()">Contacto</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-overlay" class="md:hidden"></div>
 
-            <section id="sobre-mi" class="mb-8">
-                <h2 class="text-2xl font-semibold section-header">Sobre Mí</h2>
-                <p class="text-lg">Soy una Relacionista Pública enfocada en ayuda social en Colombia. Fundé Cambiando Vidas LR SAS, liderando iniciativas para apoyar a adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de derechos humanos, conservación ambiental, y apoyo a animales en estado de vulnerabilidad. Con experiencia en orquídeología y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.</p>
+        <main class="p-8 md:p-10">
+
+            <section id="sobre-mi" class="mb-10 bg-gray-50 p-6 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold section-header text-emerald-700">Resumen Profesional</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">Soy una Relacionista Pública enfocada en ayuda social en Colombia. Fundé Cambiando Vidas LR SAS, liderando iniciativas para apoyar a adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de derechos humanos, conservación ambiental, y apoyo a animales en estado de vulnerabilidad. Con experiencia en orquídeología y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.</p>
             </section>
 
-            <section id="habilidades" class="mb-8">
-                <h2 class="text-2xl font-semibold section-header">Habilidades blandas</h2>
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 custom-list">
-                    <li class="list-item">Comunicación efectiva</li>
-                    <li class="list-item">Trabajo en equipo</li>
-                    <li class="list-item">Empatía</li>
-                    <li class="list-item">Liderazgo</li>
-                    <li class="list-item">Coordinación de proyectos</li>
-                    <li class="list-item">Gestión de recursos</li>
-                    <li class="list-item">Trabajo con comunidades vulnerables</li>
-                    <li class="list-item">Conservación ambiental</li>
-                    <li class="list-item">Organización de eventos</li>
-                    <li class="list-item">Adaptable</li>
-                    <li class="list-item">Orientada a resultados</li>
-                    <li class="list-item">Empírica</li>
-                    <li class="list-item">Relaciones públicas</li>
+            <section id="habilidades" class="mb-10">
+                <h2 class="text-3xl font-bold section-header text-emerald-700">Habilidades Clave</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Comunicación efectiva</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Trabajo en equipo</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Empatía</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Liderazgo</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Coordinación de proyectos</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Gestión de recursos</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Trabajo con comunidades vulnerables</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Conservación ambiental</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Organización de eventos</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Adaptable</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Orientada a resultados</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Empírica</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-center text-md font-medium shadow-sm transition-transform hover:scale-105">Relaciones públicas</span>
+                </div>
+            </section>
+
+            <section id="experiencia" class="mb-10">
+                <h2 class="text-3xl font-bold section-header text-emerald-700">Experiencia Profesional</h2>
+
+                <div class="mb-8 p-6 bg-white rounded-lg shadow-md border-l-4 border-emerald-500 hover:shadow-lg transition-shadow duration-200">
+                    <h3 class="text-xl md:text-2xl font-semibold text-emerald-800">Secretaria Diplomática, Mission Human Rights (Colombia – Europa)</h3>
+                    <p class="text-sm text-gray-500 mb-3"><em>Julio 2023 – Hoy</em></p>
+                    <ul class="custom-list text-gray-700">
+                        <li>Ejercicio de funciones diplomáticas de alto nivel como representante institucional de Mission Human Rights en Colombia, articulando esfuerzos nacionales e internacionales en favor de la protección y promoción de los derechos humanos.</li>
+                        <li>Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.</li>
+                        <li>Coordinación de la incidencia diplomática y política ante sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.</li>
+                        <li>Supervisión de la gestión nacional, velando por la alineación estratégica con la misión institucional y promoviendo la transparencia, la integridad y la articulación efectiva de los órganos directivos.</li>
+                        <li>Facilitación de relaciones con organismos multilaterales, cooperantes y aliados estratégicos para la proyección internacional de la organización y la consolidación de su estructura operativa.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8 p-6 bg-white rounded-lg shadow-md border-l-4 border-emerald-500 hover:shadow-lg transition-shadow duration-200">
+                    <h3 class="text-xl md:text-2xl font-semibold text-emerald-800">CEO, Cambiando Vidas LR S.A.S.</h3>
+                    <p class="text-sm text-gray-500 mb-3"><em>Julio 2023 – Hoy | San Antonio del Tequendama, CO</em></p>
+                    <div class="alliance-logos flex flex-wrap gap-4 justify-center my-4">
+                        <img src="./images/ability.png" alt="Logo de ABILITYTOHELP" class="w-20 h-auto object-contain">
+                        <img src="./images/fip.png" alt="Logo de FIP" class="w-20 h-auto object-contain">
+                        <img src="./images/inclo.png" alt="Logo de Inclusión" class="w-20 h-auto object-contain">
+                        <img src="./images/linkvelink.png" alt="Logo de LinkedIn" class="w-20 h-auto object-contain">
+                        <img src="./images/logo-mujeres-solidarias.png" alt="Logo de Fundación Mujeres Solidarias" class="w-20 h-auto object-contain">
+                    </div>
+                    <ul class="custom-list text-gray-700">
+                        <li>Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.</li>
+                        <li>Gestión e implementación de una alianza internacional con la organización ABILITYTOHELP, mediante la cual se logró la distribución de 15.000 becas de formación en inglés (niveles A1 a B1), así como becas para estudios técnicos en Conducta Humana Aplicada, beneficiando a jóvenes y adultos en condiciones de vulnerabilidad.</li>
+                        <li>Facilitación de procesos estratégicos para el posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo la visibilidad y el fortalecimiento de sus marcas en colaboración directa con la con Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, y la Agencia Mundial de Prensa.</li>
+                        <li>Desarrollo de programas de formación, capacitación e impulso emprendedor, dirigidos especialmente a mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar a través del trabajo en conjunto con la organización Mecedora de mis Ancestros.</li>
+                        <li>Coordinación de una red nacional de productores para optimizar la comercialización de sus productos, fortalecer sus emprendimientos y posicionar a los agricultores colombianos en mercados nacionales e internacionales.</li>
+                        <li>Promoción de iniciativas culturales innovadoras que integran el arte y la identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional por medio de una alianza cultural con el Maestro Siaucho.</li>
+                        <li>Liderazgo en Sembrando Semillas, un proyecto de Cambiando Vidas LR S.A.S que impactó a más de 1,500 clientes a través de la venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para fomentar el desarrollo sostenible del sector.</li>
+                        <li>Facilitamos el acceso a capacitaciones en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, captando recursos para el programa Colombia Mayor.</li>
+                        <li>Colaboro con la Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en la promoción y defensa de los derechos humanos a nivel nacional.</li>
+                        <li>Coordiné la capacitación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas a través de la Fundación FMEC.</li>
+                        <li>Organizo eventos en Bogotá, con la fundación PROASOCIADOS conectando a inversores internacionales con emprendedores nacionales, logrando que más de 200 emprendedores formalicen y escalen sus negocios.</li>
+                        <li>Conecté a estudiantes de territorios remotos con la Fundación TLS, facilitando su acceso a becas de la Georgia Tech International Corporation para su titulación universitaria.</li>
+                        <li>Brindamos capacitaciones a las personas con discapacidad, a través de la alianza con el movimiento latinoamericano de personas con discapacidad, para facilitar su integración a la sociedad.</li>
+                        <li>Capacito a víctimas del conflicto armado sobre sus derechos y brindándoles apoyo continuo.</li>
+                        <li>Coordiné la gestión y postulación de proyectos en Cundinamarca y Antioquía junto a Dismartek, cumpliendo con todos los requerimientos y plazos establecidos.</li>
+                        <li>Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.</li>
+                        <li>Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.</li>
+                        <li>Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.</li>
+                        <li>Apoyó a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
+                        <li>Apoyó en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
+                        <li>Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8 p-6 bg-white rounded-lg shadow-md border-l-4 border-emerald-500 hover:shadow-lg transition-shadow duration-200">
+                    <h3 class="text-xl md:text-2xl font-semibold text-emerald-800">Relacionista comercial, ATSEI de Colombia.</h3>
+                    <p class="text-sm text-gray-500 mb-3"><em>Febrero 2016 – Hoy | San Antonio del Tequendama, CO</em></p>
+                    <ul class="custom-list text-gray-700">
+                        <li>Impulsé la comercialización e implementación de paneles solares a nivel nacional, logrando su adopción exitosa en 5 ciudades.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8 p-6 bg-white rounded-lg shadow-md border-l-4 border-emerald-500 hover:shadow-lg transition-shadow duration-200">
+                    <h3 class="text-xl md:text-2xl font-semibold text-emerald-800">Fundadora, Construyendo Sonrisas.</h3>
+                    <p class="text-sm text-gray-500 mb-3"><em>2012 – 2016 | Lima, PE</em></p>
+                    <ul class="custom-list text-gray-700">
+                        <li>Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
+                        <li>Colaboró con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
+                        <li>Organizó talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
+                        <li>Dirigió la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
+                        <li>Logró apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="educacion" class="mb-10">
+                <h2 class="text-3xl font-bold section-header text-emerald-700">Educación Extendida</h2>
+                <ul class="custom-list text-gray-700">
+                    <li>Diplomado de derechos humanos con la Capellanía Armada Mundial de Paz de México.</li>
+                    <li>Técnico Agropecuario, instituto Tomás Moro.</li>
+                    <li>Diplomado en Inclusión.</li>
+                    <li>Derechos humanos, Escuela nacional de formación comunitaria.</li>
+                    <li>Diplomado en Circulo De Maestros Conocimientos Y Saberes De La Federación De Discapacidad Cuidadores De Colombia Y El Movimiento Guajira Disruptiva.</li>
                 </ul>
             </section>
 
-            <section id="experiencia" class="mb-8">
-                <h2 class="text-2xl font-semibold section-header">Experiencia</h2>
-
-                <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                    <h3 class="text-xl font-semibold text-emerald-600">Secretaria Diplomática, Mission Human Rights (Colombia – Europa)</h3>
-                    <p class="text-sm text-gray-500 mb-2">07/2023 – Hoy</p>
-                    <ul class="custom-list">
-                        <li class="list-item">Ejercicio de funciones diplomáticas de alto nivel como representante institucional de Mission Human Rights en Colombia, articulando esfuerzos nacionales e internacionales en favor de la protección y promoción de los derechos humanos.</li>
-                        <li class="list-item">Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.</li>
-                        <li class="list-item">Coordinación de la incidencia diplomática y política ante sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.</li>
-                        <li class="list-item">Supervisión de la gestión nacional, velando por la alineación estratégica con la misión institucional y promoviendo la transparencia, la integridad y la articulación efectiva de los órganos directivos.</li>
-                        <li class="list-item">Facilitación de relaciones con organismos multilaterales, cooperantes y aliados estratégicos para la proyección internacional de la organización y la consolidación de su estructura operativa.</li>
-                    </ul>
-                </div>
-
-                <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                    <h3 class="text-xl font-semibold text-emerald-600">CEO, Cambiando Vidas LR S.A.S.</h3>
-                    <p class="text-sm text-gray-500 mb-2">07/2023 – Hoy | San Antonio del Tequendama, CO</p>
-                    <div class="alliance-logos mt-4">
-                        <img src="images/ability.png" alt="Logo de ABILITYTOHELP" class="w-20 h-auto">
-                        <img src="images/fip.png" alt="Logo de FIP" class="w-20 h-auto">
-                        <img src="images/inclo.png" alt="Logo de Inclusión" class="w-20 h-auto">
-                        <img src="images/linkvelink.png" alt="Logo de LinkedIn" class="w-20 h-auto">
-                        <img src="images/logo-mujeres-solidarias.png" alt="Logo de Fundación Mujeres Solidarias" class="w-20 h-auto">
-                    </div>
-                    <ul class="custom-list mt-4">
-                        <li class="list-item">Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.</li>
-                        <li class="list-item">Gestión e implementación de una alianza internacional con la organización ABILITYTOHELP, mediante la cual se logró la distribución de 15.000 becas de formación en inglés (niveles A1 a B1), así como becas para estudios técnicos en Conducta Humana Aplicada, beneficiando a jóvenes y adultos en condiciones de vulnerabilidad.</li>
-                        <li class="list-item">Facilitación de procesos estratégicos para el posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo la visibilidad y el fortalecimiento de sus marcas en colaboración directa con la con Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, y la Agencia Mundial de Prensa.</li>
-                        <li class="list-item">Desarrollo de programas de formación, capacitación e impulso emprendedor, dirigidos especialmente a mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar a través del trabajo en conjunto con la organización Mecedora de mis Ancestros.</li>
-                        <li class="list-item">Coordinación de una red nacional de productores para optimizar la comercialización de sus productos, fortalecer sus emprendimientos y posicionar a los agricultores colombianos en mercados nacionales e internacionales.</li>
-                        <li class="list-item">Promoción de iniciativas culturales innovadoras que integran el arte y la identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional por medio de una alianza cultural con el Maestro Siaucho.</li>
-                        <li class="list-item">Liderazgo en Sembrando Semillas, un proyecto de Cambiando Vidas LR S.A.S que impactó a más de 1,500 clientes a través de la venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para fomentar el desarrollo sostenible del sector.</li>
-                        <li class="list-item">Facilitamos el acceso a capacitaciones en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, captando recursos para el programa Colombia Mayor.</li>
-                        <li class="list-item">Colaboro con la Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en la promoción y defensa de los derechos humanos a nivel nacional.</li>
-                        <li class="list-item">Coordiné la capacitación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas a través de la Fundación FMEC.</li>
-                        <li class="list-item">Organizo eventos en Bogotá, con la fundación PROASOCIADOS conectando a inversores internacionales con emprendedores nacionales, logrando que más de 200 emprendedores formalicen y escalen sus negocios.</li>
-                        <li class="list-item">Conecté a estudiantes de territorios remotos con la Fundación TLS, facilitando su acceso a becas de la Georgia Tech International Corporation para su titulación universitaria.</li>
-                        <li class="list-item">Brindamos capacitaciones a las personas con discapacidad, a través de la alianza con el movimiento latinoamericano de personas con discapacidad, para facilitar su integración a la sociedad.</li>
-                        <li class="list-item">Capacito a víctimas del conflicto armado sobre sus derechos y brindándoles apoyo continuo.</li>
-                        <li class="list-item">Coordiné la gestión y postulación de proyectos en Cundinamarca y Antioquía junto a Dismartek, cumpliendo con todos los requerimientos y plazos establecidos.</li>
-                        <li class="list-item">Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.</li>
-                        <li class="list-item">Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.</li>
-                        <li class="list-item">Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.</li>
-                        <li class="list-item">Apoyó a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
-                        <li class="list-item">Apoyó en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
-                        <li class="list-item">Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.</li>
-                    </ul>
-                </div>
-
-                <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                    <h3 class="text-xl font-semibold text-emerald-600">Relacionista comercial, ATSEI de Colombia.</h3>
-                    <p class="text-sm text-gray-500 mb-2">02/2016 – Hoy | San Antonio del Tequendama, CO</p>
-                    <ul class="custom-list">
-                        <li class="list-item">Impulsé la comercialización e implementación de paneles solares a nivel nacional, logrando su adopción exitosa en 5 ciudades.</li>
-                    </ul>
-                </div>
-
-                <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                    <h3 class="text-xl font-semibold text-emerald-600">Fundadora, Construyendo Sonrisas.</h3>
-                    <p class="text-sm text-gray-500 mb-2">2012 – 2016 | Lima, PE</p>
-                    <ul class="custom-list">
-                        <li class="list-item">Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
-                        <li class="list-item">Colaboré con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
-                        <li class="list-item">Organicé talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
-                        <li class="list-item">Dirigí la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
-                        <li class="list-item">Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="educacion" class="mb-8">
-                <h2 class="text-2xl font-semibold section-header">Educación extendida</h2>
-                <ul class="custom-list">
-                    <li class="list-item">Diplomado de derechos humanos con la Capellanía Armada Mundial de Paz de México.</li>
-                    <li class="list-item">Técnico Agropecuario, instituto Tomás Moro.</li>
-                    <li class="list-item">Diplomado en Inclusión.</li>
-                    <li class="list-item">Derechos humanos, Escuela nacional de formación comunitaria.</li>
-                    <li class="list-item">Diplomado en Circulo De Maestros Conocimientos Y Saberes De La Federación De Discapacidad Cuidadores De Colombia Y El Movimiento Guajira Disruptiva.</li>
+            <section id="certificaciones" class="mb-10">
+                <h2 class="text-3xl font-bold section-header text-emerald-700">Certificaciones</h2>
+                <ul class="custom-list text-gray-700">
+                    <li>Alta Distinción «Honor, Dignidad y Gloria» Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.</li>
+                    <li>Doctor Honoris Causa en: Derechos Humanos.</li>
                 </ul>
             </section>
 
-            <section id="certificaciones" class="mb-8">
-                <h2 class="text-2xl font-semibold section-header">Certificaciones</h2>
-                <ul class="custom-list">
-                    <li class="list-item">Alta Distinción «Honor, Dignidad y Gloria» Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.</li>
-                    <li class="list-item">Doctor Honoris Causa en: Derechos Humanos.</li>
-                </ul>
-            </section>
+            <section id="contacto" class="mb-10 bg-gray-50 p-8 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold section-header text-emerald-700">Contáctame</h2>
+                <p class="text-lg text-gray-700 mb-6">Estoy abierta a nuevas oportunidades y colaboraciones. No dudes en enviarme un mensaje.</p>
 
-            <section id="contacto" class="mb-8">
-                <h2 class="text-2xl font-semibold section-header">Contacto</h2>
-                <p class="text-lg mb-4">Si deseas contactarme, por favor, utiliza el siguiente formulario o mi información de contacto.</p>
-
-                <form action="#" method="POST" class="space-y-4">
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
-                        <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm" required>
+                        <label for="name" class="block text-md font-medium text-gray-700 mb-1">Nombre Completo</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 text-base" placeholder="Tu nombre" required>
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm" required>
+                        <label for="email" class="block text-md font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                        <input type="email" id="email" name="_replyto" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 text-base" placeholder="tu.email@ejemplo.com" required>
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
-                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm" required></textarea>
+                        <label for="message" class="block text-md font-medium text-gray-700 mb-1">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 text-base" placeholder="Tu mensaje aquí..." required></textarea>
                     </div>
                     <div>
-                        <button type="submit" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+                        <button type="submit" class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-colors duration-200">
                             Enviar Mensaje
                         </button>
                     </div>
                 </form>
 
-                <p class="text-sm text-gray-500 mt-4 text-center">
-                    **Nota:** Este formulario es solo la estructura HTML. Para que funcione y envíe mensajes, necesitarás integrarlo con un servicio de backend o una plataforma como <a href="https://formspree.io/" target="_blank" class="text-blue-600 hover:underline">Formspree</a>, <a href="https://www.netlify.com/products/forms/" target="_blank" class="text-blue-600 hover:underline">Netlify Forms</a>, o similar.
+                <p class="text-sm text-gray-600 mt-6 text-center">
+                    **¡IMPORTANTE!** Para que este formulario funcione, debes **reemplazar `https://formspree.io/f/YOUR_FORMSPREE_ID`** en el atributo `action` de la etiqueta `<form>` con la **URL única que obtuviste de Formspree.io** al crear tu formulario. Si no lo haces, el formulario no enviará correos.
                 </p>
 
-                <p class="text-lg mt-6 text-center">También puedes contactarme directamente:</p>
-                <ul class="custom-list mt-2 text-center">
-                    <li class="list-item inline-block mx-2">Email: <a href="mailto:liliromo56@gmail.com" class="text-blue-600 hover:underline">liliromo56@gmail.com</a></li>
-                    <li class="list-item inline-block mx-2">Teléfono: <a href="tel:+573145092255" class="text-blue-600 hover:underline">+57 314 5092255</a></li>
-                    <li class="list-item inline-block mx-2">LinkedIn: <a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/martha-liliana-rodríguez-romo</a></li>
+                <p class="text-xl font-semibold mt-8 text-center text-emerald-700">O contáctame directamente:</p>
+                <ul class="list-none flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 text-lg">
+                    <li><a href="mailto:liliromo56@gmail.com" class="text-blue-600 hover:underline flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-emerald-600" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>liliromo56@gmail.com</a></li>
+                    <li><a href="tel:+573145092255" class="text-blue-600 hover:underline flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-emerald-600" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 1.956A4 4 0 018.82 7.93l-1.8 1.8a12.86 12.86 0 005.171 5.171l1.8-1.8a4 4 0 012.146.955l1.956.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.163 18 2 12.837 2 6V3z"/></svg>+57 314 5092255</a></li>
+                    <li><a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-emerald-600" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764c0 .974-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>Perfil de LinkedIn</a></li>
                 </ul>
             </section>
 
         </main>
 
-        <footer class="bg-gray-200 text-center p-4 text-gray-600 text-sm">
+        <footer class="bg-gray-200 text-center p-4 text-gray-600 text-sm border-t border-gray-300">
             <p>&copy; 2025 Martha Liliana Rodríguez Romo. Todos los derechos reservados.</p>
         </footer>
 
     </div>
 
     <a href="https://wa.me/573145092255" target="_blank" class="whatsapp-button">
-        💬
-    </a>
-
-</body>
-</html>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.911C.151 6.57 6.009.055 13.34 0c7.33 0 13.187 6.516 13.187 14.577 0 8.062-5.857 14.577-13.188 14.577-2.34 0-4.66-.745-6.61-2.14L.057 24zm6.865-3.076l-.413-.245c-1.39-2.028-2.12-4.417-2.12-6.932 0-5.727 4.14-10.371 9.243-10.371 2.536 0 4.939 1.05 6.747 2.923 1.81 1.873 2.763 4.388 2.763 7.025 0 5.727-4.14 10.371-9.243 10.371-1.954 0-3.905-.674-5.59-1.97l-.37-.218-3.868 1.029 1.04-3.715zm9.57-2.078c-.292-.146-1.72-.845-1.996-.94s-.478-.146-.68.146c-.2.292-.782.939-.958 1.134-.176.196-.353.21-.65.064-.296-.146-1.25-.462-2.384-1.47-2.587-2.736-2.887-2.905-3.033-3.15-.146-.245-.015-.38.128-.525.127-.146.292-.38.438-.582.146-.2.196-.345.292-.582.096-.237.048-.44-.02-.613-.065-.173-.59-.974-.812-1.29-.224-.315-.175-.262-.35-.
