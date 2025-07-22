@@ -7,54 +7,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3WdfZpG/nU6qD4G0T6JtN0c5W1y6x9A7Z9G3P1O/T5U5w5d5R5v5w5d5R5v5w5d5R5v5w5d5R5v5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Custom Tailwind Configuration and Global Styles - Colores Tema Verde */
+        /* Custom Tailwind Configuration and Global Styles - Colores Tema Azul (adaptado al original) */
         :root {
-            --color-primary-light: #1B5E20; /* Darker Green (Forest Green) */
-            --color-primary-dark: #0F3812;  /* Very Dark Green */
-            --color-accent-light: #4CAF50; /* Medium Green (Lime Green) */
-            --color-accent-dark: #388E3C;  /* Slightly darker accent green */
+            --color-primary-light: #1A237E; /* Darker Blue (Indigo) */
+            --color-primary-dark: #0D103D;  /* Very Dark Blue */
+            --color-accent-light: #2196F3; /* Medium Blue (Dodger Blue) */
+            --color-accent-dark: #1976D2;  /* Slightly darker accent blue */
             --color-text-dark: #212121;    /* Dark gray for main text */
             --color-text-medium: #616161;  /* Medium gray for secondary text */
-            --color-bg-light: #F9FBE7;     /* Very light pale green/yellowish background */
-            --color-bg-medium: #E8F5E9;    /* Light green background */
-            --color-bg-subtle: #DCEDC8;    /* More subtle green background */
+            --color-bg-light: #E3F2FD;     /* Very light pale blue background */
+            --color-bg-medium: #BBDEFB;    /* Light blue background */
+            --color-bg-subtle: #90CAF9;    /* More subtle blue background */
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(180deg, var(--color-bg-medium) 0%, var(--color-bg-subtle) 100%);
+            background: var(--color-bg-light); /* Fondo más claro para el minimalismo */
             color: var(--color-text-medium);
             line-height: 1.7;
             overflow-x: hidden;
-            padding-top: 70px; /* Add padding to body to prevent content from being hidden by fixed nav */
+            padding-top: 70px;
         }
 
-        /* Main CV container styling */
+        /* Main CV container styling - Más limpio, bordes más sutiles */
         .cv-container {
             background-color: white;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            border-radius: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Sombra más suave */
+            border-radius: 1rem; /* Bordes un poco menos redondeados */
             overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03); /* Borde casi imperceptible */
             transition: box-shadow 0.3s ease;
         }
         .cv-container:hover {
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Sombra al pasar el mouse */
         }
 
-        /* Header Section Styling */
+        /* Header Section Styling - Más enfocado y con menos gradiente intenso */
         .header-section {
-            background: linear-gradient(145deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+            background: var(--color-primary-light); /* Fondo sólido primario */
             color: white;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
+            padding-top: 2.5rem;
+            padding-bottom: 2rem;
             position: relative;
             overflow: hidden;
-            border-bottom-left-radius: 1.5rem;
-            border-bottom-right-radius: 1.5rem;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
             animation: fadeIn 0.8s ease-out forwards;
             opacity: 0;
-            box-shadow: inset 0 -5px 10px rgba(0,0,0,0.05);
+            box-shadow: inset 0 -3px 8px rgba(0,0,0,0.05); /* Sombra interna sutil */
         }
 
         @keyframes fadeIn {
@@ -62,32 +62,32 @@
             to { opacity: 1; }
         }
 
-        /* Profile Picture Styling - Reduced size */
+        /* Profile Picture Styling - Reduced size, frame with accent */
         .profile-pic {
             width: 120px;
             height: 120px;
-            border: 6px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 4px solid var(--color-accent-light); /* Borde con color de acento */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra más suave */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             z-index: 1;
         }
         .profile-pic:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+            transform: scale(1.03); /* Escala más sutil */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Section Titles with clean accent and animation */
+        /* Section Titles with clean accent and animation - Línea más fina, menos impacto */
         .section-title {
             position: relative;
-            padding-bottom: 1rem;
-            margin-bottom: 2.5rem;
-            color: var(--color-primary-light);
-            font-weight: 800;
-            font-size: 2.8rem;
+            padding-bottom: 0.8rem; /* Menos padding */
+            margin-bottom: 2rem; /* Menos margen */
+            color: var(--color-primary-dark); /* Títulos en color oscuro principal */
+            font-weight: 700; /* Menos bold, más legible */
+            font-size: 2.5rem; /* Tamaño de fuente ligeramente reducido */
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            letter-spacing: 0.03em; /* Menos espaciado */
+            text-shadow: none; /* Sin sombra de texto */
         }
         .section-title::after {
             content: '';
@@ -95,127 +95,109 @@
             left: 0;
             bottom: 0;
             width: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-accent-light) 0%, var(--color-accent-dark) 100%);
+            height: 3px; /* Línea más delgada */
+            background: var(--color-accent-dark); /* Color sólido de acento */
             border-radius: 9999px;
             animation: lineExpandSimple 1s ease-out forwards;
             animation-delay: 0.2s;
         }
         @keyframes lineExpandSimple {
             from { width: 0; }
-            to { width: 80px; }
+            to { width: 60px; } /* Línea más corta */
         }
 
         /* Animation for sections appearing on scroll */
         .section-hidden {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(20px); /* Menos desplazamiento */
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Animación más rápida */
         }
         .section-visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Skill Tags Styling - clean and friendly */
+        /* Skill Tags Styling - Más sutiles, colores más planos */
         .skill-tag {
-            background: linear-gradient(45deg, var(--color-accent-light) 0%, var(--color-accent-dark) 100%);
-            color: white;
-            font-weight: 600;
-            padding: 0.6rem 1.2rem;
-            border-radius: 9999px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
+            background-color: var(--color-bg-medium); /* Fondo más plano */
+            color: var(--color-primary-dark); /* Texto oscuro */
+            font-weight: 500; /* Menos bold */
+            padding: 0.5rem 1rem; /* Menos padding */
+            border-radius: 0.5rem; /* Bordes menos redondeados */
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+            transition: all 0.2s ease;
             cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid var(--color-bg-subtle); /* Borde sutil */
         }
         .skill-tag:hover {
-            background: linear-gradient(45deg, var(--color-primary-dark) 0%, var(--color-accent-light) 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+            background-color: var(--color-accent-light); /* Color de acento al pasar el mouse */
+            color: white;
+            transform: translateY(-2px); /* Menos desplazamiento */
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
         }
 
-        /* Experience Item Styling (Timeline effect) - cleaner, less busy */
+        /* Experience Item Styling (Original: No timeline, simply structured blocks) */
         .experience-item {
             position: relative;
-            padding-left: 2.5rem;
-            margin-bottom: 2.5rem;
-            background-color: var(--color-bg-light);
-            padding: 1.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--color-bg-medium);
+            padding: 1.5rem 2rem; /* Espaciado generoso */
+            margin-bottom: 2rem; /* Espacio entre elementos */
+            background-color: white; /* Fondo blanco */
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid var(--color-bg-medium); /* Borde sutil */
         }
         .experience-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
         }
-        /* Timeline dot */
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: 0.75rem;
-            top: 2rem;
-            width: 18px;
-            height: 18px;
-            background: var(--color-accent-light);
-            border-radius: 50%;
-            border: 3px solid var(--color-primary-light);
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); /* Accent light with alpha */
-            z-index: 1;
+        /* Remove timeline specific pseudo-elements */
+        .experience-item::before,
+        .experience-item::after {
+            content: none !important;
         }
-        /* Timeline vertical line */
-        .experience-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            left: 0.95rem;
-            top: 3.5rem;
-            bottom: -0.5rem;
-            width: 2px;
-            background-color: var(--color-bg-medium);
-            z-index: 0;
-        }
+
         .experience-item h3 {
             color: var(--color-primary-dark);
-            font-weight: 800;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 1.6rem; /* Menos grande */
+            margin-bottom: 0.4rem; /* Margen reducido */
         }
         .experience-item h4 {
             color: var(--color-accent-dark);
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
+            font-weight: 600;
+            font-size: 1.1rem; /* Más pequeño */
+            margin-bottom: 0.6rem; /* Margen reducido */
         }
         .experience-item p {
-            font-size: 1rem;
+            font-size: 0.95rem; /* Texto un poco más pequeño */
             color: var(--color-text-dark);
         }
         .experience-item ul {
             list-style: disc;
-            margin-left: 1.5rem;
-            margin-top: 1rem;
+            margin-left: 1.2rem; /* Menos margen */
+            margin-top: 0.8rem; /* Menos margen */
         }
         .experience-item ul li {
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
+            margin-bottom: 0.4rem; /* Menos margen */
+            line-height: 1.5; /* Interlineado más ajustado */
             color: var(--color-text-medium);
+            font-size: 0.95rem; /* Consistencia en el tamaño de la lista */
         }
 
-        /* Contact Form Styling */
+        /* Contact Form Styling - Más limpio, menos boxy */
         .contact-form-section {
-            background: linear-gradient(160deg, var(--color-bg-subtle) 0%, #ffffff 100%);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: var(--color-bg-light); /* Fondo más claro */
+            border-radius: 1rem;
+            padding: 2rem; /* Menos padding */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
         .contact-form-section input,
         .contact-form-section textarea {
-            border: 2px solid var(--color-bg-medium);
-            border-radius: 0.75rem;
-            padding: 0.9rem 1.2rem;
+            border: 1px solid var(--color-bg-medium); /* Borde más fino */
+            border-radius: 0.5rem; /* Menos redondeado */
+            padding: 0.8rem 1rem; /* Menos padding */
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
             background-color: white;
             color: var(--color-text-dark);
@@ -223,72 +205,78 @@
         .contact-form-section input:focus,
         .contact-form-section textarea:focus {
             border-color: var(--color-accent-light);
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3); /* Accent light with alpha */
+            box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2); /* Sombra más sutil */
             outline: none;
-            background-color: var(--color-bg-light);
+            background-color: #F8FDFF; /* Fondo muy claro al enfocar */
         }
         .contact-button {
-            background: linear-gradient(90deg, var(--color-accent-light) 0%, var(--color-accent-dark) 100%);
-            font-weight: 700;
-            padding: 1.2rem 2.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background: var(--color-accent-dark); /* Color sólido de acento */
+            font-weight: 600; /* Menos bold */
+            padding: 1rem 2rem; /* Menos padding */
+            border-radius: 0.75rem; /* Menos redondeado */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más suave */
             transition: all 0.3s ease;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
             text-transform: uppercase;
             color: white;
         }
         .contact-button:hover {
-            background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-accent-light) 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: var(--color-primary-dark); /* Color primario oscuro al pasar el mouse */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
         /* Floating WhatsApp Button - Keep the distinct WhatsApp green */
         .whatsapp-button {
             position: fixed;
-            bottom: 2.5rem;
-            right: 2.5rem;
+            bottom: 2rem;
+            right: 2rem;
             background-color: #25D366; /* Standard WhatsApp green */
             color: white;
             border-radius: 9999px;
-            padding: 1.25rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 1.1rem; /* Un poco más pequeño */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.8rem; /* Tamaño de icono */
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
             z-index: 1000;
         }
         .whatsapp-button:hover {
-            transform: scale(1.1);
-            background-color: #1DA851; /* Darker WhatsApp green on hover */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05); /* Escala más sutil */
+            background-color: #1DA851;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* Styles for the new Strategic Partners section */
         .partners-section {
-            padding-top: 2.5rem;
-            padding-bottom: 2.5rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
             border-top: 1px solid var(--color-bg-medium);
             text-align: center;
             background-color: var(--color-bg-light);
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
         }
 
         .partner-logo {
-            max-height: 80px;
+            max-height: 70px; /* Tamaño un poco más pequeño */
             width: auto;
-            margin: 1rem;
-            transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+            margin: 0.8rem; /* Menos margen */
+            transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+            filter: grayscale(80%); /* Ligeramente en escala de grises para integrarse más */
+            opacity: 0.8;
         }
         .partner-logo:hover {
-            transform: scale(1.08);
+            transform: scale(1.05);
+            filter: grayscale(0%); /* Color completo al pasar el mouse */
+            opacity: 1;
         }
 
-        /* Specific style for LinkedIn logo to reduce its size */
-        .partners-section a:nth-child(4) .partner-logo {
-            max-height: 65px;
+        /* Specific style for LinkedIn logo to reduce its size, applying to linkelink */
+        .partners-section a[aria-label="Logo Linkelink"] .partner-logo {
+            max-height: 55px; /* Ajuste para el logo de LinkedIn/Linkelink */
         }
 
         /* Navbar Styling */
@@ -297,23 +285,25 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: transparent;
+            background-color: var(--color-primary-dark); /* Color de fondo sólido */
             z-index: 999;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15); /* Sombra suave */
         }
 
         .navbar.scrolled {
-            background-color: var(--color-primary-dark);
+            background-color: var(--color-primary-dark); /* Permanece oscuro */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .navbar-item {
             color: white;
-            font-weight: 600;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 500; /* Menos bold */
+            padding: 0.6rem 0.9rem; /* Menos padding */
+            border-radius: 0.4rem; /* Menos redondeado */
+            transition: background-color 0.2s ease, color 0.2s ease;
             text-decoration: none;
+            font-size: 0.95rem; /* Fuente ligeramente más pequeña */
         }
 
         .navbar-item:hover {
@@ -334,7 +324,7 @@
                 justify-content: center;
             }
             .navbar-item {
-                margin: 0.25rem 0.5rem;
+                margin: 0.2rem 0.4rem; /* Menos margen */
             }
         }
 
@@ -343,45 +333,45 @@
                 padding-top: 60px;
             }
             .section-title {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
             }
             .experience-item h3 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
             .experience-item h4 {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             .whatsapp-button {
-                bottom: 2rem;
-                right: 2rem;
-                padding: 1rem;
-                font-size: 1.8rem;
+                bottom: 1.8rem;
+                right: 1.8rem;
+                padding: 0.9rem;
+                font-size: 1.6rem;
             }
             .header-section {
-                padding-top: 2.5rem;
-                padding-bottom: 2.5rem;
+                padding-top: 2rem;
+                padding-bottom: 1.5rem;
             }
             .profile-pic {
                 width: 100px;
                 height: 100px;
             }
             .partner-logo {
-                max-height: 60px;
+                max-height: 55px;
             }
-            .partners-section a:nth-child(4) .partner-logo {
-                max-height: 50px;
+            .partners-section a[aria-label="Logo Linkelink"] .partner-logo {
+                max-height: 45px;
             }
             .navbar {
-                padding: 0.5rem 1rem;
+                padding: 0.4rem 0.8rem;
             }
             .navbar .flex {
                 flex-direction: row;
                 justify-content: center;
             }
             .navbar-item {
-                font-size: 0.85rem;
-                padding: 0.6rem 0.8rem;
-                margin: 0.15rem 0.3rem;
+                font-size: 0.8rem;
+                padding: 0.5rem 0.7rem;
+                margin: 0.1rem 0.25rem;
             }
         }
 
@@ -390,49 +380,36 @@
                 padding-top: 50px;
             }
             .cv-container {
-                border-radius: 1rem;
+                border-radius: 0.8rem;
             }
             .header-section {
-                border-bottom-left-radius: 1rem;
-                border-bottom-right-radius: 1rem;
+                border-bottom-left-radius: 0.8rem;
+                border-bottom-right-radius: 0.8rem;
             }
             .section-title {
-                font-size: 2rem;
-                margin-bottom: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
             }
             .experience-item {
-                padding: 1.2rem;
-                margin-bottom: 2rem;
-            }
-            .experience-item::before {
-                left: 0.6rem;
-                top: 1.8rem;
-                width: 16px;
-                height: 16px;
-            }
-            .experience-item:not(:last-child)::after {
-                content: '';
-                position: absolute;
-                left: 0.75rem;
-                top: 3rem;
-                bottom: -0.4rem;
-                width: 1.5px;
+                padding: 1.2rem 1.5rem;
+                margin-bottom: 1.5rem;
+                border-radius: 0.6rem;
             }
             .contact-form-section {
-                padding: 2rem;
-                border-radius: 1rem;
+                padding: 1.5rem;
+                border-radius: 0.8rem;
             }
             .whatsapp-button {
-                bottom: 1.5rem;
-                right: 1.5rem;
-                padding: 0.8rem;
-                font-size: 1.5rem;
+                bottom: 1.2rem;
+                right: 1.2rem;
+                padding: 0.7rem;
+                font-size: 1.3rem;
             }
             .partner-logo {
-                max-height: 50px;
+                max-height: 45px;
             }
-            .partners-section a:nth-child(4) .partner-logo {
-                max-height: 40px;
+            .partners-section a[aria-label="Logo Linkelink"] .partner-logo {
+                max-height: 35px;
             }
             .navbar .flex {
                 flex-direction: column;
@@ -440,8 +417,8 @@
             .navbar-item {
                 width: 100%;
                 text-align: center;
-                margin-bottom: 0.25rem;
-                padding: 0.5rem;
+                margin-bottom: 0.2rem;
+                padding: 0.4rem;
             }
         }
     </style>
@@ -453,6 +430,8 @@
             <a href="#about" class="navbar-item">Sobre Mí</a>
             <a href="#skills" class="navbar-item">Habilidades</a>
             <a href="#experience" class="navbar-item">Experiencia</a>
+            <a href="#education" class="navbar-item">Educación</a>
+            <a href="#certifications" class="navbar-item">Certificaciones</a>
             <a href="#contact" class="navbar-item">Contacto</a>
             <a href="#partners" class="navbar-item">Socios</a>
         </div>
@@ -537,8 +516,8 @@
                         <li>Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.</li>
                         <li>Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.</li>
                         <li>Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.</li>
-                        <li>Apoyé a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
-                        <li>Apoyé en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
+                        <li>Apoyó a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
+                        <li>Apoyó en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
                         <li>Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.</li>
                     </ul>
                 </div>
@@ -559,7 +538,7 @@
                     <ul class="text-gray-600">
                         <li>Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
                         <li>Colaboré con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
-                        <li>Organicé talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
+                        <li>Organizó talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
                         <li>Dirigí la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
                         <li>Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
                     </ul>
