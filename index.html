@@ -4,215 +4,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Martha Liliana Rodríguez Romo | Relacionista Pública</title>
-    <meta name="description" content="Currículum Vitae de Martha Liliana Rodríguez Romo, Relacionista Pública enfocada en ayuda social, derechos humanos y sostenibilidad en Colombia.</p>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <meta name="description" content="CV de Martha Liliana Rodríguez Romo, Relacionista Pública enfocada en ayuda social, liderazgo y sostenibilidad.">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <link rel="stylesheet" href="css/output.css">
-</head>
-<body>
 
-    <a href="https://wa.me/573145092255" class="whatsapp-button" target="_blank" aria-label="Enviar mensaje a Lili por WhatsApp">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
+            color: #374151; /* Tailwind gray-700 */
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4a90e2; /* Un color de borde distintivo */
+        }
+        .nav-link {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #4a90e2; /* Azul para hover */
+        }
+        /* Estilos para que el scroll suave funcione bien */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <a href="https://wa.me/573145092255?text=Hola,%20estoy%20interesado%20en%20contactar%20a%20Martha%20Liliana%20Rodríguez%20Romo." class="whatsapp-button" target="_blank" aria-label="WhatsApp de Martha Liliana">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <div class="main-wrapper">
-        <header class="header-section">
-            <div class="container header-content">
-                <div class="profile-summary">
-                    <img src="images/lili-perfil.jpeg" alt="Foto de perfil de Martha Liliana Rodríguez Romo" class="profile-picture">
-                    <h1 class="profile-name" data-i18n="name">Martha Liliana Rodríguez Romo</h1>
-                    <p class="profile-title" data-i18n="title">Relacionista Pública</p>
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="location">Bogotá, Colombia</span></p>
-                        <p><i class="fas fa-envelope"></i> <a href="mailto:liliromo56@gmail.com">liliromo56@gmail.com</a></p>
-                        <p><i class="fas fa-phone"></i> <a href="tel:+573145092255">+57 314 509 2255</a></p>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/lili/" target="_blank" aria-label="LinkedIn de Lili"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                </div>
-
-                <nav class="main-navigation">
-                    <button class="nav-toggle" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
-                    <ul class="nav-list">
-                        <li><a href="#about" data-i18n="nav.about">Sobre Mí</a></li>
-                        <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
-                        <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
-                        <li><a href="#education" data-i18n="nav.education">Educación</a></li>
-                        <li><a href="#certifications" data-i18n="nav.certifications">Certificaciones</a></li>
-                        <li><a href="#partners" data-i18n="nav.partners">Aliados Estratégicos</a></li>
-                    </ul>
-                </nav>
-
-                <div class="language-switcher">
-                    <button id="lang-es" class="lang-button active" data-lang="es">ES</button>
-                    <button id="lang-en" class="lang-button" data-lang="en">EN</button>
+    <div class="container mx-auto px-4 py-8">
+        <header class="bg-white shadow-lg rounded-lg p-6 mb-8 text-center relative">
+            <div class="flex flex-col items-center">
+                <img src="images/foto-perfil.jpeg" alt="Foto de perfil de Martha Liliana Rodríguez Romo" class="profile-img mb-4">
+                <h1 class="text-4xl font-bold text-gray-800" data-lang-key="name"></h1>
+                <p class="text-xl text-gray-600 mb-4" data-lang-key="title"></p>
+                <div class="text-gray-500 text-lg">
+                    <p data-lang-key="location"></p>
+                    <p>
+                        <a href="mailto:liliromo56@gmail.com" class="text-blue-600 hover:underline">liliromo56@gmail.com</a> | 
+                        <a href="tel:+573145092255" class="text-blue-600 hover:underline">+573145092255</a>
+                        </p>
                 </div>
             </div>
+
+            <div class="absolute top-4 right-4 flex space-x-2">
+                <button id="lang-es" class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors text-sm">ES</button>
+                <button id="lang-en" class="px-3 py-1 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition-colors text-sm">EN</button>
+            </div>
+
+            <nav class="mt-6">
+                <ul class="flex flex-wrap justify-center space-x-4 md:space-x-6 text-base md:text-lg font-semibold">
+                    <li><a href="#summary" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_summary"></a></li>
+                    <li><a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_experience"></a></li>
+                    <li><a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_skills"></a></li>
+                    <li><a href="#education" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_education"></a></li>
+                    <li><a href="#certifications" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_certifications"></a></li>
+                    <li><a href="#allies" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_allies"></a></li>
+                </ul>
+            </nav>
         </header>
 
-        <main class="content-section container">
-
-            <section id="about" class="section-block about-me">
-                <h2 class="section-title" data-i18n="section.about">Resumen Profesional</h2>
-                <p class="section-description" data-i18n="about.description">
-                    Soy una Relacionista Pública enfocada en ayuda social en Colombia. Fundé Cambiando Vidas LR SAS, liderando iniciativas para apoyar a adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de derechos humanos, conservación ambiental, y apoyo a animales en estado de vulnerabilidad. Con experiencia en orquideología y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.
-                </p>
+        <main>
+            <section id="summary" class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_summary"></h2>
+                <p class="text-gray-700 leading-relaxed" id="summary_text"></p>
             </section>
 
-            <section id="skills" class="section-block skills">
-                <h2 class="section-title" data-i18n="section.skills">Habilidades Blandas</h2>
-                <ul class="skills-list soft-skills">
-                    <li data-i18n="skills.communication">Comunicación efectiva</li>
-                    <li data-i18n="skills.teamwork">Trabajo en equipo</li>
-                    <li data-i18n="skills.empathy">Empatía</li>
-                    <li data-i18n="skills.leadership">Liderazgo</li>
-                    <li data-i18n="skills.project_coordination">Coordinación de proyectos</li>
-                    <li data-i18n="skills.resource_management">Gestión de recursos</li>
-                    <li data-i18n="skills.community_work">Trabajo con comunidades vulnerables</li>
-                    <li data-i18n="skills.environmental_conservation">Conservación ambiental</li>
-                    <li data-i18n="skills.event_organization">Organización de eventos</li>
-                    <li data-i18n="skills.adaptable">Adaptable</li>
-                    <li data-i18n="skills.results_oriented">Orientada a resultados</li>
-                    <li data-i18n="skills.empirical">Empírica</li>
-                    <li data-i18n="skills.public_relations">Relaciones públicas</li>
-                </ul>
+            <section id="experience" class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_experience"></h2>
+                <div id="experience-content">
+                    </div>
             </section>
 
-            <section id="experience" class="section-block experience">
-                <h2 class="section-title" data-i18n="section.experience">Experiencia Profesional</h2>
-
-                <div class="job-entry">
-                    <h3 data-i18n="exp.mission_human_rights.title">Secretaria Diplomática, Mission Human Rights Internacional</h3>
-                    <p class="job-meta" data-i18n="exp.mission_human_rights.period">07/2023 – Hoy | Colombia – Europa</p>
-                    <ul class="job-responsibilities">
-                        <li data-i18n="exp.mission_human_rights.responsibility1">Ejercicio de funciones diplomáticas de alto nivel como representante institucional de Mission Human Rights en Colombia, articulando esfuerzos nacionales e internacionales en favor de la protección y promoción de los derechos humanos.</li>
-                        <li data-i18n="exp.mission_human_rights.responsibility2">Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.</li>
-                        <li data-i18n="exp.mission_human_rights.responsibility3">Coordinación de la incidencia diplomática y política ante sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.</li>
-                        <li data-i18n="exp.mission_human_rights.responsibility4">Supervisión de la gestión nacional, velando por la alineación estratégica con la misión institucional y promoviendo la transparencia, la integridad y la articulación efectiva de los órganos directivos.</li>
-                        <li data-i18n="exp.mission_human_rights.responsibility5">Facilitación de relaciones con organismos multilaterales, cooperantes y aliados estratégicos para la proyección internacional de la organización y la consolidación de su estructura operativa.</li>
+            <section id="skills" class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_skills"></h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-700" id="skills-list">
                     </ul>
-                </div>
+            </section>
 
-                <div class="job-entry">
-                    <h3 data-i18n="exp.cambiando_vidas.title">CEO, Cambiando Vidas LR S.A.S.</h3>
-                    <p class="job-meta" data-i18n="exp.cambiando_vidas.period">07/2023 – Hoy | San Antonio del Tequendama, CO</p>
-                    <ul class="job-responsibilities">
-                        <li data-i18n="exp.cambiando_vidas.responsibility1">Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility2">Gestión e implementación de una alianza internacional con la organización ABILITYTOHELP, mediante la cual se logró la distribución de 15.000 becas de formación en inglés (niveles A1 a B1), así como becas para estudios técnicos en Conducta Humana Aplicada, beneficiando a jóvenes y adultos en condiciones de vulnerabilidad.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility3">Facilitación de procesos estratégicos para el posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo la visibilidad y el fortalecimiento de sus marcas en colaboración directa con la con Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, y la Agencia Mundial de Prensa.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility4">Desarrollo de programas de formación, capacitación e impulso emprendedor, dirigidos especialmente a mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar a través del trabajo en conjunto con la organización Mecedora de mis Ancestros.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility5">Coordinación de una red nacional de productores para optimizar la comercialización de sus productos, fortalecer sus emprendimientos y posicionar a los agricultores colombianos en mercados nacionales e internacionales.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility6">Promoción de iniciativas culturales innovadoras que integran el arte y la identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional por medio de una alianza cultural con el Maestro Siaucho.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility7">Liderazgo en Sembrando Semillas, un proyecto de Cambiando Vidas LR S.A.S que impactó a más de 1,500 clientes a través de la venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para fomentar el desarrollo sostenible del sector.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility8">Facilitamos el acceso a capacitaciones en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, captando recursos para el programa Colombia Mayor.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility9">Colaboro con la Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en la promoción y defensa de los derechos humanos a nivel nacional.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility10">Coordiné la capacitación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas a través de la Fundación FMEC.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility11">Organizo eventos en Bogotá, con la fundación PROASOCIADOS conectando a inversores internacionales con emprendedores nacionales, logrando que más de 200 emprendedores formalicen y escalen sus negocios.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility12">Conecté a estudiantes de territorios remotos con la Fundación TLS, facilitando su acceso a becas de la Georgia Tech International Corporation para su titulación universitaria.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility13">Brindamos capacitaciones a las personas con discapacidad, a través de la alianza con el movimiento latinoamericano de personas con discapacidad, para facilitar su integración a la sociedad.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility14">Capacito a víctimas del conflicto armado sobre sus derechos y brindándoles apoyo continuo.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility15">Coordiné la gestión y postulación de proyectos en Cundinamarca y Antioquía junto a Dismartek, cumpliendo con todos los requerimientos y plazos establecidos.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility16">Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility17">Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility18">Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility19">Apoyé a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility20">Apoyé en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
-                        <li data-i18n="exp.cambiando_vidas.responsibility21">Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.</li>
+            <section id="education" class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_education"></h2>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2" id="education-list">
                     </ul>
-                </div>
+            </section>
 
-                <div class="job-entry">
-                    <h3 data-i18n="exp.atsei.title">Relacionista Comercial, ATSEI de Colombia.</h3>
-                    <p class="job-meta" data-i18n="exp.atsei.period">02/2016 – Hoy | San Antonio del Tequendama, CO</p>
-                    <ul class="job-responsibilities">
-                        <li data-i18n="exp.atsei.responsibility1">Impulsé la comercialización e implementación de paneles solares a nivel nacional, logrando su adopción exitosa en 5 ciudades.</li>
+            <section id="certifications" class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_certifications"></h2>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2" id="certifications-list">
                     </ul>
-                </div>
-
-                <div class="job-entry">
-                    <h3 data-i18n="exp.construyendo_sonrisas.title">Fundadora, Construyendo Sonrisas.</h3>
-                    <p class="job-meta" data-i18n="exp.construyendo_sonrisas.period">2012 – 2016 | Lima, PE</p>
-                    <ul class="job-responsibilities">
-                        <li data-i18n="exp.construyendo_sonrisas.responsibility1">Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
-                        <li data-i18n="exp.construyendo_sonrisas.responsibility2">Colaboré con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
-                        <li data-i18n="exp.construyendo_sonrisas.responsibility3">Organicé talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
-                        <li data-i18n="exp.construyendo_sonrisas.responsibility4">Dirigí la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
-                        <li data-i18n="exp.construyendo_sonrisas.responsibility5">Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
-                    </ul>
-                </div>
             </section>
 
-            <section id="education" class="section-block education">
-                <h2 class="section-title" data-i18n="section.education">Educación Extendida</h2>
-                <div class="education-entry">
-                    <h3 data-i18n="edu.diploma1.title">Diplomado de derechos humanos</h3>
-                    <p class="institution" data-i18n="edu.diploma1.institution">Capellanía Armada Mundial de Paz de México.</p>
-                </div>
-                <div class="education-entry">
-                    <h3 data-i18n="edu.tech_agri.title">Técnico Agropecuario</h3>
-                    <p class="institution" data-i18n="edu.tech_agri.institution">instituto Tomás Moro.</p>
-                </div>
-                <div class="education-entry">
-                    <h3 data-i18n="edu.diploma2.title">Diplomado en Inclusión.</h3>
-                </div>
-                <div class="education-entry">
-                    <h3 data-i18n="edu.human_rights_school.title">Derechos humanos</h3>
-                    <p class="institution" data-i18n="edu.human_rights_school.institution">Escuela nacional de formación comunitaria.</p>
-                </div>
-                <div class="education-entry">
-                    <h3 data-i18n="edu.masters_circle.title">Diplomado en Circulo De Maestros Conocimientos Y Saberes</h3>
-                    <p class="institution" data-i18n="edu.masters_circle.institution">De La Federación De Discapacidad Cuidadores De Colombia Y El Movimiento Guajira Disruptiva.</p>
-                </div>
+            <section id="allies" class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_allies"></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="allies-grid">
+                    </div>
             </section>
-
-            <section id="certifications" class="section-block certifications">
-                <h2 class="section-title" data-i18n="section.certifications">Certificaciones</h2>
-                <div class="certification-entry">
-                    <h3 data-i18n="cert.adolfo_perez.title">Alta Distinción «Honor, Dignidad y Gloria»</h3>
-                    <p class="certificate-meta" data-i18n="cert.adolfo_perez.details">Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.</p>
-                </div>
-                <div class="certification-entry">
-                    <h3 data-i18n="cert.honoris_causa.title">Doctor Honoris Causa en: Derechos Humanos.</h3>
-                </div>
-            </section>
-
-            <section id="partners" class="section-block partners">
-                <h2 class="section-title" data-i18n="section.partners">Aliados Estratégicos y Colaboraciones</h2>
-                <div class="partner-logos">
-                    <img src="images/logos/ability.jpeg" alt="Logo de ABILITYTOHELP" data-i18n="partner.abilitytohelp_alt">
-                    <img src="images/logos/credencial-cdhu.jpeg" alt="Logo de Credencial CDHU" data-i18n="partner.credencial_cdhu_alt">
-                    <img src="images/logos/logo-cavlir.png" alt="Logo de CAVLiR" data-i18n="partner.cavlir_alt">
-                    <img src="images/logos/logo-mujeres-solidarias.jpeg" alt="Logo de Mujeres Solidarias" data-i18n="partner.mujeres_solidarias_alt">
-                    <img src="images/logos/serpaj.jpeg" alt="Logo de SERPAJ" data-i18n="partner.serpaj_alt">
-                    <img src="images/logos/agencia-mundial-prensa.jpeg" alt="Logo de Agencia Mundial de Prensa" data-i18n="partner.world_press_agency_alt">
-                    <img src="images/logos/mecedora.jpeg" alt="Logo de Mecedora de mis Ancestros" data-i18n="partner.mecedora_alt">
-                    <img src="images/logos/maestro-siaucho.jpeg" alt="Logo de Maestro Siaucho" data-i18n="partner.siaucho_alt">
-                    <img src="images/logos/colombia-mayor.jpeg" alt="Logo de Colombia Mayor" data-i18n="partner.colombia_mayor_alt">
-                    <img src="images/logos/colombia-honesta.jpeg" alt="Logo de Veeduría por una Colombia Honesta" data-i18n="partner.honest_colombia_alt">
-                    <img src="images/logos/fmec.jpeg" alt="Logo de Fundación FMEC" data-i18n="partner.fmec_alt">
-                    <img src="images/logos/proasociados.jpeg" alt="Logo de PROASOCIADOS" data-i18n="partner.proasociados_alt">
-                    <img src="images/logos/tls.jpeg" alt="Logo de Fundación TLS" data-i18n="partner.tls_alt">
-                    <img src="images/logos/georgia-tech.jpeg" alt="Logo de Georgia Tech International Corporation" data-i18n="partner.georgia_tech_alt">
-                    <img src="images/logos/discapacidad-latam.jpeg" alt="Logo de Movimiento Latinoamericano de Personas con Discapacidad" data-i18n="partner.disability_movement_alt">
-                    <img src="images/logos/dismartek.jpeg" alt="Logo de Dismartek" data-i18n="partner.dismartek_alt">
-                    <img src="images/logos/appantioquia.jpeg" alt="Logo de AppAntioquia" data-i18n="partner.appantioquia_alt">
-                    <img src="images/logos/inverfina.jpeg" alt="Logo de Inverfina SAC" data-i18n="partner.invferfina_alt">
-                    <img src="images/logos/fediscol.jpeg" alt="Logo de FEDISCOL" data-i18n="partner.fediscol_alt">
-                    <img src="images/logos/andedh.jpeg" alt="Logo de ANDEDH" data-i18n="partner.andedh_alt">
-                </div>
-            </section>
-
         </main>
-
-        <footer class="footer-section">
-            <p data-i18n="footer.copyright">&copy; 2025 Martha Liliana Rodríguez Romo. Todos los derechos reservados.</p>
-        </footer>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/language.js"></script>
+    <script>
+        const langData = {}; // Este objeto contendrá los datos de idioma cargados desde los JSON
+        let currentLang = 'es'; // Idioma por defecto
+
+        // Función para cargar los datos de idioma desde los archivos JSON
+        async function loadLanguageData() {
+            try {
+                const esResponse = await fetch('data/es.json');
+                langData['es'] = await esResponse.json();
+
+                const enResponse = await fetch('data/en.json');
+                langData['en'] = await enResponse.json();
+
+                // Intentar cargar el idioma preferido del navegador o uno guardado
+                const savedLang = localStorage.getItem('cvLang');
+                if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
+                    currentLang = savedLang;
+                } else if (navigator.language.startsWith('en')) {
+                    currentLang = 'en';
+                }
+
+                applyLanguage(currentLang); // Aplica el idioma inicial al cargar
+            } catch (error) {
+                console.error('Error al cargar los archivos de idioma:', error);
+            }
+        }
+
+        // Función para aplicar el idioma seleccionado a los elementos del DOM
+        function applyLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('cvLang', lang); // Guardar el idioma seleccionado
+            const data = langData[lang];
+
+            // Actualizar elementos con atributo data-lang-key
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (data[key] !== undefined) { // Usar undefined para manejar casos donde la clave podría no existir
+                    element.textContent = data[key];
+                }
+            });
+
+            // Actualizar Resumen (usando el ID 'summary_text' que es un párrafo)
+            const summaryTextElement = document.getElementById('summary_text');
+            if (summaryTextElement && data.summary && data.summary.text) {
+                summaryTextElement.textContent = data.summary.text;
+            }
+
+            // Actualizar Experiencia
+            const experienceContent = document.getElementById('experience-content');
+            experienceContent.innerHTML = ''; // Limpiar antes de añadir
+            if (data.experience) { // Añadir verificación si 'experience' existe
+                data.experience.forEach(exp => {
+                    const expDiv = document.createElement('div');
+                    expDiv.className = 'mb-6 p-4 border border-gray-200 rounded-md';
+                    expDiv.innerHTML = `
+                        <h3 class="text-xl font-semibold text-gray-800">${exp.position} - ${exp.organization}</h3>
+                        <p class="text-gray-600 mb-2">${exp.period}</p>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            ${exp.responsibilities.map(res => `<li>${res}</li>`).join('')}
+                        </ul>
+                    `;
+                    experienceContent.appendChild(expDiv);
+                });
+            }
+
+            // Actualizar Habilidades
+            const skillsList = document.getElementById('skills-list');
+            skillsList.innerHTML = '';
+            if (data.skills) { // Añadir verificación si 'skills' existe
+                data.skills.forEach(skill => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-center text-lg';
+                    li.innerHTML = `<i class="fas fa-check-circle text-blue-500 mr-2"></i> ${skill}`;
+                    skillsList.appendChild(li);
+                });
+            }
+
+            // Actualizar Educación
+            const educationList = document.getElementById('education-list');
+            educationList.innerHTML = '';
+            if (data.education) { // Añadir verificación si 'education' existe
+                data.education.forEach(edu => {
+                    const li = document.createElement('li');
+                    li.textContent = edu;
+                    educationList.appendChild(li);
+                });
+            }
+
+            // Actualizar Certificaciones
+            const certificationsList = document.getElementById('certifications-list');
+            certificationsList.innerHTML = '';
+            if (data.certifications) { // Añadir verificación si 'certifications' existe
+                data.certifications.forEach(cert => {
+                    const li = document.createElement('li');
+                    li.textContent = cert;
+                    certificationsList.appendChild(li);
+                });
+            }
+
+            // Actualizar Aliados Estratégicos
+            const alliesGrid = document.getElementById('allies-grid');
+            alliesGrid.innerHTML = '';
+            if (data.allies) { // Añadir verificación si 'allies' existe
+                data.allies.forEach(ally => {
+                    const allyDiv = document.createElement('div');
+                    allyDiv.className = 'bg-gray-100 p-4 rounded-lg text-center flex flex-col items-center justify-between';
+                    allyDiv.innerHTML = `
+                        ${ally.logo ? `<img src="${ally.logo}" alt="${ally.name} Logo" class="w-24 h-24 object-contain mx-auto mb-2">` : '<i class="fas fa-handshake text-5xl text-blue-500 mb-2"></i>'}
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">${ally.name}</h3>
+                        <p class="text-gray-600 text-sm">${ally.location}</p>
+                        ${ally.description ? `<p class="text-gray-700 text-sm mt-2">${ally.description}</p>` : ''}
+                        ${ally.url ? `<a href="${ally.url}" target="_blank" class="text-blue-600 hover:underline mt-2 text-sm">${data.visit_website}</a>` : ''}
+                    `;
+                    alliesGrid.appendChild(allyDiv);
+                });
+            }
+
+            // Actualizar el estado de los botones de idioma
+            const langEsBtn = document.getElementById('lang-es');
+            const langEnBtn = document.getElementById('lang-en');
+
+            if (langEsBtn && langEnBtn) { // Asegurarse de que los botones existan
+                if (lang === 'es') {
+                    langEsBtn.classList.add('bg-blue-500', 'text-white');
+                    langEsBtn.classList.remove('bg-gray-300', 'text-gray-700');
+                    langEnBtn.classList.remove('bg-blue-500', 'text-white');
+                    langEnBtn.classList.add('bg-gray-300', 'text-gray-700');
+                } else {
+                    langEnBtn.classList.add('bg-blue-500', 'text-white');
+                    langEnBtn.classList.remove('bg-gray-300', 'text-gray-700');
+                    langEsBtn.classList.remove('bg-blue-500', 'text-white');
+                    langEsBtn.classList.add('bg-gray-300', 'text-gray-700');
+                }
+            }
+        }
+
+        // Event Listeners para los botones de idioma
+        document.getElementById('lang-es').addEventListener('click', () => applyLanguage('es'));
+        document.getElementById('lang-en').addEventListener('click', () => applyLanguage('en'));
+
+        // Cargar los datos de idioma al iniciar
+        document.addEventListener('DOMContentLoaded', loadLanguageData);
+    </script>
 </body>
 </html>

@@ -1,0 +1,300 @@
+{
+    "name": "Martha Liliana Rodríguez Romo",
+    "title": "Public Relations Specialist",
+    "location": "Bogotá, Colombia",
+    "nav_summary": "Summary",
+    "nav_experience": "Experience",
+    "nav_skills": "Skills",
+    "nav_education": "Education",
+    "nav_certifications": "Certifications",
+    "nav_allies": "Strategic Allies",
+    "sec_summary": "Summary",
+    "sec_experience": "Experience",
+    "sec_skills": "Soft Skills",
+    "sec_education": "Extended Education",
+    "sec_certifications": "Certifications",
+    "sec_allies": "Strategic Allies",
+    "visit_website": "Visit website",
+    "summary": {
+        "text": "I am a Public Relations professional focused on social aid in Colombia. I founded Cambiando Vidas LR SAS, leading initiatives to support vulnerable elderly adults and empowered women. I have worked on human rights projects, environmental conservation, and support for vulnerable animals. With experience in orchidology and solar panel commercialization, I am committed to social development and sustainability."
+    },
+    "skills": [
+        "Effective communication",
+        "Teamwork",
+        "Empathy",
+        "Leadership",
+        "Project coordination",
+        "Resource management",
+        "Work with vulnerable communities",
+        "Environmental conservation",
+        "Event organization",
+        "Adaptable",
+        "Results-oriented",
+        "Empirical",
+        "Public relations"
+    ],
+    "experience": [
+        {
+            "position": "CIDHU Commissioner - Human Connections",
+            "organization": "Mission Human Rights Internacional",
+            "period": "07/2023 – Present",
+            "responsibilities": [
+                "Responsible for human connections and the articulation of national and international efforts for the protection and promotion of human rights.",
+                "Leadership in the formulation and validation of the organization's Statutes, establishing principles of governance, strategic control, and institutional responsibility.",
+                "Coordination of diplomatic and political advocacy before international human rights systems, including participation in multilateral forums and drafting official reports and communications.",
+                "Supervision of national management, ensuring strategic alignment with the institutional mission and promoting transparency, integrity, and effective articulation of the governing bodies.",
+                "Facilitating relationships with multilateral organizations, partners, and strategic allies for the international projection of the organization and the consolidation of its operational structure."
+            ]
+        },
+        {
+            "position": "CEO",
+            "organization": "Cambiando Vidas LR S.A.S.",
+            "period": "07/2023 – Present",
+            "responsibilities": [
+                "Management and implementation of an international alliance with the ABILITYTOHELP organization, through which 15,000 English language training scholarships (A1 to B1 levels) were distributed, as well as scholarships for technical studies in Applied Human Behavior, benefiting vulnerable youth and adults.",
+                "Appointed Doctor Honoris Causa in Human Rights during the First International Summit of the Colombian Bar Association (June 2025, Cartagena), in recognition of her trajectory in social leadership, promotion of rights, and contributions to strengthening justice and advocacy at an international level.",
+                "Facilitating strategic processes for the positioning of companies, organizations, and individuals in national and international markets, promoting visibility and strengthening their brands in direct collaboration with Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, and the World Press Agency.",
+                "Developing training, capacity building, and entrepreneurial support programs, especially aimed at Afro-descendant and indigenous women, with direct impact on more than 800 families in the Cesar department through joint work with the 'Mecedora de mis Ancestros' organization.",
+                "Coordinating a national network of producers to optimize the commercialization of their products, strengthen their ventures, and position Colombian farmers in national and international markets.",
+                "Promoting innovative cultural initiatives that integrate art and local identity, generating impact on participating communities and strengthening their connection with national culture through a cultural alliance with Maestro Siaucho.",
+                "Leading 'Sembrando Semillas', a Cambiando Vidas LR S.A.S project that impacted more than 1,500 clients through the sale of orchid seeds, formalizing more than 300 nurseries, and working directly with 400 farmers to foster sustainable development in the sector.",
+                "Facilitating access to human rights training, literacy, and free events for vulnerable elderly adults, raising funds for the Colombia Mayor program.",
+                "Collaborating with the 'Veeduría por una Colombia Honesta' alongside Leonardo Bernal Caballero, working on the promotion and defense of human rights at a national level.",
+                "Coordinating the training and follow-up of more than 200 women in Magdalena and Cundinamarca, empowering them through the FMEC Foundation.",
+                "Organizing events in Bogotá, with the PROASOCIADOS foundation connecting international investors with national entrepreneurs, enabling more than 200 entrepreneurs to formalize and scale their businesses.",
+                "Connecting students from remote territories with the TLS Foundation, facilitating their access to scholarships from the Georgia Tech International Corporation for their university degrees.",
+                "Providing training to people with disabilities, through the alliance with the Latin American movement of people with disabilities, to facilitate their integration into society.",
+                "Training victims of the armed conflict about their rights and providing continuous support.",
+                "Coordinating the management and submission of projects in Cundinamarca and Antioquia with Dismartek, fulfilling all established requirements and deadlines.",
+                "Being part of the Great Network of Antioquia through AppAntioquia, and collaborating in the Popular Association and the Departmental Media Table. Contributing to the Antioquia Federation of Arts and the United Artists Association (NIT 90027942-5), united with the National Creative Industry led jointly by James Arboleda and myself.",
+                "Supporting the protection of vulnerable animals in Cundinamarca, financing social initiatives through Inverfina SAC, a Peruvian construction company, for the past 10 years.",
+                "Contributing to environmental conservation in Colombia, Peru, and Ecuador, leading expeditions in the Amazon to identify and preserve endemic species for 8 years. Achieved the creation of new hybridizations that strengthen biodiversity and support conservation efforts.",
+                "Supporting the community of Nueva Jerusalen in Ibagué in conjunction with Mrs. Flora Imelda Perez, President of the communal action board.",
+                "Supporting in conjunction with the FEDISCOL organization people with disabilities in Colombian territory.",
+                "Working hand in hand with the national federation of displaced persons in defense of human rights, ANDEDH."
+            ]
+        },
+        {
+            "position": "Commercial Relations Specialist",
+            "organization": "ATSEI de Colombia.",
+            "period": "02/2016 – Present",
+            "responsibilities": [
+                "Promoted the commercialization and implementation of solar panels nationwide, achieving successful adoption in 5 cities."
+            ]
+        },
+        {
+            "position": "Founder",
+            "organization": "Construyendo Sonrisas.",
+            "period": "2012 – 2016",
+            "responsibilities": [
+                "Started 12 years ago in the human settlement Pachacutec in Lima, Peru, providing support to children and street animals through the \"Construyendo Sonrisas\" project.",
+                "Collaborated with fine arts artists in Lima, boosting the local economy through the promotion and commercialization of their works.",
+                "Organized workshops for recycling wood from demolished houses, focused on environmental rehabilitation and supporting 10 young people with drug addiction problems.",
+                "Directed the \"Suma_rte\" gallery in Peru, highlighting the importance of 'guacas' (ancient burial sites) and other traditional spaces through rock paintings and semi-precious stones.",
+                "Succeeded in supporting more than 70 homeless animals in the past and currently cares for 18 dogs, providing them with medical care, food, and a safe home."
+            ]
+        }
+    ],
+    "education": [
+        "Diploma in Human Rights with the World Peace Armed Chaplaincy of Mexico.",
+        "Agricultural Technician, Tomás Moro Institute.",
+        "Diploma in Inclusion.",
+        "Human Rights, National School of Community Training.",
+        "Diploma in Circle of Masters Knowledge and Wisdom of the Federation of Disability Caregivers of Colombia and the Disruptive Guajira Movement."
+    ],
+    "certifications": [
+        "High Distinction «Honor, Dignity and Glory» Adolfo Pérez Esquivel 2024 in Commemoration of Universal Human Rights Day.",
+        "Doctor Honoris Causa in: Human Rights."
+    ],
+    "allies": [
+        {
+            "name": "Mission Human Rights Internacional",
+            "location": "Colombia – Europe",
+            "description": "Organization dedicated to the protection and promotion of human rights.",
+            "url": "URL_DE_MISSION_HUMAN_RIGHTS_INTERNACIONAL",
+            "logo": "images/fip.jpeg"
+        },
+        {
+            "name": "ABILITYTOHELP",
+            "location": "International",
+            "description": "Collaboration for English language and applied human behavior training scholarships.",
+            "url": "URL_DE_ABILITYTOHELP",
+            "logo": "images/ability.jpeg"
+        },
+        {
+            "name": "Construction, Service, Peace and Justice in Latin America (SERPAJ)",
+            "location": "Latin America",
+            "description": "Alliance for strategic positioning and brand strengthening.",
+            "url": "URL_DE_SERPAJ",
+            "logo": "images/serpaj.jpeg"
+        },
+        {
+            "name": "World Press Agency",
+            "location": "International",
+            "description": "Collaboration for brand visibility and positioning.",
+            "url": "URL_DE_AGENCIA_MUNDIAL_DE_PRENSA",
+            "logo": "images/prensa.jpeg"
+        },
+        {
+            "name": "Mecedora de mis Ancestros",
+            "location": "Cesar Department, Colombia",
+            "description": "Joint work for training and entrepreneurship programs for Afro-descendant and indigenous women.",
+            "url": "URL_DE_MECEDORA_DE_MIS_ANCESTROS",
+            "logo": "images/ancestros.jpeg"
+        },
+        {
+            "name": "Maestro Siaucho",
+            "location": "Colombia",
+            "description": "Cultural alliance for the promotion of artistic initiatives and local identity.",
+            "url": "URL_DEL_MAESTRO_SIAUCHO",
+            "logo": "images/siaucho.jpeg"
+        },
+        {
+            "name": "Veeduría por una Colombia Honesta",
+            "location": "National (Colombia)",
+            "description": "Collaboration in the promotion and defense of human rights.",
+            "url": "URL_DE_VEEDURIA_COLOMBIA_HONESTA",
+            "logo": "images/colombia_honesta.jpeg"
+        },
+        {
+            "name": "FMEC Foundation",
+            "location": "Magdalena and Cundinamarca, Colombia",
+            "description": "Empowering women through training and follow-up.",
+            "url": "URL_DE_FUNDACION_FMEC",
+            "logo": "images/logo-mujeres-solidarias.jpeg"
+        },
+        {
+            "name": "PROASOCIADOS",
+            "location": "Bogotá, Colombia",
+            "description": "Connecting international investors with national entrepreneurs.",
+            "url": "URL_DE_PROASOCIADOS",
+            "logo": "images/proasociados.jpeg"
+        },
+        {
+            "name": "TLS Foundation",
+            "location": "International",
+            "description": "Facilitating access to university scholarships for students from remote territories.",
+            "url": "URL_DE_FUNDACION_TLS",
+            "logo": "images/tls.jpeg"
+        },
+        {
+            "name": "Georgia Tech International Corporation",
+            "location": "International",
+            "description": "Support for university degree scholarships.",
+            "url": "URL_DE_GEORGIA_TECH",
+            "logo": "images/georgia_tech.jpeg"
+        },
+        {
+            "name": "Latin American Movement of People with Disabilities",
+            "location": "Latin America",
+            "description": "Training for the social integration of people with disabilities.",
+            "url": "URL_DE_MOVIMIENTO_DISCAPACIDAD",
+            "logo": "images/movimiento_discapacidad.jpeg"
+        },
+        {
+            "name": "Dismartek",
+            "location": "Cundinamarca and Antioquia, Colombia",
+            "description": "Coordination of project management and submission.",
+            "url": "URL_DE_DISMARTEK",
+            "logo": "images/dismartek.jpeg"
+        },
+        {
+            "name": "AppAntioquia (Great Network of Antioquia)",
+            "location": "Antioquia, Colombia",
+            "description": "Collaboration in the network and regional development.",
+            "url": "URL_DE_APPANTIOQUIA",
+            "logo": "images/appantioquia.jpeg"
+        },
+        {
+            "name": "Popular Association",
+            "location": "Colombia",
+            "description": "Collaboration in guild and social initiatives.",
+            "url": "URL_DE_AGREMIACION_POPULAR",
+            "logo": "images/agremia.jpeg"
+        },
+        {
+            "name": "Departmental Media Table",
+            "location": "Colombia",
+            "description": "Collaboration in the field of media.",
+            "url": "URL_DE_MESA_DE_MEDIOS",
+            "logo": "images/mesa_medios.jpeg"
+        },
+        {
+            "name": "Antioquia Federation of Arts",
+            "location": "Antioquia, Colombia",
+            "description": "Contribution to artistic and cultural development.",
+            "url": "URL_DE_FEDERACION_ARTES",
+            "logo": "images/fed_artes.jpeg"
+        },
+        {
+            "name": "United Artists Association (NIT 90027942-5)",
+            "location": "Colombia",
+            "description": "Union for the National Creative Industry.",
+            "url": "URL_DE_ARTISTAS_UNIDOS",
+            "logo": "images/artistas_unidos.jpeg"
+        },
+        {
+            "name": "Inverfina SAC",
+            "location": "Peru",
+            "description": "Financing social initiatives for animal protection.",
+            "url": "URL_DE_INVERFINA_SAC",
+            "logo": "images/inverfina.jpeg"
+        },
+        {
+            "name": "World Peace Armed Chaplaincy of Mexico",
+            "location": "Mexico",
+            "description": "Organization of human rights diplomas.",
+            "url": "URL_DE_CAPELLANIA",
+            "logo": "images/capellania.jpeg"
+        },
+        {
+            "name": "Tomás Moro Institute",
+            "location": "Colombia",
+            "description": "Educational institution for agricultural technical training.",
+            "url": "URL_DE_INSTITUTO_TOMAS_MORO",
+            "logo": "images/tomas_moro.jpeg"
+        },
+        {
+            "name": "National School of Community Training",
+            "location": "Colombia",
+            "description": "Human rights training at the community level.",
+            "url": "URL_DE_ESCUELA_FORMACION_COMUNITARIA",
+            "logo": "images/escuela_comunitaria.jpeg"
+        },
+        {
+            "name": "Federation of Disability Caregivers of Colombia",
+            "location": "Colombia",
+            "description": "Part of the circle of masters in knowledge and wisdom about disability.",
+            "url": "URL_DE_FEDERACION_DISCAPACIDAD",
+            "logo": "images/fediscol.jpeg"
+        },
+        {
+            "name": "Disruptive Guajira Movement",
+            "location": "La Guajira, Colombia",
+            "description": "Participation in movement for the knowledge and wisdom of the region.",
+            "url": "URL_DE_GUAJIRA_DISRUPTIVA",
+            "logo": "images/guajira_disruptiva.jpeg"
+        },
+        {
+            "name": "Ms. Flora Imelda Perez",
+            "location": "Ibagué, Colombia",
+            "description": "President of the communal action board, collaborator in community support.",
+            "url": "",
+            "logo": "images/flora_perez.jpeg"
+        },
+        {
+            "name": "FEDISCOL",
+            "location": "Colombia",
+            "description": "Support for people with disabilities in Colombian territory.",
+            "url": "URL_DE_FEDISCOL",
+            "logo": "images/fediscol.jpeg"
+        },
+        {
+            "name": "National Federation of Displaced Persons in Defense of Human Rights (ANDEDH)",
+            "location": "National (Colombia)",
+            "description": "Joint work in defense of the human rights of displaced persons.",
+            "url": "URL_DE_ANDEDH",
+            "logo": "images/andedh.jpeg"
+        }
+    ]
+}
