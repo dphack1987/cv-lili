@@ -1,3 +1,5 @@
+HTML
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Martha Liliana Rodríguez Romo | Relacionista Pública</title>
     <meta name="description" content="CV de Martha Liliana Rodríguez Romo, Relacionista Pública enfocada en ayuda social, liderazgo y sostenibilidad.">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="stylesheet" href="css/output.css">
@@ -38,22 +42,111 @@
             transform: scale(1.1);
         }
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px; /* Un poco más grande */
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #4a90e2; /* Un color de borde distintivo */
+            border: 5px solid #4a90e2; /* Borde más pronunciado */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Sombra para destacarla */
         }
         .nav-link {
             cursor: pointer;
-            transition: color 0.3s;
+            transition: color 0.3s, background-color 0.3s;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem; /* rounded-md */
+            white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
         }
         .nav-link:hover {
-            color: #4a90e2; /* Azul para hover */
+            color: #ffffff; /* Texto blanco en hover */
+            background-color: #4a90e2; /* Fondo azul en hover */
         }
-        /* Estilos para que el scroll suave funcione bien */
+        .nav-link.active {
+            color: #ffffff;
+            background-color: #3b82f6; /* Tailwind blue-500 */
+        }
         html {
             scroll-behavior: smooth;
+        }
+        .logo-container {
+            background-color: white;
+            padding: 1.5rem; /* Más espaciado */
+            border-radius: 0.75rem; /* Más redondeado */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra más fuerte */
+            margin-bottom: 2.5rem; /* Más espacio */
+            display: inline-block;
+        }
+        .section-header {
+            border-bottom: 3px solid #3b82f6; /* Un azul más vibrante para los bordes */
+            padding-bottom: 0.75rem; /* Más padding */
+            margin-bottom: 1.5rem; /* Más espacio debajo */
+            color: #1f2937; /* gray-900 para títulos de sección */
+        }
+        .sidebar-section {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        .experience-item {
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid #a8b1be; /* Línea de tiempo sutil */
+            margin-left: 0.5rem;
+            padding-bottom: 1.5rem; /* Espacio entre ítems */
+        }
+        .experience-item:last-child {
+            border-left: none; /* Eliminar línea para el último ítem */
+            padding-bottom: 0;
+        }
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -8px; /* Ajustar posición del círculo */
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background-color: #3b82f6; /* Círculo azul */
+            border-radius: 50%;
+            border: 2px solid #ffffff; /* Borde blanco para que destaque */
+            box-shadow: 0 0 0 2px #3b82f6; /* Sombra adicional */
+        }
+        .skill-item {
+            background-color: #e0f2f7; /* Un azul claro muy sutil */
+            padding: 0.5rem 1rem;
+            border-radius: 9999px; /* rounded-full */
+            display: inline-flex; /* Para que el contenido esté centrado verticalmente con el icono */
+            align-items: center;
+            font-size: 0.9em;
+            color: #1a567c; /* Un azul oscuro para el texto */
+        }
+        .ally-card {
+            background-color: #f9fafb; /* Ligeramente más claro para las tarjetas */
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+        .ally-card:hover {
+            transform: translateY(-5px); /* Pequeño efecto hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .ally-logo {
+            filter: grayscale(80%); /* Logotipos en escala de grises para uniformidad */
+            transition: filter 0.3s ease-in-out;
+        }
+        .ally-card:hover .ally-logo {
+            filter: grayscale(0%); /* Color al pasar el ratón */
+        }
+        /* Estilos para que el menú de navegación sea scrollable en móvil */
+        .nav-scrollable {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Para un scroll más suave en iOS */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE and Edge */
+        }
+        .nav-scrollable::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
         }
     </style>
 </head>
@@ -64,80 +157,118 @@
     </a>
 
     <div class="container mx-auto px-4 py-8">
-        <header class="bg-white shadow-lg rounded-lg p-6 mb-8 text-center relative">
-            <div class="flex flex-col items-center">
-                <img src="images/foto-perfil.jpeg" alt="Foto de perfil de Martha Liliana Rodríguez Romo" class="profile-img mb-4">
-                <h1 class="text-4xl font-bold text-gray-800" data-lang-key="name"></h1>
-                <p class="text-xl text-gray-600 mb-4" data-lang-key="title"></p>
-                <div class="text-gray-500 text-lg">
-                    <p data-lang-key="location"></p>
-                    <p>
-                        <a href="mailto:liliromo56@gmail.com" class="text-blue-600 hover:underline">liliromo56@gmail.com</a> | 
-                        <a href="tel:+573145092255" class="text-blue-600 hover:underline">+573145092255</a>
-                        </p>
+        <section class="flex justify-center mb-10">
+            <div class="logo-container">
+                <img src="images/logo-cavlir.png" alt="Logo CAVLIR" class="h-24 w-auto"> 
+            </div>
+        </section>
+
+        <header class="bg-white shadow-xl rounded-lg p-8 mb-10 text-center relative">
+            <div class="flex flex-col md:flex-row items-center justify-center md:space-x-8">
+                <img src="images/foto-perfil.jpeg" alt="Foto de perfil de Martha Liliana Rodríguez Romo" class="profile-img mb-6 md:mb-0">
+                <div class="text-center md:text-left">
+                    <h1 class="text-5xl font-extrabold text-gray-900 mb-2" data-lang-key="name"></h1>
+                    <p class="text-2xl text-blue-600 font-semibold mb-4" data-lang-key="title"></p>
+                    <div class="text-gray-700 text-lg space-y-2">
+                        <p><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i> <span data-lang-key="location"></span></p>
+                        <p><i class="fas fa-envelope text-blue-500 mr-2"></i> <a href="mailto:liliromo56@gmail.com" class="text-blue-600 hover:underline">liliromo56@gmail.com</a></p>
+                        <p><i class="fas fa-phone-alt text-blue-500 mr-2"></i> <a href="tel:+573145092255" class="text-blue-600 hover:underline">+573145092255</a></p>
+                        </div>
                 </div>
             </div>
 
-            <div class="absolute top-4 right-4 flex space-x-2">
-                <button id="lang-es" class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors text-sm">ES</button>
-                <button id="lang-en" class="px-3 py-1 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition-colors text-sm">EN</button>
+            <div class="absolute top-6 right-6 flex space-x-2">
+                <button id="lang-es" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-base font-semibold">ES</button>
+                <button id="lang-en" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-colors text-base font-semibold">EN</button>
             </div>
 
-            <nav class="mt-6">
-                <ul class="flex flex-wrap justify-center space-x-4 md:space-x-6 text-base md:text-lg font-semibold">
-                    <li><a href="#summary" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_summary"></a></li>
-                    <li><a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_experience"></a></li>
-                    <li><a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_skills"></a></li>
-                    <li><a href="#education" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_education"></a></li>
-                    <li><a href="#certifications" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_certifications"></a></li>
-                    <li><a href="#allies" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" data-lang-key="nav_allies"></a></li>
+            <nav class="mt-8 bg-blue-700 p-3 rounded-lg shadow-md">
+                <ul class="flex justify-center md:justify-start space-x-2 md:space-x-4 text-white font-semibold text-base md:text-lg nav-scrollable">
+                    <li><a href="#summary" class="nav-link" data-lang-key="nav_summary"></a></li>
+                    <li><a href="#experience" class="nav-link" data-lang-key="nav_experience"></a></li>
+                    <li><a href="#skills" class="nav-link" data-lang-key="nav_skills"></a></li>
+                    <li><a href="#education" class="nav-link" data-lang-key="nav_education"></a></li>
+                    <li><a href="#certifications" class="nav-link" data-lang-key="nav_certifications"></a></li>
+                    <li><a href="#participations" class="nav-link" data-lang-key="nav_participations"></a></li>
+                    <li><a href="#allies" class="nav-link" data-lang-key="nav_allies"></a></li>
+                    <li><a href="#contact" class="nav-link" data-lang-key="nav_contact"></a></li>
                 </ul>
             </nav>
         </header>
 
-        <main>
-            <section id="summary" class="bg-white shadow-lg rounded-lg p-6 mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_summary"></h2>
-                <p class="text-gray-700 leading-relaxed" id="summary_text"></p>
-            </section>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <section id="summary" class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                    <h2 class="text-3xl font-bold section-header" data-lang-key="sec_summary"></h2>
+                    <p class="text-gray-700 leading-relaxed text-lg" id="summary_text"></p>
+                </section>
 
-            <section id="experience" class="bg-white shadow-lg rounded-lg p-6 mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_experience"></h2>
-                <div id="experience-content">
-                    </div>
-            </section>
+                <section id="experience" class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                    <h2 class="text-3xl font-bold section-header" data-lang-key="sec_experience"></h2>
+                    <div id="experience-content">
+                        </div>
+                </section>
 
-            <section id="skills" class="bg-white shadow-lg rounded-lg p-6 mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_skills"></h2>
-                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-700" id="skills-list">
-                    </ul>
-            </section>
+                <section id="participations" class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                    <h2 class="text-3xl font-bold section-header" data-lang-key="sec_participations"></h2>
+                    <ul class="list-none space-y-3 text-gray-700" id="participations-list">
+                        </ul>
+                </section>
 
-            <section id="education" class="bg-white shadow-lg rounded-lg p-6 mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_education"></h2>
-                <ul class="list-disc pl-5 text-gray-700 space-y-2" id="education-list">
-                    </ul>
-            </section>
+                 <section id="contact" class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                    <h2 class="text-3xl font-bold section-header" data-lang-key="sec_contact"></h2>
+                    <form action="https://formspree.io/f/xvovoyvo" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 text-base font-bold mb-2" data-lang-key="contact_name_label"></label>
+                            <input type="text" id="name" name="name" class="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2.5 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 text-base font-bold mb-2" data-lang-key="contact_email_label"></label>
+                            <input type="email" id="email" name="_replyto" class="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2.5 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 text-base font-bold mb-2" data-lang-key="contact_message_label"></label>
+                            <textarea id="message" name="message" rows="6" class="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2.5 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-y" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline-blue transition-all w-full md:w-auto text-lg" data-lang-key="contact_send_button">
+                            <i class="fas fa-paper-plane mr-2"></i> 
+                        </button>
+                    </form>
+                </section>
+            </div>
 
-            <section id="certifications" class="bg-white shadow-lg rounded-lg p-6 mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_certifications"></h2>
-                <ul class="list-disc pl-5 text-gray-700 space-y-2" id="certifications-list">
-                    </ul>
-            </section>
+            <div class="lg:col-span-1">
+                <section id="skills" class="sidebar-section">
+                    <h2 class="text-2xl font-bold section-header" data-lang-key="sec_skills"></h2>
+                    <div class="flex flex-wrap gap-2" id="skills-list">
+                        </div>
+                </section>
 
-            <section id="allies" class="bg-white shadow-lg rounded-lg p-6 mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2" data-lang-key="sec_allies"></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="allies-grid">
-                    </div>
-            </section>
-        </main>
+                <section id="education" class="sidebar-section">
+                    <h2 class="text-2xl font-bold section-header" data-lang-key="sec_education"></h2>
+                    <ul class="list-none space-y-3 text-gray-700" id="education-list">
+                        </ul>
+                </section>
+
+                <section id="certifications" class="sidebar-section">
+                    <h2 class="text-2xl font-bold section-header" data-lang-key="sec_certifications"></h2>
+                    <ul class="list-none space-y-3 text-gray-700" id="certifications-list">
+                        </ul>
+                </section>
+
+                <section id="allies" class="sidebar-section">
+                    <h2 class="text-2xl font-bold section-header" data-lang-key="sec_allies"></h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="allies-grid">
+                        </div>
+                </section>
+            </div>
+        </div>
     </div>
 
     <script>
-        const langData = {}; // Este objeto contendrá los datos de idioma cargados desde los JSON
-        let currentLang = 'es'; // Idioma por defecto
+        const langData = {}; 
+        let currentLang = 'es'; 
 
-        // Función para cargar los datos de idioma desde los archivos JSON
         async function loadLanguageData() {
             try {
                 const esResponse = await fetch('data/es.json');
@@ -146,7 +277,6 @@
                 const enResponse = await fetch('data/en.json');
                 langData['en'] = await enResponse.json();
 
-                // Intentar cargar el idioma preferido del navegador o uno guardado
                 const savedLang = localStorage.getItem('cvLang');
                 if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
                     currentLang = savedLang;
@@ -154,42 +284,40 @@
                     currentLang = 'en';
                 }
 
-                applyLanguage(currentLang); // Aplica el idioma inicial al cargar
+                applyLanguage(currentLang); 
+                setupSmoothScrolling(); // Configura el scroll suave
+                setupIntersectionObserver(); // Configura el observador para el menú activo
             } catch (error) {
                 console.error('Error al cargar los archivos de idioma:', error);
             }
         }
 
-        // Función para aplicar el idioma seleccionado a los elementos del DOM
         function applyLanguage(lang) {
             currentLang = lang;
-            localStorage.setItem('cvLang', lang); // Guardar el idioma seleccionado
+            localStorage.setItem('cvLang', lang); 
             const data = langData[lang];
 
-            // Actualizar elementos con atributo data-lang-key
             document.querySelectorAll('[data-lang-key]').forEach(element => {
                 const key = element.getAttribute('data-lang-key');
-                if (data[key] !== undefined) { // Usar undefined para manejar casos donde la clave podría no existir
+                if (data[key] !== undefined) {
                     element.textContent = data[key];
                 }
             });
 
-            // Actualizar Resumen (usando el ID 'summary_text' que es un párrafo)
             const summaryTextElement = document.getElementById('summary_text');
             if (summaryTextElement && data.summary && data.summary.text) {
                 summaryTextElement.textContent = data.summary.text;
             }
 
-            // Actualizar Experiencia
             const experienceContent = document.getElementById('experience-content');
-            experienceContent.innerHTML = ''; // Limpiar antes de añadir
-            if (data.experience) { // Añadir verificación si 'experience' existe
+            experienceContent.innerHTML = ''; 
+            if (data.experience) {
                 data.experience.forEach(exp => {
                     const expDiv = document.createElement('div');
-                    expDiv.className = 'mb-6 p-4 border border-gray-200 rounded-md';
+                    expDiv.className = 'experience-item'; // Clase para la línea de tiempo
                     expDiv.innerHTML = `
-                        <h3 class="text-xl font-semibold text-gray-800">${exp.position} - ${exp.organization}</h3>
-                        <p class="text-gray-600 mb-2">${exp.period}</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">${exp.position} - ${exp.organization}</h3>
+                        <p class="text-gray-600 mb-3 text-sm">${exp.period}</p>
                         <ul class="list-disc pl-5 text-gray-700 space-y-1">
                             ${exp.responsibilities.map(res => `<li>${res}</li>`).join('')}
                         </ul>
@@ -198,63 +326,73 @@
                 });
             }
 
-            // Actualizar Habilidades
             const skillsList = document.getElementById('skills-list');
             skillsList.innerHTML = '';
-            if (data.skills) { // Añadir verificación si 'skills' existe
+            if (data.skills) {
                 data.skills.forEach(skill => {
-                    const li = document.createElement('li');
-                    li.className = 'flex items-center text-lg';
+                    const li = document.createElement('div'); // Cambiado a div para los tags
+                    li.className = 'skill-item';
                     li.innerHTML = `<i class="fas fa-check-circle text-blue-500 mr-2"></i> ${skill}`;
                     skillsList.appendChild(li);
                 });
             }
 
-            // Actualizar Educación
             const educationList = document.getElementById('education-list');
             educationList.innerHTML = '';
-            if (data.education) { // Añadir verificación si 'education' existe
+            if (data.education) {
                 data.education.forEach(edu => {
                     const li = document.createElement('li');
-                    li.textContent = edu;
+                    li.className = 'flex items-start'; // Para alinear icono al inicio
+                    li.innerHTML = `<i class="fas fa-graduation-cap text-blue-500 mr-3 mt-1"></i> <span>${edu}</span>`;
                     educationList.appendChild(li);
                 });
             }
 
-            // Actualizar Certificaciones
             const certificationsList = document.getElementById('certifications-list');
             certificationsList.innerHTML = '';
-            if (data.certifications) { // Añadir verificación si 'certifications' existe
+            if (data.certifications) {
                 data.certifications.forEach(cert => {
                     const li = document.createElement('li');
-                    li.textContent = cert;
+                    li.className = 'flex items-start'; // Para alinear icono al inicio
+                    li.innerHTML = `<i class="fas fa-award text-blue-500 mr-3 mt-1"></i> <span>${cert}</span>`;
                     certificationsList.appendChild(li);
                 });
             }
 
-            // Actualizar Aliados Estratégicos
+            const participationsList = document.getElementById('participations-list');
+            participationsList.innerHTML = '';
+            if (data.participations) {
+                data.participations.forEach(part => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start'; // Para alinear icono al inicio
+                    li.innerHTML = `<i class="fas fa-hands-helping text-blue-500 mr-3 mt-1"></i> <span>${part}</span>`;
+                    participationsList.appendChild(li);
+                });
+            }
+
             const alliesGrid = document.getElementById('allies-grid');
             alliesGrid.innerHTML = '';
-            if (data.allies) { // Añadir verificación si 'allies' existe
+            if (data.allies) {
                 data.allies.forEach(ally => {
-                    const allyDiv = document.createElement('div');
-                    allyDiv.className = 'bg-gray-100 p-4 rounded-lg text-center flex flex-col items-center justify-between';
+                    const allyDiv = document.createElement('a'); // Cambiado a <a> para que toda la tarjeta sea clickable
+                    allyDiv.href = ally.url || '#'; // Si no hay URL, no hace nada
+                    allyDiv.target = "_blank"; // Abrir en nueva pestaña
+                    allyDiv.className = 'ally-card text-center flex flex-col items-center justify-between no-underline text-current';
                     allyDiv.innerHTML = `
-                        ${ally.logo ? `<img src="${ally.logo}" alt="${ally.name} Logo" class="w-24 h-24 object-contain mx-auto mb-2">` : '<i class="fas fa-handshake text-5xl text-blue-500 mb-2"></i>'}
-                        <h3 class="text-xl font-semibold text-gray-800 mb-1">${ally.name}</h3>
-                        <p class="text-gray-600 text-sm">${ally.location}</p>
+                        ${ally.logo ? `<img src="${ally.logo}" alt="${ally.name} Logo" class="ally-logo w-24 h-24 object-contain mx-auto mb-2">` : '<i class="fas fa-handshake text-5xl text-blue-500 mb-2"></i>'}
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">${ally.name}</h3>
+                        <p class="text-gray-600 text-xs">${ally.location}</p>
                         ${ally.description ? `<p class="text-gray-700 text-sm mt-2">${ally.description}</p>` : ''}
-                        ${ally.url ? `<a href="${ally.url}" target="_blank" class="text-blue-600 hover:underline mt-2 text-sm">${data.visit_website}</a>` : ''}
+                        ${ally.url ? `<span class="text-blue-600 hover:underline mt-2 text-sm">${data.visit_website}</span>` : ''}
                     `;
                     alliesGrid.appendChild(allyDiv);
                 });
             }
 
-            // Actualizar el estado de los botones de idioma
             const langEsBtn = document.getElementById('lang-es');
             const langEnBtn = document.getElementById('lang-en');
 
-            if (langEsBtn && langEnBtn) { // Asegurarse de que los botones existan
+            if (langEsBtn && langEnBtn) {
                 if (lang === 'es') {
                     langEsBtn.classList.add('bg-blue-500', 'text-white');
                     langEsBtn.classList.remove('bg-gray-300', 'text-gray-700');
@@ -269,11 +407,69 @@
             }
         }
 
-        // Event Listeners para los botones de idioma
+        // Función para el scroll suave
+        function setupSmoothScrolling() {
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+
+        // Función para activar la clase 'active' en el menú de navegación
+        function setupIntersectionObserver() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.3 // 30% de la sección visible para considerarla activa
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${entry.target.id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Manejar el enlace activo inicial al cargar la página
+            // Eliminar la clase activa de todos los enlaces primero
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // Luego, determinar la sección actual o la primera por defecto
+            const currentHash = window.location.hash;
+            if (currentHash) {
+                const targetLink = document.querySelector(`nav a[href="${currentHash}"]`);
+                if (targetLink) {
+                    targetLink.classList.add('active');
+                }
+            } else { // Si no hay hash, activar el primer enlace (Ej: Resumen)
+                 const firstNavLink = document.querySelector('nav .nav-link');
+                 if (firstNavLink) {
+                     firstNavLink.classList.add('active');
+                 }
+            }
+        }
+
+
         document.getElementById('lang-es').addEventListener('click', () => applyLanguage('es'));
         document.getElementById('lang-en').addEventListener('click', () => applyLanguage('en'));
 
-        // Cargar los datos de idioma al iniciar
         document.addEventListener('DOMContentLoaded', loadLanguageData);
     </script>
 </body>
