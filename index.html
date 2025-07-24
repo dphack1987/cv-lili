@@ -1,20 +1,643 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV Martha Liliana Rodríguez Romo</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martha Liliana Rodríguez Romo - Relacionista Pública de Alto Impacto</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Font Awesome para iconos (WhatsApp) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Fuente Inter de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind: bg-slate-50 */
+            color: #334155; /* Tailwind: text-slate-700 */
+            scroll-behavior: smooth; /* Suaviza el scroll al navegar por anclas */
+        }
+        .section-title {
+            position: relative;
+            font-size: 2.5rem; /* Aumentado para más impacto */
+            font-weight: 800; /* Más audaz */
+            color: #1e293b; /* Tailwind: text-slate-900 */
+            margin-bottom: 2.5rem; /* Tailwind: mb-10 */
+            padding-bottom: 0.75rem; /* Más espacio para la línea */
+            text-align: center; /* Centrar títulos de sección */
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%; /* Centrar la línea */
+            transform: translateX(-50%); /* Ajuste para centrar */
+            bottom: 0;
+            width: 80px; /* Ancho de la línea aumentado */
+            height: 5px; /* Grosor de la línea aumentado */
+            background-color: #2563eb; /* Tailwind: blue-600 */
+            border-radius: 9999px; /* Tailwind: rounded-full */
+        }
 
-<body>
-  <header class="header">
-    <div class="container">
-      <img src="images/foto-perfil.jpg" alt="Foto de perfil de Martha Liliana Rodríguez Romo" class="profile-img" />
-      <h1>Martha Liliana Rodríguez Romo</h1>
-      <h2>Relacionista Pública | Líder Social | Diplomática Humanitaria</h2>
-      <p>📍 San Antonio del Tequendama, Cundinamarca</p>
-      <p>📧 <a href="mailto:liliromo56@gmail.com">liliromo56@gmail.com</a> | 📞 +57 314 509 2255</p>
-    </div>
-  </header> 
+        /* Estilos para el botón flotante de WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25D366; /* Color original de WhatsApp */
+            color: white;
+            padding: 1.25rem; /* Tamaño ligeramente más grande */
+            border-radius: 9999px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem; /* Icono más grande */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.15) translateY(-5px); /* Efecto de "flotar" más pronunciado */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Estilos para el formulario */
+        .form-input {
+            @apply w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-3 focus:ring-blue-500 transition duration-300 shadow-sm; /* Padding y sombra mejorados, ring más grueso */
+        }
+        .form-textarea {
+            @apply w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-3 focus:ring-blue-500 transition duration-300 resize-y shadow-sm; /* Padding y sombra mejorados, ring más grueso */
+        }
+        .submit-button {
+            @apply bg-blue-600 text-white font-bold py-4 px-8 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg transform hover:scale-105; /* Botón más grande, redondeado, sombra y efecto hover */
+        }
+
+        /* Animación de entrada para secciones */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Efecto de hover para tarjetas de habilidades */
+        .skill-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para el carrusel de logos (simplificado para HTML puro, necesitaría JS para funcionalidad completa) */
+        .logo-carousel-container {
+            overflow: hidden;
+            position: relative;
+            padding: 2rem 0;
+        }
+        .logo-carousel {
+            display: flex;
+            animation: scroll-logos 20s linear infinite; /* Animación de scroll */
+        }
+        .logo-carousel-item {
+            flex-shrink: 0;
+            width: 180px; /* Ancho fijo para cada logo */
+            margin-right: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .logo-carousel-item img {
+            max-width: 100%;
+            max-height: 80px;
+            filter: grayscale(100%); /* Logos en escala de grises para un look unificado */
+            opacity: 0.7;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+        .logo-carousel-item img:hover {
+            filter: grayscale(0%); /* Color al pasar el ratón */
+            opacity: 1;
+        }
+
+        @keyframes scroll-logos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); } /* Mueve los logos para que se repitan */
+        }
+
+        /* Para que la animación se vea continua, duplicamos los logos en JS */
+        /* Esto se manejará en el script */
+
+        /* Efecto de partículas en el héroe (placeholder, necesitaría Three.js o similar para ser real) */
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.1; /* Muy sutil */
+        }
+        .hero-particles::before, .hero-particles::after {
+            content: '';
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: particle-move 20s infinite ease-in-out;
+        }
+        .hero-particles::before {
+            width: 100px; height: 100px;
+            top: 10%; left: 15%;
+            animation-delay: 0s;
+        }
+        .hero-particles::after {
+            width: 70px; height: 70px;
+            bottom: 20%; right: 25%;
+            animation-delay: 10s;
+        }
+        @keyframes particle-move {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, -30px) scale(1.1); }
+            50% { transform: translate(100px, 50px) scale(0.9); }
+            75% { transform: translate(-50px, -20px) scale(1.2); }
+        }
+
+        /* Estilo para el contenedor de la foto de perfil */
+        .profile-image-container {
+            position: relative;
+            width: 180px; /* Tamaño más grande para la foto */
+            height: 180px;
+            margin: 0 auto 1.5rem auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid rgba(255, 255, 255, 0.3); /* Borde más sutil */
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra exterior para un efecto de profundidad */
+            transition: transform 0.3s ease-in-out;
+        }
+        .profile-image-container:hover {
+            transform: scale(1.05); /* Ligerísimo zoom al pasar el ratón */
+        }
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Estilos para el carrusel de certificaciones (similar al de aliados) */
+        .cert-carousel-container {
+            overflow: hidden;
+            position: relative;
+            padding: 2rem 0;
+        }
+        .cert-carousel {
+            display: flex;
+            animation: scroll-certs 25s linear infinite; /* Animación de scroll */
+        }
+        .cert-carousel-item {
+            flex-shrink: 0;
+            width: 300px; /* Ancho fijo para cada certificación */
+            margin-right: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .cert-carousel-item img {
+            max-width: 100%;
+            height: auto; /* Altura automática para mantener proporción */
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .cert-carousel-item img:hover {
+            transform: scale(1.03);
+        }
+        @keyframes scroll-certs {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+    </style>
+</head>
+<body class="leading-relaxed">
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573145092255" target="_blank" class="whatsapp-button" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Barra de Navegación -->
+    <nav class="bg-white shadow-lg py-4 sticky top-0 z-50"> <!-- Sombra más pronunciada -->
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#hero" class="text-3xl font-extrabold text-blue-700 tracking-tight">Martha Liliana</a> <!-- Fuente más grande y espaciado -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200">Sobre Mí</a>
+                <a href="#skills" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200">Habilidades</a>
+                <a href="#experience" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200">Experiencia</a>
+                <a href="#education" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200">Formación</a>
+                <a href="#certifications" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200">Certificaciones</a> <!-- Nuevo enlace -->
+                <a href="#allies" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200">Aliados</a>
+                <a href="#contact" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200">Contacto</a>
+            </div>
+            <!-- Menú hamburguesa para móviles -->
+            <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                <i class="fas fa-bars text-3xl"></i> <!-- Icono más grande -->
+            </button>
+        </div>
+        <!-- Menú móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pt-2 pb-4 shadow-lg">
+            <a href="#about" class="block py-3 text-slate-700 hover:bg-blue-50 rounded-md transition duration-200 text-lg">Sobre Mí</a>
+            <a href="#skills" class="block py-3 text-slate-700 hover:bg-blue-50 rounded-md transition duration-200 text-lg">Habilidades</a>
+            <a href="#experience" class="block py-3 text-slate-700 hover:bg-blue-50 rounded-md transition duration-200 text-lg">Experiencia</a>
+            <a href="#education" class="block py-3 text-slate-700 hover:bg-blue-50 rounded-md transition duration-200 text-lg">Formación</a>
+            <a href="#certifications" class="block py-3 text-slate-700 hover:bg-blue-50 rounded-md transition duration-200 text-lg">Certificaciones</a> <!-- Nuevo enlace -->
+            <a href="#allies" class="block py-3 text-slate-700 hover:bg-blue-50 rounded-md transition duration-200 text-lg">Aliados</a>
+            <a href="#contact" class="block py-3 text-slate-700 hover:bg-blue-50 rounded-md transition duration-200 text-lg">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Sección de Héroe/Inicio -->
+    <section id="hero" class="relative bg-gradient-to-br from-blue-700 to-blue-900 text-white py-20 md:py-32 flex items-center justify-center min-h-screen-75 overflow-hidden">
+        <!-- Efecto de partículas sutil (CSS puro, para un efecto más avanzado se necesitaría JS como Three.js) -->
+        <div class="hero-particles"></div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="bg-white bg-opacity-15 p-8 md:p-12 rounded-2xl shadow-2xl max-w-3xl mx-auto backdrop-blur-sm"> <!-- Opacidad y blur para un efecto moderno -->
+                <!-- Contenedor para la foto de perfil con efectos -->
+                <div class="profile-image-container">
+                    <img src="https://placehold.co/180x180/e2e8f0/1e293b?text=Foto" alt="Foto de Perfil de Martha Liliana Rodríguez Romo">
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg">Martha Liliana Rodríguez Romo</h1> <!-- Sombra para el texto -->
+                <p class="text-xl md:text-3xl font-light mb-8 opacity-90">Relacionista Pública de Alto Impacto</p> <!-- Texto más grande y sutil -->
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-lg md:text-xl">
+                    <span class="flex items-center"><i class="fas fa-map-marker-alt mr-3 text-blue-200"></i> Bogotá, Colombia</span>
+                    <a href="mailto:liliromo56@gmail.com" class="flex items-center hover:underline hover:text-blue-200 transition duration-200"><i class="fas fa-envelope mr-3 text-blue-200"></i> liliromo56@gmail.com</a>
+                    <a href="tel:+573145092255" class="flex items-center hover:underline hover:text-blue-200 transition duration-200"><i class="fas fa-phone mr-3 text-blue-200"></i> +573145092255</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí / Resumen -->
+    <section id="about" class="py-16 md:py-24 bg-white fade-in-section">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="section-title">Sobre Mí</h2>
+            <p class="text-lg md:text-xl text-slate-700 leading-relaxed text-center">Soy una Relacionista Pública enfocada en ayuda social en Colombia. Fundé Cambiando Vidas LR SAS, liderando iniciativas para apoyar a adultos mayores vulnerables y mujeres empoderadas. He trabajado en proyectos de derechos humanos, conservación ambiental, y apoyo a animales en estado de vulnerabilidad. Con experiencia en orquídeologia y comercialización de paneles solares, comprometida con el desarrollo social y la sostenibilidad.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Habilidades Blandas -->
+    <section id="skills" class="py-16 md:py-24 bg-slate-50 fade-in-section">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="section-title">Habilidades Clave</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-comments text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Comunicación efectiva</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-users text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Trabajo en equipo</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-handshake text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Empatía</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-user-tie text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Liderazgo</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-project-diagram text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Coordinación de proyectos</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-coins text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Gestión de recursos</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-hand-holding-heart text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Trabajo con comunidades vulnerables</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-leaf text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Conservación ambiental</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-calendar-alt text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Organización de eventos</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-sync-alt text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Adaptable</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-chart-line text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Orientada a resultados</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-lightbulb text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Empírica</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center skill-card">
+                    <i class="fas fa-bullhorn text-blue-600 text-3xl mb-3"></i>
+                    <span class="text-lg font-semibold text-slate-800">Relaciones públicas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Experiencia -->
+    <section id="experience" class="py-16 md:py-24 bg-white fade-in-section">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="section-title">Experiencia Profesional</h2>
+
+            <!-- Experiencia: Secretaria Diplomática -->
+            <div class="mb-12 p-8 bg-slate-50 rounded-xl shadow-lg border-l-4 border-blue-600"> <!-- Borde lateral para destacar -->
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">Secretaria Diplomática, Mission Human Rights Internacional</h3>
+                <p class="text-blue-700 text-lg font-semibold mb-4">07/2023 – Hoy | Colombia – Europa</p>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 text-base">
+                    <li>Ejercicio de funciones diplomáticas de alto nivel como representante institucional de Mission Human Rights en Colombia, articulando esfuerzos nacionales e internacionales en favor de la protección y promoción de los derechos humanos.</li>
+                    <li>Liderazgo en la formulación y validación de los Estatutos de la organización, estableciendo principios de gobernanza, control estratégico y responsabilidad institucional.</li>
+                    <li>Coordinación de la incidencia diplomática y política ante sistemas internacionales de derechos humanos, incluyendo participación en foros multilaterales y redacción de informes y comunicaciones oficiales.</li>
+                    <li>Supervisión de la gestión nacional, velando por la alineación estratégica con la misión institucional y promoviendo la transparencia, la integridad y la articulación efectiva de los órganos directivos.</li>
+                    <li>Facilitación de relaciones con organismos multilaterales, cooperantes y aliados estratégicos para la proyección internacional de la organización y la consolidación de su estructura operativa.</li>
+                </ul>
+            </div>
+
+            <!-- Experiencia: CEO, Cambiando Vidas LR S.A.S. -->
+            <div class="mb-12 p-8 bg-slate-50 rounded-xl shadow-lg border-l-4 border-blue-600">
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">CEO, Cambiando Vidas LR S.A.S.</h3>
+                <p class="text-blue-700 text-lg font-semibold mb-4">07/2023 – Hoy | Bogotá, CO</p>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 text-base">
+                    <li>Designada Doctora Honoris Causa en Derechos Humanos durante la Primera Cumbre Internacional de la Abogacía Colombiana (junio 2025, Cartagena), en reconocimiento a su trayectoria en liderazgo social, promoción de derechos y contribuciones al fortalecimiento de la justicia y la abogacía a nivel internacional.</li>
+                    <li>Gestión e implementación de una alianza internacional con la organización ABILITYTOHELP, mediante la cual se logró la distribución de 15.000 becas de formación en inglés (niveles A1 a B1), así como becas para estudios técnicos en Conducta Humana Aplicada, beneficiando a jóvenes y adultos en condiciones de vulnerabilidad.</li>
+                    <li>Facilitación de procesos estratégicos para el posicionamiento de empresas, organizaciones e individuos en mercados nacionales e internacionales, promoviendo la visibilidad y el fortalecimiento de sus marcas en colaboración directa con la con Construcción, Servicio, Paz y Justicia en América Latina, SERPAJ, y la Agencia Mundial de Prensa.</li>
+                    <li>Desarrollo de programas de formación, capacitación e impulso emprendedor, dirigidos especialmente a mujeres afrodescendientes e indígenas, con impacto directo en más de 800 familias en el departamento del Cesar a través del trabajo en conjunto con la organización Mecedora de mis Ancestros.</li>
+                    <li>Coordinación de una red nacional de productores para optimizar la comercialización de sus productos, fortalecer sus emprendimientos y posicionar a los agricultores colombianos en mercados nacionales e internacionales.</li>
+                    <li>Promoción de iniciativas culturales innovadoras que integran el arte y la identidad local, generando impacto en las comunidades participantes y fortaleciendo su conexión con la cultura nacional por medio de una alianza cultural con el Maestro Siaucho.</li>
+                    <li>Liderazgo en Sembrando Semillas, un proyecto de Cambiando Vidas LR S.A.S que impactó a más de 1,500 clientes a través de la venta de semillas de orquídeas, formalizando más de 300 viveros y trabajando directamente con 400 agricultores para fomentar el desarrollo sostenible del sector.</li>
+                    <li>Facilitamos el acceso a capacitaciones en derechos humanos, alfabetización y eventos gratuitos para adultos mayores vulnerables, captando recursos para el programa Colombia Mayor.</li>
+                    <li>Colaboro con la Veeduría por una Colombia Honesta junto a Leonardo Bernal Caballero, trabajando en la promoción y defensa de los derechos humanos a nivel nacional.</li>
+                    <li>Coordiné la capacitación y seguimiento de más de 200 mujeres en Magdalena y Cundinamarca, empoderándolas a través de la Fundación FMEC.</li>
+                    <li>Organizo eventos en Bogotá, con la fundación PROASOCIADOS conectando a inversores internacionales con emprendedores nacionales, logrando que más de 200 emprendedores formalicen y escalen sus negocios.</li>
+                    <li>Conecté a estudiantes de territorios remotos con la Fundación TLS, facilitando su acceso a becas de la Georgia Tech International Corporation para su titulación universitaria.</li>
+                    <li>Brindamos capacitaciones a las personas con discapacidad, a través de la alianza con el movimiento latinoamericano de personas con discapacidad, para facilitar su integración a la sociedad.</li>
+                    <li>Capacito a víctimas del conflicto armado sobre sus derechos y brindándoles apoyo continuo.</li>
+                    <li>Coordiné la gestión y postulación de proyectos en Cundinamarca y Antioquía junto a Dismartek, cumpliendo con todos los requerimientos y plazos establecidos.</li>
+                    <li>Formo parte de la Gran Red de Antioquía a través de AppAntioquia, y colaboro en la Agremiación Popular y la Mesa de Medios Departamental. Contribuyendo a la Federación Antioqueña de Artes y a la Asociación Artistas Unidos (NIT 90027942-5), unidos a la Industria Nacional Creativa liderada en conjunto por James Arboleda y mi persona.</li>
+                    <li>Apoyo la protección de animales en estado de vulnerabilidad en Cundinamarca, financiando iniciativas sociales a través de Inverfina SAC, una constructora peruana, durante los últimos 10 años.</li>
+                    <li>Contribuí a la conservación del medio ambiente en Colombia, Perú y Ecuador, liderando expediciones en la Amazonía para identificar y preservar especies endémicas durante 8 años. Logré crear nuevas hibridaciones que fortalecen la biodiversidad y apoyan los esfuerzos de conservación.</li>
+                    <li>Apoyé a la comunidad de Nueva Jerusalen en Ibagué en conjunto con la Sra. Flora Imelda Perez, Presidenta de la junta de acción comunal.</li>
+                    <li>Apoyé en conjunto con la organización FEDISCOL a las personas con discapacidad en el territorio colombiano.</li>
+                    <li>Trabajé de la mano con la federación nacional de desplazados en defensa de los derechos humanos, ANDEDH.</li>
+                </ul>
+                <!-- Placeholder para carrusel de proyectos/fotos de Cambiando Vidas -->
+                <div class="mt-8 text-center">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Proyectos en Acción (Imágenes aquí)</h4>
+                    <div class="flex overflow-x-auto space-x-4 p-4 bg-white rounded-lg shadow-inner scrollbar-hide">
+                        <img src="https://placehold.co/200x150/e0f2fe/1e293b?text=Proyecto+1" alt="Imagen de Proyecto 1" class="flex-shrink-0 w-48 h-36 object-cover rounded-lg shadow-md hover:scale-105 transition duration-200">
+                        <img src="https://placehold.co/200x150/e0f2fe/1e293b?text=Proyecto+2" alt="Imagen de Proyecto 2" class="flex-shrink-0 w-48 h-36 object-cover rounded-lg shadow-md hover:scale-105 transition duration-200">
+                        <img src="https://placehold.co/200x150/e0f2fe/1e293b?text=Proyecto+3" alt="Imagen de Proyecto 3" class="flex-shrink-0 w-48 h-36 object-cover rounded-lg shadow-md hover:scale-105 transition duration-200">
+                        <img src="https://placehold.co/200x150/e0f2fe/1e293b?text=Proyecto+4" alt="Imagen de Proyecto 4" class="flex-shrink-0 w-48 h-36 object-cover rounded-lg shadow-md hover:scale-105 transition duration-200">
+                        <!-- Añade más imágenes de proyectos aquí -->
+                    </div>
+                    <p class="text-sm text-slate-500 mt-2">Desliza para ver más imágenes de nuestros proyectos.</p>
+                </div>
+            </div>
+
+            <!-- Experiencia: Relacionista comercial, ATSEI de Colombia -->
+            <div class="mb-12 p-8 bg-slate-50 rounded-xl shadow-lg border-l-4 border-blue-600">
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">Relacionista comercial, ATSEI de Colombia.</h3>
+                <p class="text-blue-700 text-lg font-semibold mb-4">02/2016 – Hoy | Bogotá, CO</p>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 text-base">
+                    <li>Impulsé la comercialización e implementación de paneles solares a nivel nacional, logrando su adopción exitosa en 5 ciudades.</li>
+                </ul>
+            </div>
+
+            <!-- Experiencia: Fundadora, Construyendo Sonrisas -->
+            <div class="p-8 bg-slate-50 rounded-xl shadow-lg border-l-4 border-blue-600">
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">Fundadora, Construyendo Sonrisas.</h3>
+                <p class="text-blue-700 text-lg font-semibold mb-4">2012 – 2016 | Lima, PE</p>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 text-base">
+                    <li>Comencé hace 12 años en el asentamiento humano Pachacutec en Lima, Perú, brindando apoyo a niños y animales de la calle a través del proyecto "Construyendo Sonrisas".</li>
+                    <li>Colaboré con artistas de bellas artes en Lima, impulsando la economía local mediante la promoción y comercialización de sus obras.</li>
+                    <li>Organicé talleres de reciclaje de madera de casas demolidas, enfocados en la rehabilitación ambiental y apoyando a 10 jóvenes con problemas de drogadicción.</li>
+                    <li>Dirigí la galería "Suma_rte" en Perú, destacando la importancia de las guacas y otros espacios tradicionales a través de pinturas rupestres y piedras semipreciosas.</li>
+                    <li>Logré apoyar a más de 70 animales sin hogar en el pasado y actualmente cuido de 18 perros, proporcionándoles atención médica, comida y un hogar seguro.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Educación y Distinciones -->
+    <section id="education" class="py-16 md:py-24 bg-slate-50 fade-in-section">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="section-title">Formación y Distinciones</h2>
+
+            <!-- Educación Extendida -->
+            <div class="mb-12 p-8 bg-white rounded-xl shadow-lg border-l-4 border-blue-600">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Educación Extendida</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 text-base">
+                    <li>Diplomado de derechos humanos con la Capellanía Armada Mundial de Paz de México.</li>
+                    <li>Técnico Agropecuario, instituto Tomás Moro.</li>
+                    <li>Diplomado en Inclusión.</li>
+                    <li>Derechos humanos, Escuela nacional de formación comunitaria.</li>
+                    <li>Diplomado en Circulo De Maestros Conocimientos Y Saberes De La Federación De Discapacidad Cuidadores De Colombia Y El Movimiento Guajira Disruptiva.</li>
+                </ul>
+            </div>
+
+            <!-- Distinciones y Reconocimientos -->
+            <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-blue-600">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Distinciones y Reconocimientos</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 text-base">
+                    <li>Alta Distinción «Honor, Dignidad y Gloria» Adolfo Pérez Esquivel 2024 en Conmemoración del Día Universal de los Derechos Humanos.</li>
+                    <li>Doctor Honoris Causa en: Derechos Humanos.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva Sección de Certificaciones (con imágenes) -->
+    <section id="certifications" class="py-16 md:py-24 bg-white fade-in-section">
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <h2 class="section-title mx-auto">Certificaciones</h2>
+            <p class="text-lg md:text-xl text-slate-700 mb-8">Aquí puedes ver algunas de las certificaciones que respaldan mi trayectoria y conocimientos.</p>
+            <div class="cert-carousel-container">
+                <div class="cert-carousel" id="cert-carousel">
+                    <!-- Placeholder para imágenes de certificaciones.
+                         Reemplaza 'https://placehold.co/300x200/e0f2fe/1e293b?text=Certificado+X' con tus JPGs.
+                         Asegúrate de que las imágenes tengan una buena resolución y proporción. -->
+                    <div class="cert-carousel-item">
+                        <img src="https://placehold.co/300x200/e0f2fe/1e293b?text=Certificado+1" alt="Certificado 1">
+                    </div>
+                    <div class="cert-carousel-item">
+                        <img src="https://placehold.co/300x200/e0f2fe/1e293b?text=Certificado+2" alt="Certificado 2">
+                    </div>
+                    <div class="cert-carousel-item">
+                        <img src="https://placehold.co/300x200/e0f2fe/1e293b?text=Certificado+3" alt="Certificado 3">
+                    </div>
+                    <div class="cert-carousel-item">
+                        <img src="https://placehold.co/300x200/e0f2fe/1e293b?text=Certificado+4" alt="Certificado 4">
+                    </div>
+                    <div class="cert-carousel-item">
+                        <img src="https://placehold.co/300x200/e0f2fe/1e293b?text=Certificado+5" alt="Certificado 5">
+                    </div>
+                    <!-- Añade más divs para más imágenes de certificaciones aquí -->
+                </div>
+            </div>
+            <p class="text-sm text-slate-500 mt-2">Desliza para ver más certificaciones.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Aliados Estratégicos -->
+    <section id="allies" class="py-16 md:py-24 bg-slate-50 fade-in-section">
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <h2 class="section-title mx-auto">Aliados Estratégicos</h2>
+            <p class="text-lg md:text-xl text-slate-700 mb-8">Trabajamos de la mano con organizaciones y empresas clave para maximizar nuestro impacto social y ambiental.</p>
+            <div class="logo-carousel-container">
+                <div class="logo-carousel" id="allies-carousel">
+                    <!-- Placeholder para logos de aliados. Reemplaza 'https://placehold.co/150x80/e2e8f0/1e293b?text=Logo+Aliado' con tus JPGs -->
+                    <div class="logo-carousel-item">
+                        <img src="https://placehold.co/180x90/e2e8f0/1e293b?text=Logo+Aliado+1" alt="Logo Aliado 1">
+                    </div>
+                    <div class="logo-carousel-item">
+                        <img src="https://placehold.co/180x90/e2e8f0/1e293b?text=Logo+Aliado+2" alt="Logo Aliado 2">
+                    </div>
+                    <div class="logo-carousel-item">
+                        <img src="https://placehold.co/180x90/e2e8f0/1e293b?text=Logo+Aliado+3" alt="Logo Aliado 3">
+                    </div>
+                    <div class="logo-carousel-item">
+                        <img src="https://placehold.co/180x90/e2e8f0/1e293b?text=Logo+Aliado+4" alt="Logo Aliado 4">
+                    </div>
+                    <div class="logo-carousel-item">
+                        <img src="https://placehold.co/180x90/e2e8f0/1e293b?text=Logo+Aliado+5" alt="Logo Aliado 5">
+                    </div>
+                    <div class="logo-carousel-item">
+                        <img src="https://placehold.co/180x90/e2e8f0/1e293b?text=Logo+Aliado+6" alt="Logo Aliado 6">
+                    </div>
+                    <!-- Duplica los items para un efecto de carrusel continuo con CSS/JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="py-16 md:py-24 bg-white fade-in-section">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h2 class="section-title mx-auto">Contáctame</h2>
+            <p class="text-lg text-center text-slate-700 mb-8">Si deseas contactarme para colaboraciones, proyectos o consultas, por favor completa el siguiente formulario. Estaré encantada de responderte.</p>
+            
+            <form action="YOUR_FORM_SUBMISSION_URL" method="POST" class="bg-slate-50 p-8 md:p-10 rounded-xl shadow-2xl border border-blue-100"> <!-- Sombra más profunda y borde sutil -->
+                <div class="mb-6">
+                    <label for="name" class="block text-slate-700 text-base font-bold mb-2">Nombre Completo:</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required>
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block text-slate-700 text-base font-bold mb-2">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="tu.email@ejemplo.com" required>
+                </div>
+                <div class="mb-6">
+                    <label for="subject" class="block text-slate-700 text-base font-bold mb-2">Asunto:</label>
+                    <input type="text" id="subject" name="subject" class="form-input" placeholder="Motivo de tu mensaje" required>
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-slate-700 text-base font-bold mb-2">Tu Mensaje:</label>
+                    <textarea id="message" name="message" rows="7" class="form-textarea" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="submit-button">Enviar Mensaje</button>
+                </div>
+            </form>
+            <p class="text-center text-slate-600 mt-8 text-lg">También puedes contactarme directamente:</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-lg mt-4">
+                <a href="mailto:liliromo56@gmail.com" class="flex items-center text-blue-600 hover:underline font-semibold"><i class="fas fa-envelope mr-3"></i> liliromo56@gmail.com</a>
+                <a href="tel:+573145092255" class="flex items-center text-blue-600 hover:underline font-semibold"><i class="fas fa-phone mr-3"></i> +573145092255</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-10 text-center"> <!-- Fondo más oscuro para contraste -->
+        <div class="container mx-auto px-6">
+            <p class="text-lg">&copy; 2025 Martha Liliana Rodríguez Romo. Todos los derechos reservados.</p>
+            <div class="flex justify-center space-x-8 mt-6">
+                <!-- Puedes añadir enlaces a redes sociales aquí si los tienes -->
+                <a href="https://wa.me/573145092255" target="_blank" class="text-white hover:text-blue-400 transition duration-200 text-3xl" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <!-- Ejemplo de LinkedIn, si aplica -->
+                <!-- <a href="#" target="_blank" class="text-white hover:text-blue-400 transition duration-200 text-3xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> -->
+            </div>
+            <p class="text-sm text-slate-400 mt-4">Diseñado con pasión por la IA.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar el menú móvil al hacer clic en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // JavaScript para la animación de entrada de secciones (Intersection Observer)
+        const sections = document.querySelectorAll('.fade-in-section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Porcentaje de la sección visible para activar la animación
+        };
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Dejar de observar una vez que se ha animado
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // JavaScript para el carrusel de logos continuo
+        const alliesCarousel = document.getElementById('allies-carousel');
+        if (alliesCarousel) {
+            // Duplicar los logos para un efecto de scroll infinito
+            const originalLogos = Array.from(alliesCarousel.children);
+            originalLogos.forEach(item => {
+                alliesCarousel.appendChild(item.cloneNode(true));
+            });
+        }
+
+        // JavaScript para el carrusel de certificaciones continuo
+        const certCarousel = document.getElementById('cert-carousel');
+        if (certCarousel) {
+            // Duplicar los items para un efecto de scroll infinito
+            const originalCerts = Array.from(certCarousel.children);
+            originalCerts.forEach(item => {
+                certCarousel.appendChild(item.cloneNode(true));
+            });
+        }
+    </script>
+</body>
+</html>
